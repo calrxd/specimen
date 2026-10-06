@@ -2,7 +2,7 @@
 
 An open-source design system for B2B SaaS product teams. One token file generates the CSS, the Tailwind theme and the Figma library, and a checker fails the build when Figma and the code disagree. MIT licensed. Pre-release; v1.0 is planned for December 2026.
 
-Documentation: [specimen.systems/docs](https://specimen.systems/docs)
+Documentation: [specimen.systems/docs](https://specimen.systems/docs). Storybook: [storybook.specimen.systems](https://storybook.specimen.systems).
 
 ## Install
 
