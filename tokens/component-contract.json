@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "08858c8521db",
+  "sourceHash": "18691dc06679",
   "components": [
     {
       "name": "Mark",
@@ -163,6 +163,565 @@
         }
       ],
       "expectedVariantCount": 2
+    },
+    {
+      "name": "Accordion",
+      "description": "Stacked sections that open one at a time to keep a long page scannable: settings groups,\nFAQs, release notes. Each heading is a button with aria-expanded, and its panel is a\nregion labelled by it. Hairlines separate the rows; the open row shows a minus.",
+      "storybookTitle": "Components/Accordion",
+      "source": "src/components/ui/Accordion.tsx",
+      "storyFile": "src/components/ui/Accordion.stories.tsx",
+      "importPath": "@/components/ui/Accordion",
+      "props": [
+        {
+          "name": "items",
+          "type": "AccordionItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The sections. Content, not a Figma property: the library shows three.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "allowMultiple",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Several sections open at once. Off: opening one closes the others.",
+          "figma": {
+            "name": "allowMultiple",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "defaultOpen",
+          "type": "string[]",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The ids of the sections open on load. Content, not a Figma property.",
+          "figma": {
+            "name": "defaultOpen",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "allowMultiple": false,
+            "defaultOpen": [
+              "licence"
+            ]
+          }
+        },
+        {
+          "name": "AllClosed",
+          "args": {
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "allowMultiple": false
+          }
+        },
+        {
+          "name": "AllowMultiple",
+          "args": {
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "allowMultiple": true,
+            "defaultOpen": [
+              "figma"
+            ]
+          }
+        },
+        {
+          "name": "WithDisabled",
+          "args": {
+            "items": [
+              {
+                "$dynamic": "SpreadElement"
+              },
+              {
+                "id": "archive",
+                "title": "Archived questions",
+                "content": "Nothing here yet.",
+                "disabled": true
+              }
+            ],
+            "allowMultiple": false
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Avatar",
+      "description": "A round image or the initials of a person or workspace. It belongs to the dot family, so it\nis the one fully round element besides the radio and the switch. The surface fill and\nhairline keep initials legible in both themes; a status dot ringed in the canvas colour\nshows presence.",
+      "storybookTitle": "Components/Avatar",
+      "source": "src/components/ui/Avatar.tsx",
+      "storyFile": "src/components/ui/Avatar.stories.tsx",
+      "importPath": "@/components/ui/Avatar",
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The person or workspace the avatar stands for. Gives the initials and the accessible name.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A photo or logo URL. Without one, the initials show.",
+          "figma": {
+            "name": "src",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "srcVisible"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "sm in tables and lists, md in headers and comments, lg on profile pages.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "status",
+          "type": "enum",
+          "values": [
+            "none",
+            "online",
+            "away",
+            "busy"
+          ],
+          "required": false,
+          "default": "none",
+          "description": "A presence dot at the lower right, in the status colours.",
+          "figma": {
+            "name": "status",
+            "figmaType": "VARIANT",
+            "values": [
+              "none",
+              "online",
+              "away",
+              "busy"
+            ],
+            "defaultValue": "none"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "name": "Ada Lovelace",
+            "size": "md",
+            "status": "none"
+          }
+        },
+        {
+          "name": "WithStatus",
+          "args": {
+            "name": "Grace Hopper",
+            "size": "md",
+            "status": "online"
+          }
+        },
+        {
+          "name": "Large",
+          "args": {
+            "name": "Margaret Hamilton",
+            "size": "lg",
+            "status": "away"
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "name": "Alan Turing",
+            "size": "sm",
+            "status": "busy"
+          }
+        },
+        {
+          "name": "Sizes",
+          "args": {
+            "name": "Ada Lovelace"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        {
+          "name": "status",
+          "values": [
+            "none",
+            "online",
+            "away",
+            "busy"
+          ]
+        }
+      ],
+      "expectedVariantCount": 12
+    },
+    {
+      "name": "AvatarGroup",
+      "description": "A row of overlapping avatars for the people on a record: assignees, reviewers, members.\nEach avatar is ringed in the canvas colour so the overlap reads as a stack, and anyone past\nmax is counted in a final circle rather than dropped silently.",
+      "storybookTitle": "Components/AvatarGroup",
+      "source": "src/components/ui/Avatar.tsx",
+      "storyFile": "src/components/ui/AvatarGroup.stories.tsx",
+      "importPath": "@/components/ui/Avatar",
+      "props": [
+        {
+          "name": "people",
+          "type": "AvatarGroupPerson[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The people in the group, in order. Content, not a Figma property: the library shows four and a count.",
+          "figma": {
+            "name": "people",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 4,
+          "description": "How many avatars show before the rest collapse into a \"+3\" count.",
+          "figma": {
+            "name": "max",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "Size of every avatar in the group.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "people": {
+              "$dynamic": "Identifier"
+            },
+            "max": 4,
+            "size": "md"
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "people": {
+              "$dynamic": "Identifier"
+            },
+            "max": 3,
+            "size": "sm"
+          }
+        },
+        {
+          "name": "NoOverflow",
+          "args": {
+            "people": {
+              "$dynamic": "CallExpression"
+            },
+            "max": 4,
+            "size": "md"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        }
+      ],
+      "expectedVariantCount": 3
+    },
+    {
+      "name": "Badge",
+      "description": "A badge: a small count or flag that sits next to a nav item, a tab or an avatar. It is a\npill from the dot family, so it is fully round; with dot on it collapses to the dot alone.\nGive it an aria-label whenever the number would be meaningless read on its own.",
+      "storybookTitle": "Components/Badge",
+      "source": "src/components/ui/Badge.tsx",
+      "storyFile": "src/components/ui/Badge.stories.tsx",
+      "importPath": "@/components/ui/Badge",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "A count or a single short word: \"3\", \"99+\", \"New\". Ignored when dot is on.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "tone",
+          "type": "enum",
+          "values": [
+            "sample",
+            "muted",
+            "danger"
+          ],
+          "required": false,
+          "default": "sample",
+          "description": "sample for new or unread, danger for something that needs attention, muted for a neutral count.",
+          "figma": {
+            "name": "tone",
+            "figmaType": "VARIANT",
+            "values": [
+              "sample",
+              "muted",
+              "danger"
+            ],
+            "defaultValue": "sample"
+          }
+        },
+        {
+          "name": "dot",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows only the dot, without the label, for presence of something rather than a number.",
+          "figma": {
+            "name": "dot",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "3",
+            "tone": "sample",
+            "dot": false,
+            "aria-label": "3 unread messages"
+          }
+        },
+        {
+          "name": "Danger",
+          "args": {
+            "label": "12",
+            "tone": "danger",
+            "aria-label": "12 failed payments"
+          }
+        },
+        {
+          "name": "Muted",
+          "args": {
+            "label": "99+",
+            "tone": "muted",
+            "aria-label": "More than 99 invoices"
+          }
+        },
+        {
+          "name": "Dot",
+          "args": {
+            "label": "New",
+            "tone": "sample",
+            "dot": true,
+            "aria-label": "New activity"
+          }
+        },
+        {
+          "name": "InContext",
+          "args": {
+            "label": "3"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "tone",
+          "values": [
+            "sample",
+            "muted",
+            "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 3
+    },
+    {
+      "name": "Breadcrumb",
+      "description": "Where the current page sits in the hierarchy, with a link back to each level above it.\nAn ordered list in a labelled nav; the last item is the current page, marked with\naria-current and left unlinked. Separators are drawn, not read out.",
+      "storybookTitle": "Components/Breadcrumb",
+      "source": "src/components/ui/Breadcrumb.tsx",
+      "storyFile": "src/components/ui/Breadcrumb.stories.tsx",
+      "importPath": "@/components/ui/Breadcrumb",
+      "props": [
+        {
+          "name": "items",
+          "type": "BreadcrumbItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "From the top level down to the current page. Content, not a Figma property.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "items": [
+              {
+                "label": "Billing",
+                "href": "#billing"
+              },
+              {
+                "label": "Invoices",
+                "href": "#invoices"
+              },
+              {
+                "label": "INV-2048"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TwoLevels",
+          "args": {
+            "items": [
+              {
+                "label": "Settings",
+                "href": "#settings"
+              },
+              {
+                "label": "Team"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Deep",
+          "args": {
+            "aria-label": "Project location",
+            "items": [
+              {
+                "label": "Workspaces",
+                "href": "#w"
+              },
+              {
+                "label": "Harbour & Hale",
+                "href": "#h"
+              },
+              {
+                "label": "Projects",
+                "href": "#p"
+              },
+              {
+                "label": "Website refresh",
+                "href": "#r"
+              },
+              {
+                "label": "Tasks"
+              }
+            ]
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
     },
     {
       "name": "Button",
@@ -331,6 +890,118 @@
       "expectedVariantCount": 8
     },
     {
+      "name": "Card",
+      "description": "A framed panel that groups one subject on a screen: a plan, a setting, a summary. Flat\nlike every panel in the system: surface fill, hairline edge, the 8px panel corner. Title\nand description are optional, so a card can also frame a bare table or chart.",
+      "storybookTitle": "Components/Card",
+      "source": "src/components/ui/Card.tsx",
+      "storyFile": "src/components/ui/Card.stories.tsx",
+      "importPath": "@/components/ui/Card",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The card's heading. Sentence case.",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "titleVisible"
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One or two lines under the title saying what the card holds.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The body.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "actions",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A row at the foot of the card, usually sm Buttons.",
+          "figma": {
+            "name": "actions",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "title": "Monthly report",
+            "description": "Revenue, signups and churn for September, sent to the team on the first working day.",
+            "children": {
+              "$dynamic": "JSXElement"
+            },
+            "actions": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "TitleOnly",
+          "args": {
+            "title": "Notifications",
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "WithActions",
+          "args": {
+            "title": "Delete workspace",
+            "description": "Every project, member and invoice in this workspace is removed. This cannot be undone.",
+            "actions": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        },
+        {
+          "name": "Bare",
+          "args": {
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "Checkbox",
       "description": "A box with the mark's 4px corner, hairline border, green fill with an ink tick when on. The native input\nis drawn with appearance:none so it keeps keyboard, focus ring and form semantics while\nmatching the Figma component pixel for pixel. Never pre-tick a consent box.",
       "storybookTitle": "Components/Checkbox",
@@ -435,6 +1106,135 @@
             "label": "System page",
             "checked": true,
             "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Chip",
+      "description": "A chip: one selected value or active filter, removable in place. Unlike Tag, which is\nread-only metadata in capitals, a chip is something the person chose and can take back,\nso it is sentence case on a surface fill with a real button to remove it.",
+      "storybookTitle": "Components/Chip",
+      "source": "src/components/ui/Chip.tsx",
+      "storyFile": "src/components/ui/Chip.stories.tsx",
+      "importPath": "@/components/ui/Chip",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The value the chip stands for. Sentence case, a few words: \"Overdue\", \"Harbour & Hale\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "removable",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows a remove control after the label. Pair with onRemove.",
+          "figma": {
+            "name": "removable",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "dot",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows the green dot before the label, for an active filter.",
+          "figma": {
+            "name": "dot",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Text, border and the remove control go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onRemove",
+          "type": "(() => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called when the remove control is pressed.",
+          "figma": {
+            "name": "onRemove",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Harbour & Hale",
+            "removable": false,
+            "dot": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Removable",
+          "args": {
+            "label": "Overdue",
+            "removable": true,
+            "onRemove": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "ActiveFilter",
+          "args": {
+            "label": "Status: failed",
+            "removable": true,
+            "dot": true,
+            "onRemove": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Archived",
+            "removable": true,
+            "disabled": true
+          }
+        },
+        {
+          "name": "Group",
+          "args": {
+            "label": "Overdue"
           }
         }
       ],
@@ -683,6 +1483,344 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "Divider",
+      "description": "A hairline that separates content, the brand's own structural device. Decorative by\ndefault; a labelled divider is announced as a separator with its label.",
+      "storybookTitle": "Components/Divider",
+      "source": "src/components/ui/Divider.tsx",
+      "storyFile": "src/components/ui/Divider.stories.tsx",
+      "importPath": "@/components/ui/Divider",
+      "props": [
+        {
+          "name": "orientation",
+          "type": "enum",
+          "values": [
+            "horizontal",
+            "vertical"
+          ],
+          "required": false,
+          "default": "horizontal",
+          "description": "horizontal between stacked blocks, vertical between items in a row.",
+          "figma": {
+            "name": "orientation",
+            "figmaType": "VARIANT",
+            "values": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Short text centred on the line, such as \"or\". Horizontal only.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "labelVisible"
+          }
+        },
+        {
+          "name": "strong",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "strong uses line-strong for a heavier break; the default is the decorative line.",
+          "figma": {
+            "name": "strong",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "orientation": "horizontal",
+            "strong": false
+          }
+        },
+        {
+          "name": "WithLabel",
+          "args": {
+            "orientation": "horizontal",
+            "label": "or"
+          }
+        },
+        {
+          "name": "Strong",
+          "args": {
+            "orientation": "horizontal",
+            "strong": true
+          }
+        },
+        {
+          "name": "Vertical",
+          "args": {
+            "orientation": "vertical"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "orientation",
+          "values": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "Drawer",
+      "description": "A side sheet for detail or editing that keeps the page in view behind it. Built on the\nnative dialog element, like Dialog, so focus is trapped, the page is inert and Escape\ncloses it; focus returns to whatever opened it. Flat: the scrim dims the page, and the\npanel takes surface fill, a line-strong edge and the 8px corner on its inner edge only.",
+      "storybookTitle": "Components/Drawer",
+      "source": "src/components/ui/Drawer.tsx",
+      "storyFile": "src/components/ui/Drawer.stories.tsx",
+      "importPath": "@/components/ui/Drawer",
+      "props": [
+        {
+          "name": "open",
+          "type": "boolean",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Whether the drawer is showing. Controlled: set it false from onClose.",
+          "figma": {
+            "name": "open",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What the drawer is for, sentence case: \"Invoice INV-2048\".",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the title.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "side",
+          "type": "enum",
+          "values": [
+            "end",
+            "start"
+          ],
+          "required": false,
+          "default": "end",
+          "description": "Which edge it slides from. end is right in left-to-right languages.",
+          "figma": {
+            "name": "side",
+            "figmaType": "VARIANT",
+            "values": [
+              "end",
+              "start"
+            ],
+            "defaultValue": "end"
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The body: details, a form, filters. Actions go at the end.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Called on Escape, on a click outside the panel, and on the close control.",
+          "figma": {
+            "name": "onClose",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "open": true,
+            "title": "Invoice INV-2048",
+            "description": "Harbour & Hale, due 3 October.",
+            "side": "end",
+            "children": {
+              "$dynamic": "JSXElement"
+            },
+            "onClose": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Form",
+          "args": {
+            "open": true,
+            "title": "Edit customer",
+            "side": "end",
+            "children": {
+              "$dynamic": "JSXElement"
+            },
+            "onClose": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Start",
+          "args": {
+            "open": true,
+            "title": "Filters",
+            "side": "start",
+            "children": {
+              "$dynamic": "JSXElement"
+            },
+            "onClose": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "side",
+          "values": [
+            "end",
+            "start"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "EmptyState",
+      "description": "The space a list, table or page shows before it has content. An empty screen is an\ninvitation to act, so it says what is missing and offers the one action that fixes it.\nThe visual is the specimen dot on an empty slide: a frame waiting for something to\nobserve.",
+      "storybookTitle": "Components/EmptyState",
+      "source": "src/components/ui/EmptyState.tsx",
+      "storyFile": "src/components/ui/EmptyState.stories.tsx",
+      "importPath": "@/components/ui/EmptyState",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What is empty, and in a word why: \"No invoices yet\".",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "What the reader can do about it, in one or two sentences.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "action",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The action that fills the space, usually a primary Button.",
+          "figma": {
+            "name": "action",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "title": "No invoices yet",
+            "description": "Create your first invoice, or import last year’s from a CSV file.",
+            "action": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "NoResults",
+          "args": {
+            "title": "No invoices match these filters",
+            "description": "Clear a filter or search for a customer name instead.",
+            "action": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "TitleOnly",
+          "args": {
+            "title": "Nothing archived"
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "Field",
       "description": "A labelled text input with the hint and error slots every form needs. The border does\nthe work: line-interactive at rest (3:1, per WCAG 1.4.11), sample on focus, danger on\nerror, line when read-only, disabled when disabled.",
       "storybookTitle": "Components/Field",
@@ -849,6 +1987,210 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "InputNumber",
+      "description": "A number field with decrease and increase buttons either side, for quantities a person\nadjusts rather than types: seats, retries, a percentage. A native number input underneath,\nso arrow keys step it and assistive technology announces it as a spin button. The steppers\nstay out of the tab order because the arrow keys already do their job.",
+      "storybookTitle": "Components/InputNumber",
+      "source": "src/components/ui/InputNumber.tsx",
+      "storyFile": "src/components/ui/InputNumber.stories.tsx",
+      "importPath": "@/components/ui/InputNumber",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the input. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The starting number. Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The lowest value the steppers and the field accept.",
+          "figma": {
+            "name": "min",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The highest value the steppers and the field accept.",
+          "figma": {
+            "name": "max",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 1,
+          "description": "How far one press of a stepper or an arrow key moves the value.",
+          "figma": {
+            "name": "step",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "unit",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A unit shown after the number, in muted: \"seats\", \"GBP\", \"%\".",
+          "figma": {
+            "name": "unit",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "unitVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the input. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and the native required attribute.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border, steppers and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Seats",
+            "defaultValue": 5,
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "required": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "WithUnit",
+          "args": {
+            "label": "Discount",
+            "defaultValue": 10,
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "%",
+            "hint": "Applied to the first invoice only."
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Seats",
+            "defaultValue": 0,
+            "min": 1,
+            "error": "A workspace needs at least one seat.",
+            "required": true
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Seats",
+            "defaultValue": 5,
+            "disabled": true,
+            "hint": "Seats are set by your plan."
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "Menu",
       "description": "A list of actions opened from a button. Opens below its trigger with focus on the first\nitem; arrow keys move, Home and End jump, Enter or Space runs the item and closes the\nmenu, Escape closes it and returns focus to the trigger, Tab closes it and moves on.",
       "storybookTitle": "Components/Menu",
@@ -994,6 +2336,494 @@
       "expectedVariantCount": 2
     },
     {
+      "name": "Message",
+      "description": "An inline notice that sits in the page flow, next to what it is about. Use it for a state\nthat lasts (a failed payment, an expiring trial); use Toast for something that just\nhappened. Flat, like Toast: surface fill, line-strong edge, and the status colour as a 4px\nbar on the left.",
+      "storybookTitle": "Components/Message",
+      "source": "src/components/ui/Message.tsx",
+      "storyFile": "src/components/ui/Message.stories.tsx",
+      "importPath": "@/components/ui/Message",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What the reader needs to know, sentence case: \"Your trial ends in 3 days\".",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One or two sentences of detail or the next step.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "tone",
+          "type": "enum",
+          "values": [
+            "info",
+            "success",
+            "warn",
+            "danger"
+          ],
+          "required": false,
+          "default": "info",
+          "description": "The status colour of the bar. danger is announced assertively; the rest politely.",
+          "figma": {
+            "name": "tone",
+            "figmaType": "VARIANT",
+            "values": [
+              "info",
+              "success",
+              "warn",
+              "danger"
+            ],
+            "defaultValue": "info"
+          }
+        },
+        {
+          "name": "action",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One action that resolves the message, usually a small Button.",
+          "figma": {
+            "name": "action",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "onDismiss",
+          "type": "(() => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shows a close control. Leave it off for a message that stays until its cause is fixed.",
+          "figma": {
+            "name": "onDismiss",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "title": "Your trial ends in 3 days",
+            "description": "Add a payment method to keep your workspace.",
+            "tone": "info"
+          }
+        },
+        {
+          "name": "WithAction",
+          "args": {
+            "title": "Card declined",
+            "description": "The payment of £1,240 for Harbour & Hale failed on 3 October.",
+            "tone": "danger",
+            "action": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "Success",
+          "args": {
+            "title": "Workspace verified",
+            "description": "Invoices now show your registered company name.",
+            "tone": "success",
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Warn",
+          "args": {
+            "title": "Two invoices are overdue",
+            "tone": "warn"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "tone",
+          "values": [
+            "info",
+            "success",
+            "warn",
+            "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 4
+    },
+    {
+      "name": "PageHeader",
+      "description": "The header at the top of an app screen: where you are, what the screen is called, and the\none or two actions that belong to it. The title is the page's h1; actions wrap below it\non narrow screens.",
+      "storybookTitle": "Components/PageHeader",
+      "source": "src/components/ui/PageHeader.tsx",
+      "storyFile": "src/components/ui/PageHeader.stories.tsx",
+      "importPath": "@/components/ui/PageHeader",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The screen's name. Sentence case: \"Billing overview\".",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the title: what the screen is for, or its scope.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "breadcrumb",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A Breadcrumb above the title on screens below the top level.",
+          "figma": {
+            "name": "breadcrumb",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "actions",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Primary actions on the right: one primary Button at most.",
+          "figma": {
+            "name": "actions",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "title": "Billing overview",
+            "description": "Revenue, failed payments and overdue invoices across every workspace.",
+            "actions": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "WithBreadcrumb",
+          "args": {
+            "title": "INV-2048",
+            "description": "Harbour & Hale, due on 3 October.",
+            "breadcrumb": {
+              "$dynamic": "JSXElement"
+            },
+            "actions": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        },
+        {
+          "name": "TitleOnly",
+          "args": {
+            "title": "Settings"
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Paginator",
+      "description": "Moves through a long list one page at a time, under a table or a set of results.\nPrevious and next sit either side of a compact page list: first, last, the current page\nand its neighbours, with an ellipsis for the gaps. The current page carries aria-current.",
+      "storybookTitle": "Components/Paginator",
+      "source": "src/components/ui/Paginator.tsx",
+      "storyFile": "src/components/ui/Paginator.stories.tsx",
+      "importPath": "@/components/ui/Paginator",
+      "props": [
+        {
+          "name": "page",
+          "type": "number",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The current page, counting from 1.",
+          "figma": {
+            "name": "page",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "pageCount",
+          "type": "number",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "How many pages there are.",
+          "figma": {
+            "name": "pageCount",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "onPageChange",
+          "type": "((page: number) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the page to show. Controlled: set page from it.",
+          "figma": {
+            "name": "onPageChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "page": 4,
+            "pageCount": 12
+          }
+        },
+        {
+          "name": "FirstPage",
+          "args": {
+            "page": 1,
+            "pageCount": 12
+          }
+        },
+        {
+          "name": "LastPage",
+          "args": {
+            "page": 12,
+            "pageCount": 12
+          }
+        },
+        {
+          "name": "FewPages",
+          "args": {
+            "page": 2,
+            "pageCount": 3
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Password",
+      "description": "A password field: Field's label, hint and error, with a Show control that reveals what was\ntyped. The control is a toggle button (aria-pressed) inside the field's border, and the\ninput keeps its autocomplete attribute so password managers still work.",
+      "storybookTitle": "Components/Password",
+      "source": "src/components/ui/Password.tsx",
+      "storyFile": "src/components/ui/Password.stories.tsx",
+      "importPath": "@/components/ui/Password",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the input. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shown inside the empty input, in faint.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the input: the rules a new password must meet. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and the native required attribute.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "revealable",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": true,
+          "description": "Shows the Show and Hide control, so a person can check what they typed.",
+          "figma": {
+            "name": "revealable",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": true
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Password",
+            "placeholder": "Your password",
+            "required": false,
+            "disabled": false,
+            "revealable": true
+          }
+        },
+        {
+          "name": "NewPassword",
+          "args": {
+            "label": "New password",
+            "hint": "At least 12 characters. A passphrase of four words works well.",
+            "autoComplete": "new-password",
+            "required": true
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Password",
+            "error": "That password does not match this account.",
+            "required": true
+          }
+        },
+        {
+          "name": "NotRevealable",
+          "args": {
+            "label": "Admin PIN",
+            "placeholder": "Six digits",
+            "revealable": false
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Password",
+            "placeholder": "Managed by single sign-on",
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "Popover",
       "description": "A panel of extra content opened from a button, dismissed by Escape or a click outside.\nNot modal: the page stays usable behind it. Use Dialog when the user must answer before\ngoing on. Flat like every overlay: surface fill and a line-strong edge, no shadow.",
       "storybookTitle": "Components/Popover",
@@ -1131,6 +2961,101 @@
         }
       ],
       "expectedVariantCount": 4
+    },
+    {
+      "name": "ProgressBar",
+      "description": "Shows how far a task has got. A 4px track in the line colour with a sample-green fill,\nlabelled above. Indeterminate work pulses a third of the track; the pulse stops under\nreduced motion and the segment stays put.",
+      "storybookTitle": "Components/ProgressBar",
+      "source": "src/components/ui/ProgressBar.tsx",
+      "storyFile": "src/components/ui/ProgressBar.stories.tsx",
+      "importPath": "@/components/ui/ProgressBar",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What is in progress, sentence case: \"Uploading invoices\". Also its accessible name.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 0,
+          "description": "How far along, from 0 to 100. Ignored while indeterminate.",
+          "figma": {
+            "name": "value",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "indeterminate",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "For work with no known length. The bar pulses instead of filling.",
+          "figma": {
+            "name": "indeterminate",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "showValue",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows the percentage beside the label.",
+          "figma": {
+            "name": "showValue",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Uploading invoices",
+            "value": 64,
+            "indeterminate": false,
+            "showValue": true
+          }
+        },
+        {
+          "name": "Indeterminate",
+          "args": {
+            "label": "Preparing your export",
+            "indeterminate": true
+          }
+        },
+        {
+          "name": "Complete",
+          "args": {
+            "label": "Import finished",
+            "value": 100,
+            "showValue": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
     },
     {
       "name": "Radio",
@@ -1484,6 +3409,681 @@
       ],
       "variantAxes": [],
       "expectedVariantCount": 1
+    },
+    {
+      "name": "SelectButton",
+      "description": "A segmented control: two to five mutually exclusive options shown side by side, for\nswitching a view or a period (\"Day, Week, Month\"). Native radios underneath, so arrow keys\nmove the selection and a form submits the value; the visible segments are their labels.\nUse Select when there are more than five options or the labels are long.",
+      "storybookTitle": "Components/SelectButton",
+      "source": "src/components/ui/SelectButton.tsx",
+      "storyFile": "src/components/ui/SelectButton.stories.tsx",
+      "importPath": "@/components/ui/SelectButton",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the choice for assistive technology and, when shown, above the control. Sentence case.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "options",
+          "type": "SelectButtonOption[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The choices, two to five. Content, not a Figma property: the library shows three.",
+          "figma": {
+            "name": "options",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The value selected at first. Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Groups the radios for a form, and must be unique on the page. A generated name is used when omitted.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "md",
+            "sm"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "md beside other fields, sm in toolbars and table headers.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "md",
+              "sm"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "labelVisible",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows the label above the control. Off in toolbars, where the options explain themselves.",
+          "figma": {
+            "name": "labelVisible",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Every option goes to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((value: string) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the selected value.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Period",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": "week",
+            "size": "md",
+            "labelVisible": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "WithLabel",
+          "args": {
+            "label": "Billing",
+            "labelVisible": true,
+            "defaultValue": "yearly",
+            "options": [
+              {
+                "value": "monthly",
+                "label": "Monthly"
+              },
+              {
+                "value": "yearly",
+                "label": "Yearly"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "label": "Density",
+            "size": "sm",
+            "defaultValue": "comfortable",
+            "options": [
+              {
+                "value": "comfortable",
+                "label": "Comfortable"
+              },
+              {
+                "value": "compact",
+                "label": "Compact"
+              }
+            ]
+          }
+        },
+        {
+          "name": "WithDisabledOption",
+          "args": {
+            "label": "Plan",
+            "defaultValue": "free",
+            "options": [
+              {
+                "value": "free",
+                "label": "Free"
+              },
+              {
+                "value": "pro",
+                "label": "Pro"
+              },
+              {
+                "value": "enterprise",
+                "label": "Enterprise",
+                "disabled": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Period",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": "day",
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "size",
+          "values": [
+            "md",
+            "sm"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "Skeleton",
+      "description": "A placeholder in the shape of content that is still loading, so the layout does not jump\nwhen it arrives. Decorative: hidden from assistive technology, so pair it with a status\nmessage or a Spinner label. It pulses slowly and stops under reduced motion.",
+      "storybookTitle": "Components/Skeleton",
+      "source": "src/components/ui/Skeleton.tsx",
+      "storyFile": "src/components/ui/Skeleton.stories.tsx",
+      "importPath": "@/components/ui/Skeleton",
+      "props": [
+        {
+          "name": "shape",
+          "type": "enum",
+          "values": [
+            "text",
+            "rect",
+            "circle"
+          ],
+          "required": false,
+          "default": "text",
+          "description": "text draws lines of copy, rect a block such as a card or chart, circle an avatar.",
+          "figma": {
+            "name": "shape",
+            "figmaType": "VARIANT",
+            "values": [
+              "text",
+              "rect",
+              "circle"
+            ],
+            "defaultValue": "text"
+          }
+        },
+        {
+          "name": "lines",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 3,
+          "description": "Number of lines for shape text. The last line is shorter, as real paragraphs are.",
+          "figma": {
+            "name": "lines",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "shape": "text",
+            "lines": 3
+          }
+        },
+        {
+          "name": "Block",
+          "args": {
+            "shape": "rect"
+          }
+        },
+        {
+          "name": "Avatar",
+          "args": {
+            "shape": "circle"
+          }
+        },
+        {
+          "name": "Row",
+          "args": {
+            "shape": "text",
+            "lines": 2
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "shape",
+          "values": [
+            "text",
+            "rect",
+            "circle"
+          ]
+        }
+      ],
+      "expectedVariantCount": 3
+    },
+    {
+      "name": "Slider",
+      "description": "A value picked by position on a track, for settings where the rough amount matters more\nthan the exact number: a storage limit, a retention period, a sampling rate. A native range\ninput, so dragging, arrow keys, Page Up and Page Down, Home and End all work, coloured with\nthe sample accent. Use InputNumber when the exact value matters.",
+      "storybookTitle": "Components/Slider",
+      "source": "src/components/ui/Slider.tsx",
+      "storyFile": "src/components/ui/Slider.stories.tsx",
+      "importPath": "@/components/ui/Slider",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the track. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The starting value. Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 0,
+          "description": "The left end of the track.",
+          "figma": {
+            "name": "min",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 100,
+          "description": "The right end of the track.",
+          "figma": {
+            "name": "max",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 1,
+          "description": "The smallest move, by drag or arrow key.",
+          "figma": {
+            "name": "step",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "unit",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A unit shown after the current value: \"%\", \"GB\", \"days\".",
+          "figma": {
+            "name": "unit",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "unitVisible"
+          }
+        },
+        {
+          "name": "showValue",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": true,
+          "description": "Shows the current value at the right of the label row.",
+          "figma": {
+            "name": "showValue",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": true
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Track and thumb go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Storage limit",
+            "defaultValue": 40,
+            "min": 10,
+            "max": 100,
+            "step": 10,
+            "unit": "GB",
+            "showValue": true,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Percentage",
+          "args": {
+            "label": "Sampling rate",
+            "defaultValue": 25,
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "%"
+          }
+        },
+        {
+          "name": "WithoutValue",
+          "args": {
+            "label": "Density",
+            "defaultValue": 50,
+            "showValue": false
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Retention",
+            "defaultValue": 30,
+            "min": 7,
+            "max": 90,
+            "unit": "days",
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Spinner",
+      "description": "A wait of unknown length, too short for a ProgressBar. A ring in the line colour with a\nsample-green arc that turns. Under reduced motion it stops turning and stays visible, so\nthe loading state is still clear.",
+      "storybookTitle": "Components/Spinner",
+      "source": "src/components/ui/Spinner.tsx",
+      "storyFile": "src/components/ui/Spinner.stories.tsx",
+      "importPath": "@/components/ui/Spinner",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What is loading, for assistive technology: \"Loading invoices\". Not shown.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "sm",
+            "md"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "sm sits inline with text or inside a Button; md stands alone in an empty region.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Loading invoices",
+            "size": "md"
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "label": "Saving",
+            "size": "sm"
+          }
+        },
+        {
+          "name": "Inline",
+          "args": {
+            "label": "Saving",
+            "size": "sm"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "Stepper",
+      "description": "Shows where someone is in a multi-step flow: which steps are done, which one they are on,\nand what is left. State never rests on colour alone: a complete step shows a tick, the\ncurrent step a filled dot and aria-current=\"step\", and each item carries its state as\nvisually hidden text.",
+      "storybookTitle": "Components/Stepper",
+      "source": "src/components/ui/Stepper.tsx",
+      "storyFile": "src/components/ui/Stepper.stories.tsx",
+      "importPath": "@/components/ui/Stepper",
+      "props": [
+        {
+          "name": "steps",
+          "type": "StepperStep[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The steps, in order. Content, not a Figma property: the library shows four.",
+          "figma": {
+            "name": "steps",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "current",
+          "type": "number",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The index of the current step, counting from 0. Earlier steps are complete.",
+          "figma": {
+            "name": "current",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "orientation",
+          "type": "enum",
+          "values": [
+            "horizontal",
+            "vertical"
+          ],
+          "required": false,
+          "default": "horizontal",
+          "description": "horizontal across the top of a form, vertical beside a longer flow.",
+          "figma": {
+            "name": "orientation",
+            "figmaType": "VARIANT",
+            "values": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "steps": {
+              "$dynamic": "Identifier"
+            },
+            "current": 1,
+            "orientation": "horizontal"
+          }
+        },
+        {
+          "name": "Vertical",
+          "args": {
+            "steps": {
+              "$dynamic": "Identifier"
+            },
+            "current": 2,
+            "orientation": "vertical"
+          }
+        },
+        {
+          "name": "FirstStep",
+          "args": {
+            "steps": {
+              "$dynamic": "Identifier"
+            },
+            "current": 0,
+            "orientation": "horizontal"
+          }
+        },
+        {
+          "name": "Complete",
+          "args": {
+            "steps": {
+              "$dynamic": "Identifier"
+            },
+            "current": 4,
+            "orientation": "horizontal"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "orientation",
+          "values": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
     },
     {
       "name": "Switch",
@@ -2238,6 +4838,81 @@
         }
       ],
       "expectedVariantCount": 4
+    },
+    {
+      "name": "Toolbar",
+      "description": "A row of related controls above a table or an editor, with an end group pinned to the\nright. Exposed as role=\"toolbar\"; Left and Right arrows move focus between its controls,\nHome and End jump to either end, and Tab leaves the toolbar as usual.",
+      "storybookTitle": "Components/Toolbar",
+      "source": "src/components/ui/Toolbar.tsx",
+      "storyFile": "src/components/ui/Toolbar.stories.tsx",
+      "importPath": "@/components/ui/Toolbar",
+      "props": [
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Controls on the left: filters, view switches, bulk actions.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "end",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Controls pinned to the right: export, create, settings.",
+          "figma": {
+            "name": "end",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "aria-label": "Invoice actions",
+            "children": {
+              "$dynamic": "JSXFragment"
+            },
+            "end": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "WithoutEnd",
+          "args": {
+            "aria-label": "Formatting",
+            "children": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        },
+        {
+          "name": "BulkActions",
+          "args": {
+            "aria-label": "Selected rows",
+            "children": {
+              "$dynamic": "JSXElement"
+            },
+            "end": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
     },
     {
       "name": "Tooltip",

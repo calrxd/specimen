@@ -210,6 +210,10 @@ function figmaProperty(name, { type, values }, required, codeDefault) {
   // a representative value and the checker ignores the prop.
   if (/\[\]$|^Array<|^Record<|^\{/.test(type)) return { name, figmaType: 'NONE', values: null, defaultValue: null, note: 'data prop, no Figma property' }
 
+  // Numbers (a page, a step, a minimum) are content like data props: the library draws a
+  // representative value, and Figma has no number property to bind them to.
+  if (type === 'number') return { name, figmaType: 'NONE', values: null, defaultValue: null, note: 'number, no Figma property' }
+
   // Event handlers are behaviour. A designer cannot set onClose, and Figma has nowhere to put it.
   if (/=>/.test(type)) return { name, figmaType: 'NONE', values: null, defaultValue: null, note: 'handler, no Figma property' }
 

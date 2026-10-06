@@ -1,6 +1,6 @@
 # specimen_
 
-An open-source design system for B2B SaaS product teams. One token file generates the CSS, the Tailwind theme and the Figma library, and a checker fails the build when Figma and the code disagree. MIT licensed. Pre-release; v1.0 is planned for December 2026.
+An open-source design system for B2B SaaS product teams. One token file generates the CSS, the Tailwind theme and the Figma library, and a checker fails the build when Figma and the code disagree. The core is MIT licensed; Pro components and the full Figma kit are paid, on [specimen.systems/pricing](https://specimen.systems/pricing). Pre-release; v1.0 is planned for December 2026.
 
 Documentation: [specimen.systems/docs](https://specimen.systems/docs). Storybook: [storybook.specimen.systems](https://storybook.specimen.systems).
 
@@ -34,7 +34,7 @@ The pipeline, the naming rules and every decision behind them are in [`docs/desi
 | | |
 |---|---|
 | Tokens | 162: 83 primitives, 26 colour roles with a dark and a light value each, 53 scale roles. Every role aliases one primitive. Every colour pair is measured against WCAG 2.2 AA. |
-| Components | 19: Button, Field, Textarea, Select, Checkbox, Radio, Switch, Tag, Table, Tabs, Dialog, Popover, Menu, CommandMenu, Toast, Tooltip, SectionHeader, Mark, Wordmark. React, in `src/components`. |
+| Components | 41: Button, Field, Textarea, Select, Checkbox, Radio, Switch, Tag, Table, Tabs, Dialog, Popover, Menu, CommandMenu, Toast, Tooltip, SectionHeader, Mark, Wordmark, InputNumber, Password, Slider, SelectButton, Chip, Avatar, AvatarGroup, Badge, Accordion, Card, Divider, Breadcrumb, Paginator, Stepper, Toolbar, PageHeader, Message, ProgressBar, Spinner, Skeleton, Drawer, EmptyState. React, in `src/components`. |
 | Packages | [`@specimen.systems/tokens`](packages/tokens) |
 
 The look is flat and monospaced: IBM Plex Mono for the voice, Archivo for long text, hairlines for structure, and one green accent used as a signal. Corners come from the mark's own 4px corner: 4px on controls, 8px on panels, round for the dot family. There are no shadows; overlays separate with a surface fill, a stronger line and a scrim.
@@ -56,4 +56,4 @@ Issues are welcome. This repository is published automatically from the source o
 
 ## Licence
 
-MIT
+MIT, for everything in this repository. Pro components, Pro Blocks and the Pro Figma kit are sold separately under a per-person licence and are not published here; the terms are at [specimen.systems/licence](https://specimen.systems/licence).

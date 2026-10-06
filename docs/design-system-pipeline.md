@@ -7,7 +7,7 @@ automation stops. This document describes the loop and the rules that keep both 
 
 `specimen_ Design System`: https://www.figma.com/design/48sAYLBAAByDizTB2gfsu6
 
-Contents: 162 variables across three collections; 9 text styles; 19 components. Everything in
+Contents: 162 variables across three collections; 9 text styles; 41 components. Everything in
 it was generated from the two files below.
 
 | Collection | Modes | Count | Holds |
@@ -53,6 +53,28 @@ Dialog
 Popover
 Menu
 CommandMenu
+InputNumber
+Password
+Slider
+SelectButton
+Chip
+Avatar
+AvatarGroup
+Badge
+Accordion
+Card
+Divider
+Breadcrumb
+Paginator
+Stepper
+Toolbar
+PageHeader
+Message
+ProgressBar
+Spinner
+Skeleton
+Drawer
+EmptyState
 ```
 
 ## Direction of travel
@@ -531,6 +553,11 @@ content rather than a property a designer sets, and Figma has no list property t
 to. `build-contract` marks such props `figmaType: NONE` and the checker and its stub skip
 them. The Figma component shows a representative value instead.
 
+Numbers go the same way (since 6 Oct 2026). A page, a step, a minimum or a progress value is
+content that the drawing shows, and Figma has no number property to bind it to; mapping them
+to TEXT made a designer type digits into a string. `build-contract` now marks `number` props
+`NONE` with the note "number, no Figma property".
+
 ## Three design calls, closed 10 Sep 2026
 
 | Question | Decision | Reason |
@@ -538,3 +565,43 @@ them. The Figma component shows a representative value instead.
 | Elevation | Stay flat | SPC-BRAND-001 §06: no drop shadows, structure comes from lines. Menus, popovers and dialogs will separate with `surface` fill, `line-strong` stroke and a scrim, added when Dialog lands |
 | Control radius | 4px on controls, 8px on panels (changed 6 Oct 2026) | Callum asked for a rounder, PrimeNG-like feel. The values come from the mark's own 4px corner, so the system still reads as specimen. Rules, table cells and tabs stay square; the dot family is round. Was `radius/none` from 10 Sep. SPC-BRAND-001 v1.2 §07 |
 | Density | A `density` prop on Table, not a global mode | The spacing steps already express compact rows; nothing else needs a second density |
+
+## Components: the PrimeNG gap, 6 Oct 2026
+
+A review against PrimeNG's catalogue found 22 everyday components missing from the free core.
+All 22 now exist in code, Storybook and Figma, and `figma:check` reports no drift across 41.
+
+| Group | Components |
+|---|---|
+| Form | InputNumber, Password, Slider, SelectButton, Chip |
+| Identity | Avatar, AvatarGroup, Badge |
+| Layout and navigation | Accordion, Card, Divider, Breadcrumb, Paginator, Stepper, Toolbar, PageHeader |
+| Feedback | Message, ProgressBar, Spinner, Skeleton, Drawer, EmptyState |
+
+What PrimeNG has that stays out of the free core is the Pro catalogue: Data Table, Tree, Tree
+Table, Org Chart, DatePicker, MultiSelect, AutoComplete, TreeSelect, FileUpload, Rich Text
+Editor, InputMask, InputOtp, ColorPicker, Charts, Kanban, Scheduler, App Sidebar, Splitter,
+ContextMenu, MegaMenu, and Pro Blocks. The list lives in `src/lib/catalogue.ts` and renders on
+`/docs/pro` and `/pricing`.
+
+Patterns the Figma build settled on:
+
+- A state that recolours a whole control (disabled, error) is an overlay layer the boolean
+  shows, as on Field. A boolean can only show a layer, never hide one.
+- A prop with no drawing (`defaultValue` and `name` on SelectButton, Spinner's `label`) is a
+  hidden text layer, so the property still exists and its value still reaches the code.
+- Data and number props (Paginator's pages, Stepper's steps, Accordion's items) draw one
+  representative state in the component. Stories that need a different structure are
+  detached frames named after what they show, such as "Paginator (page 1 of 12)".
+- Plugin API: an instance's `children` and `findAll` skip hidden sublayers, so never build a
+  component that hides content for stories to reveal. And a failed `use_figma` script rolls
+  back as a whole.
+
+## Free and Pro
+
+The free core (every component above, the tokens package, Storybook and the Basic Figma
+file) is MIT. Pro is a separate, paid product under a per-person licence: Pro Developer for
+the Pro code and Pro Blocks, Pro Designer for the Pro Figma kit, and a Bundle for both, each
+for one person or a team of five, one payment, every v1 release included. Prices are in GBP
+in `src/lib/catalogue.ts`. Nothing Pro is published to the public repository, npm or Figma
+Community. The mirror manifest must never pick up a Pro path.
