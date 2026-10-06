@@ -1,7 +1,7 @@
 name: publish tokens
 
 # Push a tag named tokens-v<version>, matching packages/tokens/package.json, to publish
-# @specimen/tokens. The generated files are rebuilt and checked first, so a package can
+# @specimen.systems/tokens. The generated files are rebuilt and checked first, so a package can
 # only go out if it is exactly what the sources produce.
 on:
   push:

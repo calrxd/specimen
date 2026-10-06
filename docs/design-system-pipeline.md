@@ -154,7 +154,7 @@ the utility follows the theme at runtime. It must be plain `@theme`, not `@theme
 above for why.
 
 **Dark is the default. `data-theme` on the html element picks a theme; with no attribute the
-page follows `prefers-color-scheme`** (added 4 Oct 2026, for `@specimen/tokens` consumers).
+page follows `prefers-color-scheme`** (added 4 Oct 2026, for `@specimen.systems/tokens` consumers).
 Flipping a product on an OS setting is still a product decision, so the site sets
 `data-theme="dark"` in `layout.tsx` and renders exactly as before.
 
@@ -368,7 +368,7 @@ a `FIGMA_TOKEN` personal access token with File content scope set to Read, and
 3. `npm run typecheck`.
 4. A separate job builds Storybook and uploads it as an artifact.
 
-`.github/workflows/publish-tokens.yml` publishes `@specimen/tokens` when a tag named
+`.github/workflows/publish-tokens.yml` publishes `@specimen.systems/tokens` when a tag named
 `tokens-v<version>` is pushed. It rebuilds and diffs the package first and refuses a tag that
 does not match `packages/tokens/package.json`. It needs an `NPM_TOKEN` secret, and npm
 provenance only works once the repository is public.
@@ -422,7 +422,7 @@ outlined and text buttons do. Overlays stay flat: no shadow tokens, per brand §
 
 ## The tokens package
 
-`packages/tokens` is `@specimen/tokens`. `npm run tokens` writes its `dist/` alongside the
+`packages/tokens` is `@specimen.systems/tokens`. `npm run tokens` writes its `dist/` alongside the
 site's CSS and the Figma manifest, from the same data in the same run:
 
 | File | Holds |

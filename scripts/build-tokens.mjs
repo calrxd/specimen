@@ -5,7 +5,7 @@
  * Reads  tokens/specimen.tokens.json   (W3C DTCG, hand-edited, source of truth)
  * Writes src/app/tokens.generated.css  (primitives, both themes, the Tailwind theme)
  *        tokens/figma-variables.json   (manifest consumed by the Figma variable build)
- *        packages/tokens/dist/*        (the @specimen/tokens npm package, see its README)
+ *        packages/tokens/dist/*        (the @specimen.systems/tokens npm package, see its README)
  *
  * Two layers, all the way down:
  *   primitive.*   raw values with no meaning. Plain :root custom properties under --p-*,
@@ -336,7 +336,7 @@ writeFileSync(FIGMA_OUT, `${JSON.stringify(figma, null, 2)}\n`, 'utf8')
 
 /* -------------------------------------------------------------- package */
 
-// @specimen/tokens ships the same outputs the site and the Figma file are built from, so
+// @specimen.systems/tokens ships the same outputs the site and the Figma file are built from, so
 // what is installed can never differ from what the drift check verified.
 mkdirSync(PKG_DIST, { recursive: true })
 writeFileSync(resolve(PKG_DIST, 'tailwind.css'), css, 'utf8')

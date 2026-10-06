@@ -7,20 +7,20 @@ Documentation: [specimen.systems/docs](https://specimen.systems/docs)
 ## Install
 
 ```bash
-npm install @specimen/tokens
+npm install @specimen.systems/tokens
 ```
 
 ```css
 @import "tailwindcss";
-@import "@specimen/tokens/tailwind.css";
+@import "@specimen.systems/tokens/tailwind.css";
 ```
 
-Without Tailwind, import `@specimen/tokens/tokens.css` and read the custom properties, such as `var(--color-surface)`. Dark is the default theme; set `data-theme="light"` on the html element, or leave it off and the page follows the reader's system setting. More in the [package README](packages/tokens).
+Without Tailwind, import `@specimen.systems/tokens/tokens.css` and read the custom properties, such as `var(--color-surface)`. Dark is the default theme; set `data-theme="light"` on the html element, or leave it off and the page follows the reader's system setting. More in the [package README](packages/tokens).
 
 ## Code is the source of truth
 
 ```
-tokens/specimen.tokens.json  ->  npm run tokens    ->  CSS, Tailwind theme, Figma variable manifest, @specimen/tokens
+tokens/specimen.tokens.json  ->  npm run tokens    ->  CSS, Tailwind theme, Figma variable manifest, @specimen.systems/tokens
 src/**/*.stories.tsx         ->  npm run contract  ->  tokens/component-contract.json
 Figma library                <-  npm run figma:check compares it with the contract
 ```
@@ -35,7 +35,7 @@ The pipeline, the naming rules and every decision behind them are in [`docs/desi
 |---|---|
 | Tokens | 162: 83 primitives, 26 colour roles with a dark and a light value each, 53 scale roles. Every role aliases one primitive. Every colour pair is measured against WCAG 2.2 AA. |
 | Components | 19: Button, Field, Textarea, Select, Checkbox, Radio, Switch, Tag, Table, Tabs, Dialog, Popover, Menu, CommandMenu, Toast, Tooltip, SectionHeader, Mark, Wordmark. React, in `src/components`. |
-| Packages | [`@specimen/tokens`](packages/tokens) |
+| Packages | [`@specimen.systems/tokens`](packages/tokens) |
 
 The look is flat and monospaced: IBM Plex Mono for the voice, Archivo for long text, hairlines for structure, and one green accent used as a signal. Corners come from the mark's own 4px corner: 4px on controls, 8px on panels, round for the dot family. There are no shadows; overlays separate with a surface fill, a stronger line and a scrim.
 

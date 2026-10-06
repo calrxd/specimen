@@ -1,4 +1,4 @@
-# @specimen/tokens
+# @specimen.systems/tokens
 
 ## 0.1.0
 

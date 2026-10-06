@@ -1,4 +1,4 @@
-# @specimen/tokens
+# @specimen.systems/tokens
 
 Design tokens for [specimen_](https://specimen.systems), an open-source design system for
 B2B SaaS product teams.
@@ -8,14 +8,14 @@ the Figma library is built from, and a checker fails the build when the Figma li
 matching the code. What you install here is the same output that check verified.
 
 ```bash
-npm install @specimen/tokens
+npm install @specimen.systems/tokens
 ```
 
 ## Tailwind v4
 
 ```css
 @import "tailwindcss";
-@import "@specimen/tokens/tailwind.css";
+@import "@specimen.systems/tokens/tailwind.css";
 ```
 
 Every role becomes a utility: `bg-canvas`, `text-ink`, `border-line`, `p-md`, `text-body`,
@@ -24,7 +24,7 @@ Every role becomes a utility: `bg-canvas`, `text-ink`, `border-line`, `p-md`, `t
 ## Plain CSS
 
 ```css
-@import "@specimen/tokens/tokens.css";
+@import "@specimen.systems/tokens/tokens.css";
 
 .panel {
   background: var(--color-surface);
