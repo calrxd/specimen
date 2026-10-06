@@ -1,0 +1,321 @@
+/* ------------------------------------------------------------------
+   GENERATED FILE - DO NOT EDIT
+   Source: tokens/specimen.tokens.json
+   Rebuild: npm run tokens
+   specimen_ design tokens — SPC-BRAND-001 v1.2. Single source of truth for both code and Figma. Do not edit the @theme block in globals.css directly; edit this file and run `npm run tokens`.
+   ------------------------------------------------------------------ */
+
+/* Primitives. Raw values, referenced only by the semantic layers below. */
+:root {
+  --p-color-ink-600: #5E665C;
+  --p-color-ink-700: #3A4038;
+  --p-color-ink-800: #22261F;
+  --p-color-ink-900: #101211;
+  --p-color-ink-950: #0B0C0B;
+  --p-color-grey-200: #D9DDD6;
+  --p-color-grey-250: #7F867D;
+  --p-color-grey-300: #B4BAB1;
+  --p-color-grey-400: #767C77;
+  --p-color-grey-500: #8B928C;
+  --p-color-grey-600: #565C57;
+  --p-color-grey-650: #6B716C;
+  --p-color-paper-0: #FFFFFF;
+  --p-color-paper-50: #F2F4F1;
+  --p-color-green-50: #E2F5EA;
+  --p-color-green-300: #7DF5BC;
+  --p-color-green-500: #2CE98F;
+  --p-color-green-600: #19C878;
+  --p-color-green-700: #0B9B58;
+  --p-color-green-800: #07753F;
+  --p-color-green-900: #0F2A1C;
+  --p-color-red-50: #FAE8E6;
+  --p-color-red-400: #CE6459;
+  --p-color-red-500: #C0554B;
+  --p-color-red-700: #A33A31;
+  --p-color-red-800: #8A2F27;
+  --p-color-red-900: #2A1512;
+  --p-color-amber-50: #F8EFDA;
+  --p-color-amber-500: #D9A03F;
+  --p-color-amber-700: #8A6115;
+  --p-color-amber-900: #2A2210;
+  --p-color-blue-50: #E5EDF8;
+  --p-color-blue-400: #6FA8E6;
+  --p-color-blue-700: #2A5E9A;
+  --p-color-blue-900: #13202E;
+  --p-color-scrim-40: #0B0C0B66;
+  --p-color-scrim-72: #0B0C0BB8;
+  --p-size-0: 0px;
+  --p-size-1: 1px;
+  --p-size-2: 2px;
+  --p-size-4: 4px;
+  --p-size-8: 8px;
+  --p-size-12: 12px;
+  --p-size-16: 16px;
+  --p-size-20: 20px;
+  --p-size-24: 24px;
+  --p-size-32: 32px;
+  --p-size-40: 40px;
+  --p-size-48: 48px;
+  --p-size-64: 64px;
+  --p-size-80: 80px;
+  --p-size-96: 96px;
+  --p-size-128: 128px;
+  --p-size-full: 9999px;
+  --p-font-size-10: 10px;
+  --p-font-size-11: 11px;
+  --p-font-size-12: 12px;
+  --p-font-size-13: 13px;
+  --p-font-size-15: 15px;
+  --p-font-size-24: 24px;
+  --p-font-size-32: 32px;
+  --p-font-family-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --p-font-family-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --p-tracking-12: 0.12em;
+  --p-tracking-16: 0.16em;
+  --p-tracking-minus-2: -0.02em;
+  --p-tracking-minus-1: -0.01em;
+  --p-line-height-120: 1.2;
+  --p-line-height-160: 1.6;
+  --p-line-height-170: 1.7;
+  --p-line-height-190: 1.9;
+  --p-duration-150: 150ms;
+  --p-duration-1100: 1100ms;
+  --p-duration-2400: 2400ms;
+  --p-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --p-viewport-640: 640px;
+  --p-viewport-768: 768px;
+  --p-viewport-1024: 1024px;
+  --p-viewport-1280: 1280px;
+  --p-viewport-1536: 1536px;
+  --p-measure-440: 440px;
+  --p-measure-520: 520px;
+  --p-measure-560: 560px;
+}
+
+/* Semantic colour. dark is the default. data-theme on the html element picks a
+   theme explicitly; with no attribute the page follows prefers-color-scheme. */
+:root {
+  color-scheme: dark;
+  --c-canvas: var(--p-color-ink-950);
+  --c-surface: var(--p-color-ink-900);
+  --c-ink: var(--p-color-paper-50);
+  --c-muted: var(--p-color-grey-500);
+  --c-faint: var(--p-color-grey-400);
+  --c-line: var(--p-color-ink-800);
+  --c-line-strong: var(--p-color-ink-700);
+  --c-line-interactive: var(--p-color-ink-600);
+  --c-sample: var(--p-color-green-500);
+  --c-sample-fill: var(--p-color-green-500);
+  --c-sample-hover: var(--p-color-green-300);
+  --c-sample-pressed: var(--p-color-green-700);
+  --c-on-sample: var(--p-color-ink-950);
+  --c-danger: var(--p-color-red-400);
+  --c-warn: var(--p-color-amber-500);
+  --c-success: var(--p-color-green-500);
+  --c-info: var(--p-color-blue-400);
+  --c-danger-subtle: var(--p-color-red-900);
+  --c-warn-subtle: var(--p-color-amber-900);
+  --c-success-subtle: var(--p-color-green-900);
+  --c-info-subtle: var(--p-color-blue-900);
+  --c-danger-fill: var(--p-color-red-700);
+  --c-danger-hover: var(--p-color-red-800);
+  --c-on-danger: var(--p-color-paper-50);
+  --c-disabled: var(--p-color-ink-600);
+  --c-scrim: var(--p-color-scrim-72);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --c-canvas: var(--p-color-paper-50);
+    --c-surface: var(--p-color-paper-0);
+    --c-ink: var(--p-color-ink-950);
+    --c-muted: var(--p-color-grey-600);
+    --c-faint: var(--p-color-grey-650);
+    --c-line: var(--p-color-grey-200);
+    --c-line-strong: var(--p-color-grey-300);
+    --c-line-interactive: var(--p-color-grey-250);
+    --c-sample: var(--p-color-green-800);
+    --c-sample-fill: var(--p-color-green-500);
+    --c-sample-hover: var(--p-color-green-600);
+    --c-sample-pressed: var(--p-color-green-700);
+    --c-on-sample: var(--p-color-ink-950);
+    --c-danger: var(--p-color-red-700);
+    --c-warn: var(--p-color-amber-700);
+    --c-success: var(--p-color-green-800);
+    --c-info: var(--p-color-blue-700);
+    --c-danger-subtle: var(--p-color-red-50);
+    --c-warn-subtle: var(--p-color-amber-50);
+    --c-success-subtle: var(--p-color-green-50);
+    --c-info-subtle: var(--p-color-blue-50);
+    --c-danger-fill: var(--p-color-red-700);
+    --c-danger-hover: var(--p-color-red-800);
+    --c-on-danger: var(--p-color-paper-50);
+    --c-disabled: var(--p-color-grey-250);
+    --c-scrim: var(--p-color-scrim-40);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-canvas: var(--p-color-ink-950);
+  --c-surface: var(--p-color-ink-900);
+  --c-ink: var(--p-color-paper-50);
+  --c-muted: var(--p-color-grey-500);
+  --c-faint: var(--p-color-grey-400);
+  --c-line: var(--p-color-ink-800);
+  --c-line-strong: var(--p-color-ink-700);
+  --c-line-interactive: var(--p-color-ink-600);
+  --c-sample: var(--p-color-green-500);
+  --c-sample-fill: var(--p-color-green-500);
+  --c-sample-hover: var(--p-color-green-300);
+  --c-sample-pressed: var(--p-color-green-700);
+  --c-on-sample: var(--p-color-ink-950);
+  --c-danger: var(--p-color-red-400);
+  --c-warn: var(--p-color-amber-500);
+  --c-success: var(--p-color-green-500);
+  --c-info: var(--p-color-blue-400);
+  --c-danger-subtle: var(--p-color-red-900);
+  --c-warn-subtle: var(--p-color-amber-900);
+  --c-success-subtle: var(--p-color-green-900);
+  --c-info-subtle: var(--p-color-blue-900);
+  --c-danger-fill: var(--p-color-red-700);
+  --c-danger-hover: var(--p-color-red-800);
+  --c-on-danger: var(--p-color-paper-50);
+  --c-disabled: var(--p-color-ink-600);
+  --c-scrim: var(--p-color-scrim-72);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --c-canvas: var(--p-color-paper-50);
+  --c-surface: var(--p-color-paper-0);
+  --c-ink: var(--p-color-ink-950);
+  --c-muted: var(--p-color-grey-600);
+  --c-faint: var(--p-color-grey-650);
+  --c-line: var(--p-color-grey-200);
+  --c-line-strong: var(--p-color-grey-300);
+  --c-line-interactive: var(--p-color-grey-250);
+  --c-sample: var(--p-color-green-800);
+  --c-sample-fill: var(--p-color-green-500);
+  --c-sample-hover: var(--p-color-green-600);
+  --c-sample-pressed: var(--p-color-green-700);
+  --c-on-sample: var(--p-color-ink-950);
+  --c-danger: var(--p-color-red-700);
+  --c-warn: var(--p-color-amber-700);
+  --c-success: var(--p-color-green-800);
+  --c-info: var(--p-color-blue-700);
+  --c-danger-subtle: var(--p-color-red-50);
+  --c-warn-subtle: var(--p-color-amber-50);
+  --c-success-subtle: var(--p-color-green-50);
+  --c-info-subtle: var(--p-color-blue-50);
+  --c-danger-fill: var(--p-color-red-700);
+  --c-danger-hover: var(--p-color-red-800);
+  --c-on-danger: var(--p-color-paper-50);
+  --c-disabled: var(--p-color-grey-250);
+  --c-scrim: var(--p-color-scrim-40);
+}
+
+/* Semantic roles. Components read these, never the primitives. */
+:root {
+  --color-canvas: var(--c-canvas);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-line-interactive: var(--c-line-interactive);
+  --color-sample: var(--c-sample);
+  --color-sample-fill: var(--c-sample-fill);
+  --color-sample-hover: var(--c-sample-hover);
+  --color-sample-pressed: var(--c-sample-pressed);
+  --color-on-sample: var(--c-on-sample);
+  --color-danger: var(--c-danger);
+  --color-warn: var(--c-warn);
+  --color-success: var(--c-success);
+  --color-info: var(--c-info);
+  --color-danger-subtle: var(--c-danger-subtle);
+  --color-warn-subtle: var(--c-warn-subtle);
+  --color-success-subtle: var(--c-success-subtle);
+  --color-info-subtle: var(--c-info-subtle);
+  --color-danger-fill: var(--c-danger-fill);
+  --color-danger-hover: var(--c-danger-hover);
+  --color-on-danger: var(--c-on-danger);
+  --color-disabled: var(--c-disabled);
+  --color-scrim: var(--c-scrim);
+
+  /* spacing: 4px base, fifteen named steps. Auto-layout gaps and padding in Figma bind to the same variables the Tailwind utilities read, so a step is one value in two places. */
+  --spacing-none: var(--p-size-0);
+  --spacing-2xs: var(--p-size-2);
+  --spacing-xs: var(--p-size-4);
+  --spacing-sm: var(--p-size-8);
+  --spacing-md: var(--p-size-12);
+  --spacing-lg: var(--p-size-16);
+  --spacing-xl: var(--p-size-20);
+  --spacing-2xl: var(--p-size-24);
+  --spacing-3xl: var(--p-size-32);
+  --spacing-4xl: var(--p-size-40);
+  --spacing-5xl: var(--p-size-48);
+  --spacing-6xl: var(--p-size-64);
+  --spacing-7xl: var(--p-size-80);
+  --spacing-8xl: var(--p-size-96);
+  --spacing-9xl: var(--p-size-128);
+
+  /* border: Stroke weights. The system separates surfaces with a line rather than with elevation, so weight is doing work that shadow does elsewhere. */
+  --border-none: var(--p-size-0);
+  --border-hairline: var(--p-size-1);
+  --border-strong: var(--p-size-2);
+  --border-focus: var(--p-size-2);
+  --border-accent: var(--p-size-4);
+
+  /* radius: Corners come from the mark: its slide has a 4px corner, so controls take 4px and the panels that hold them take 8px. The dot family is fully round. SPC-BRAND-001 v1.2, section 07. */
+  --radius-none: var(--p-size-0);
+  --radius-sm: var(--p-size-4);
+  --radius-md: var(--p-size-8);
+  --radius-full: var(--p-size-full);
+
+  /* text: Type scale derived from sizes already in the codebase. Each step becomes a Figma text style and a Tailwind text-* utility. */
+  --text-micro: var(--p-font-size-10);
+  --text-label: var(--p-font-size-11);
+  --text-caption: var(--p-font-size-12);
+  --text-body: var(--p-font-size-13);
+  --text-body-lg: var(--p-font-size-15);
+  --text-heading: var(--p-font-size-24);
+  --text-display: var(--p-font-size-32);
+
+  /* font: The two families. Mono is the default voice; sans appears only where a paragraph has to be read at length. */
+  --font-mono: var(--p-font-family-mono);
+  --font-text: var(--p-font-family-sans);
+
+  /* tracking: Letter spacing, applied through the Text/ * styles as a percentage rather than bound to a variable. */
+  --tracking-label: var(--p-tracking-16);
+  --tracking-tag: var(--p-tracking-12);
+  --tracking-display: var(--p-tracking-minus-2);
+  --tracking-wordmark: var(--p-tracking-minus-1);
+
+  /* leading: Line height as a unitless ratio. Taken from the values already in use in the codebase. */
+  --leading-tight: var(--p-line-height-120);
+  --leading-normal: var(--p-line-height-160);
+  --leading-relaxed: var(--p-line-height-170);
+  --leading-loose: var(--p-line-height-190);
+
+  /* duration: How long a transition or loop runs. */
+  --duration-fast: var(--p-duration-150);
+  --duration-blink: var(--p-duration-1100);
+  --duration-pulse: var(--p-duration-2400);
+
+  /* ease: The single easing curve in the system. */
+  --ease-spc: var(--p-easing-decelerate);
+
+  /* breakpoint: Tailwind v4 defaults, recorded so Figma frame widths and CSS agree. Min-width, mobile first. */
+  --breakpoint-sm: 640px /* --p-viewport-640 */;
+  --breakpoint-md: 768px /* --p-viewport-768 */;
+  --breakpoint-lg: 1024px /* --p-viewport-1024 */;
+  --breakpoint-xl: 1280px /* --p-viewport-1280 */;
+  --breakpoint-2xl: 1536px /* --p-viewport-1536 */;
+
+  /* measure: Maximum line length for readable copy. Separate from the spacing scale. */
+  --container-measure-sm: var(--p-measure-440);
+  --container-measure-md: var(--p-measure-520);
+  --container-measure-lg: var(--p-measure-560);
+}

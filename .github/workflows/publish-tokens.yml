@@ -1,0 +1,47 @@
+name: publish tokens
+
+# Push a tag named tokens-v<version>, matching packages/tokens/package.json, to publish
+# @specimen/tokens. The generated files are rebuilt and checked first, so a package can
+# only go out if it is exactly what the sources produce.
+on:
+  push:
+    tags: ['tokens-v*']
+
+permissions:
+  contents: read
+  id-token: write # npm provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+
+      - name: regenerate
+        run: npm run ds:build
+      - name: package matches its sources
+        run: |
+          if ! git diff --exit-code -- packages/tokens/dist; then
+            echo "::error::packages/tokens/dist is out of date. Run 'npm run ds:build' and commit the result."
+            exit 1
+          fi
+
+      - name: tag matches package version
+        run: |
+          version=$(node -p "require('./packages/tokens/package.json').version")
+          if [ "tokens-v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package version $version."
+            exit 1
+          fi
+
+      - name: publish
+        working-directory: packages/tokens
+        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

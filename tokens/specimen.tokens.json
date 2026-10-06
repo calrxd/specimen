@@ -1,0 +1,2014 @@
+{
+  "$description": "specimen_ design tokens — SPC-BRAND-001 v1.2. Single source of truth for both code and Figma. Do not edit the @theme block in globals.css directly; edit this file and run `npm run tokens`.",
+  "primitive": {
+    "$description": "Raw values with no meaning attached. Referenced only by the semantic layer, never from JSX and never from a component. Every scope is empty so they appear in no Figma picker.",
+    "color": {
+      "$type": "color",
+      "$description": "The palette. Two neutral ramps, one green, three status hues.",
+      "ink": {
+        "600": {
+          "$value": "#5E665C",
+          "$description": "Dark control boundary. 3.29:1 on ink-950, clears the 3:1 floor for a form control edge.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "700": {
+          "$value": "#3A4038",
+          "$description": "Dark emphasised rules.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "800": {
+          "$value": "#22261F",
+          "$description": "Dark rules.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "900": {
+          "$value": "#101211",
+          "$description": "One step off the darkest ground.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "950": {
+          "$value": "#0B0C0B",
+          "$description": "The darkest ground.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "$type": "color"
+      },
+      "grey": {
+        "200": {
+          "$value": "#D9DDD6",
+          "$description": "Light rules.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "250": {
+          "$value": "#7F867D",
+          "$description": "Light control boundary. 3.39:1 on paper-50.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "300": {
+          "$value": "#B4BAB1",
+          "$description": "Light emphasised rules.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "400": {
+          "$value": "#767C77",
+          "$description": "Dark tertiary text. 4.59:1 on ink-950.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "500": {
+          "$value": "#8B928C",
+          "$description": "Dark secondary text. 6.15:1 on ink-950.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "600": {
+          "$value": "#565C57",
+          "$description": "Light secondary text. 6.20:1 on paper-50.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "650": {
+          "$value": "#6B716C",
+          "$description": "Light tertiary text. 4.52:1 on paper-50.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "$type": "color"
+      },
+      "paper": {
+        "0": {
+          "$value": "#FFFFFF",
+          "$description": "Light raised surface.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "50": {
+          "$value": "#F2F4F1",
+          "$description": "The lightest ground.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "$type": "color"
+      },
+      "green": {
+        "50": {
+          "$value": "#E2F5EA",
+          "$description": "Light success surface. green-800 text sits on it at 5.10:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "300": {
+          "$value": "#7DF5BC",
+          "$description": "Lifted green, for hover on dark.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "500": {
+          "$value": "#2CE98F",
+          "$description": "The signal green. Ink sits on it at 12.28:1 in both modes.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "600": {
+          "$value": "#19C878",
+          "$description": "Light hover on a sample fill. Ink on it at 8.93:1, where green-700 was used for both hover and pressed.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "700": {
+          "$value": "#0B9B58",
+          "$description": "Deepened green.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "800": {
+          "$value": "#07753F",
+          "$description": "Green that survives as text on paper. 5.24:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "900": {
+          "$value": "#0F2A1C",
+          "$description": "Dark success surface. green-500 text sits on it at 9.62:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "$type": "color"
+      },
+      "red": {
+        "50": {
+          "$value": "#FAE8E6",
+          "$description": "Light danger surface. red-700 text sits on it at 5.54:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "400": {
+          "$value": "#CE6459",
+          "$description": "Dark error text. 5.22:1 on ink-950.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "500": {
+          "$value": "#C0554B",
+          "$description": "The base red.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "700": {
+          "$value": "#A33A31",
+          "$description": "Light error text. 5.92:1 on paper-50.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "800": {
+          "$value": "#8A2F27",
+          "$description": "Hover on a danger fill. Paper on it at 7.54:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "900": {
+          "$value": "#2A1512",
+          "$description": "Dark danger surface. red-400 text sits on it at 4.60:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "$type": "color"
+      },
+      "amber": {
+        "50": {
+          "$value": "#F8EFDA",
+          "$description": "Light warning surface. amber-700 text sits on it at 4.83:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "500": {
+          "$value": "#D9A03F",
+          "$description": "Dark warning text. 8.45:1 on ink-950.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "700": {
+          "$value": "#8A6115",
+          "$description": "Light warning text. 4.99:1 on paper-50.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "900": {
+          "$value": "#2A2210",
+          "$description": "Dark warning surface. amber-500 text sits on it at 6.78:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "$type": "color"
+      },
+      "blue": {
+        "50": {
+          "$value": "#E5EDF8",
+          "$description": "Light info surface. blue-700 text sits on it at 5.62:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "400": {
+          "$value": "#6FA8E6",
+          "$description": "Dark info text. 7.86:1 on ink-950.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "700": {
+          "$value": "#2A5E9A",
+          "$description": "Light info text. 6.00:1 on paper-50.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "900": {
+          "$value": "#13202E",
+          "$description": "Dark info surface. blue-400 text sits on it at 6.61:1.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "$type": "color"
+      },
+      "scrim": {
+        "$type": "color",
+        "$description": "Ink-950 at two opacities, for the layer between an open overlay and the page. The only translucent values in the system.",
+        "40": {
+          "$value": "#0B0C0B66",
+          "$description": "Ink-950 at 40%. Dims a light page without turning it grey.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        },
+        "72": {
+          "$value": "#0B0C0BB8",
+          "$description": "Ink-950 at 72%. A dark page needs more to read as recessed.",
+          "$extensions": {
+            "com.figma": {
+              "scopes": []
+            }
+          }
+        }
+      }
+    },
+    "size": {
+      "0": {
+        "$value": "0px",
+        "$description": "0px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "1": {
+        "$value": "1px",
+        "$description": "1px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "2": {
+        "$value": "2px",
+        "$description": "2px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "4": {
+        "$value": "4px",
+        "$description": "4px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "8": {
+        "$value": "8px",
+        "$description": "8px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "12": {
+        "$value": "12px",
+        "$description": "12px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "16": {
+        "$value": "16px",
+        "$description": "16px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "20": {
+        "$value": "20px",
+        "$description": "20px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "24": {
+        "$value": "24px",
+        "$description": "24px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "32": {
+        "$value": "32px",
+        "$description": "32px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "40": {
+        "$value": "40px",
+        "$description": "40px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "48": {
+        "$value": "48px",
+        "$description": "48px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "64": {
+        "$value": "64px",
+        "$description": "64px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "80": {
+        "$value": "80px",
+        "$description": "80px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "96": {
+        "$value": "96px",
+        "$description": "96px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "128": {
+        "$value": "128px",
+        "$description": "128px on the shared length ramp.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "$type": "dimension",
+      "$description": "One ramp of lengths. Spacing, border weight and radius all draw from it, which is how border/strong and border/focus end up provably the same 2px.",
+      "full": {
+        "$value": "9999px",
+        "$description": "Effectively a full round.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      }
+    },
+    "font-size": {
+      "10": {
+        "$value": "10px",
+        "$description": "10px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "11": {
+        "$value": "11px",
+        "$description": "11px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "12": {
+        "$value": "12px",
+        "$description": "12px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "13": {
+        "$value": "13px",
+        "$description": "13px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "15": {
+        "$value": "15px",
+        "$description": "15px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "24": {
+        "$value": "24px",
+        "$description": "24px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "32": {
+        "$value": "32px",
+        "$description": "32px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "$type": "dimension",
+      "$description": "Every type size in the codebase, as a raw value."
+    },
+    "font-family": {
+      "$type": "fontFamily",
+      "$description": "The two families, with their fallback stacks.",
+      "mono": {
+        "$value": "var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace",
+        "$description": "IBM Plex Mono.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [],
+            "figmaFamily": "IBM Plex Mono"
+          }
+        }
+      },
+      "sans": {
+        "$value": "var(--font-archivo), ui-sans-serif, system-ui, sans-serif",
+        "$description": "Archivo Variable.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": [],
+            "figmaFamily": "Archivo"
+          }
+        }
+      }
+    },
+    "tracking": {
+      "12": {
+        "$value": "0.12em",
+        "$description": "Wide.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "16": {
+        "$value": "0.16em",
+        "$description": "Widest.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "$type": "dimension",
+      "$description": "Letter spacing in em. Figma stores these as a percentage, because a FLOAT bound to letterSpacing resolves as pixels.",
+      "minus-2": {
+        "$value": "-0.02em",
+        "$description": "Tightened.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "minus-1": {
+        "$value": "-0.01em",
+        "$description": "Barely tightened.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      }
+    },
+    "line-height": {
+      "120": {
+        "$value": 1.2,
+        "$description": "1.2x.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "160": {
+        "$value": 1.6,
+        "$description": "1.6x.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "170": {
+        "$value": 1.7,
+        "$description": "1.7x.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "190": {
+        "$value": 1.9,
+        "$description": "1.9x.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "$type": "number",
+      "$description": "Unitless ratios, named by their percentage."
+    },
+    "duration": {
+      "150": {
+        "$value": "150ms",
+        "$description": "150ms.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "1100": {
+        "$value": "1100ms",
+        "$description": "1100ms.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "2400": {
+        "$value": "2400ms",
+        "$description": "2400ms.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "$type": "duration",
+      "$description": "Raw durations."
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "$description": "Raw curves.",
+      "decelerate": {
+        "$value": [
+          0,
+          0,
+          0.2,
+          1
+        ],
+        "$description": "Leaves immediately, settles late.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      }
+    },
+    "viewport": {
+      "640": {
+        "$value": "640px",
+        "$description": "640px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "768": {
+        "$value": "768px",
+        "$description": "768px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "1024": {
+        "$value": "1024px",
+        "$description": "1024px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "1280": {
+        "$value": "1280px",
+        "$description": "1280px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "1536": {
+        "$value": "1536px",
+        "$description": "1536px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "$type": "dimension",
+      "$description": "Raw viewport widths."
+    },
+    "measure": {
+      "440": {
+        "$value": "440px",
+        "$description": "440px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "520": {
+        "$value": "520px",
+        "$description": "520px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "560": {
+        "$value": "560px",
+        "$description": "560px.",
+        "$extensions": {
+          "com.figma": {
+            "scopes": []
+          }
+        }
+      },
+      "$type": "dimension",
+      "$description": "Raw line-length limits."
+    }
+  },
+  "color": {
+    "$type": "color",
+    "$description": "Semantic colour, two modes. Every value is an alias to a primitive, so a hue changes in one place. Contrast figures in the descriptions are measured against the canvas of that mode. Status roles come in pairs: a text/stroke colour and a -subtle surface it sits on.",
+    "canvas": {
+      "$value": "{primitive.color.ink.950}",
+      "$description": "The page ground.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.paper.50}",
+          "dark": "{primitive.color.ink.950}"
+        }
+      }
+    },
+    "surface": {
+      "$value": "{primitive.color.ink.900}",
+      "$description": "A raised surface: panels, menus, table headers. One step away from the canvas in both modes.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.paper.0}",
+          "dark": "{primitive.color.ink.900}"
+        }
+      }
+    },
+    "ink": {
+      "$value": "{primitive.color.paper.50}",
+      "$description": "Primary text. The name is the role, not the colour: it resolves to paper on a dark canvas.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.ink.950}",
+          "dark": "{primitive.color.paper.50}"
+        }
+      }
+    },
+    "muted": {
+      "$value": "{primitive.color.grey.500}",
+      "$description": "Secondary text. Clears AA in both modes.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.grey.600}",
+          "dark": "{primitive.color.grey.500}"
+        }
+      }
+    },
+    "faint": {
+      "$value": "{primitive.color.grey.400}",
+      "$description": "Tertiary text and placeholders. Clears AA in both modes, which the old dark value did not.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.grey.650}",
+          "dark": "{primitive.color.grey.400}"
+        }
+      }
+    },
+    "line": {
+      "$value": "{primitive.color.ink.800}",
+      "$description": "The default rule. Decorative, so it sits below the 3:1 floor on purpose.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.grey.200}",
+          "dark": "{primitive.color.ink.800}"
+        }
+      }
+    },
+    "line-strong": {
+      "$value": "{primitive.color.ink.700}",
+      "$description": "An emphasised rule. Still decorative.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.grey.300}",
+          "dark": "{primitive.color.ink.700}"
+        }
+      }
+    },
+    "line-interactive": {
+      "$value": "{primitive.color.ink.600}",
+      "$description": "The boundary of a form control. Clears 3:1 in both modes, which WCAG 1.4.11 requires and a decorative rule does not.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.grey.250}",
+          "dark": "{primitive.color.ink.600}"
+        }
+      }
+    },
+    "sample": {
+      "$value": "{primitive.color.green.500}",
+      "$description": "Signal green as text, links and borders. Darkens in light mode so it stays readable on paper.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL",
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.green.800}",
+          "dark": "{primitive.color.green.500}"
+        }
+      }
+    },
+    "sample-fill": {
+      "$value": "{primitive.color.green.500}",
+      "$description": "Signal green as a surface: buttons, the specimen dot. The same green in both modes, always with on-sample text over it.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.green.500}",
+          "dark": "{primitive.color.green.500}"
+        }
+      }
+    },
+    "sample-hover": {
+      "$value": "{primitive.color.green.300}",
+      "$description": "Hover on a sample fill. Lifted in dark, deepened in light. Ink stays readable on both.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.green.600}",
+          "dark": "{primitive.color.green.300}"
+        }
+      }
+    },
+    "sample-pressed": {
+      "$value": "{primitive.color.green.700}",
+      "$description": "Pressed state on a sample fill. Was green-800 in light, where ink on it fell to 3.38:1.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.green.700}",
+          "dark": "{primitive.color.green.700}"
+        }
+      }
+    },
+    "on-sample": {
+      "$value": "{primitive.color.ink.950}",
+      "$description": "Text and icons sitting on sample-fill. Ink in both modes: 12.28:1 either way.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.ink.950}",
+          "dark": "{primitive.color.ink.950}"
+        }
+      }
+    },
+    "danger": {
+      "$value": "{primitive.color.red.400}",
+      "$description": "Error text and borders. Clears AA in both modes, which the old dark value did not.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL",
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.red.700}",
+          "dark": "{primitive.color.red.400}"
+        }
+      }
+    },
+    "warn": {
+      "$value": "{primitive.color.amber.500}",
+      "$description": "Warning text and borders.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL",
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.amber.700}",
+          "dark": "{primitive.color.amber.500}"
+        }
+      }
+    },
+    "success": {
+      "$value": "{primitive.color.green.500}",
+      "$description": "Success text and borders. Success is the brand green doing its job as a status: the specimen is alive.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL",
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.green.800}",
+          "dark": "{primitive.color.green.500}"
+        }
+      }
+    },
+    "info": {
+      "$value": "{primitive.color.blue.400}",
+      "$description": "Informational text and borders. The only hue that is not brand or status-red/amber.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL",
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.blue.700}",
+          "dark": "{primitive.color.blue.400}"
+        }
+      }
+    },
+    "danger-subtle": {
+      "$value": "{primitive.color.red.900}",
+      "$description": "Low-emphasis danger surface for inline alerts, invalid rows and toasts. Always with danger text over it.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.red.50}",
+          "dark": "{primitive.color.red.900}"
+        }
+      }
+    },
+    "warn-subtle": {
+      "$value": "{primitive.color.amber.900}",
+      "$description": "Low-emphasis warning surface. Always with warn text over it.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.amber.50}",
+          "dark": "{primitive.color.amber.900}"
+        }
+      }
+    },
+    "success-subtle": {
+      "$value": "{primitive.color.green.900}",
+      "$description": "Low-emphasis success surface. Always with success text over it.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.green.50}",
+          "dark": "{primitive.color.green.900}"
+        }
+      }
+    },
+    "info-subtle": {
+      "$value": "{primitive.color.blue.900}",
+      "$description": "Low-emphasis info surface. Always with info text over it.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.blue.50}",
+          "dark": "{primitive.color.blue.900}"
+        }
+      }
+    },
+    "danger-fill": {
+      "$value": "{primitive.color.red.700}",
+      "$description": "Destructive action as a surface: the confirm button in a delete dialog. Same red in both modes, always with on-danger text.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.red.700}",
+          "dark": "{primitive.color.red.700}"
+        }
+      }
+    },
+    "danger-hover": {
+      "$value": "{primitive.color.red.800}",
+      "$description": "Hover and pressed on a danger fill.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.red.800}",
+          "dark": "{primitive.color.red.800}"
+        }
+      }
+    },
+    "on-danger": {
+      "$value": "{primitive.color.paper.50}",
+      "$description": "Text and icons sitting on danger-fill. Paper in both modes: 5.92:1.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.paper.50}",
+          "dark": "{primitive.color.paper.50}"
+        }
+      }
+    },
+    "disabled": {
+      "$value": "{primitive.color.ink.600}",
+      "$description": "Text and border of a disabled control. Around 3.3:1 in both modes: legible, clearly inert, and exempt from the AA text floor. Replaces opacity.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "TEXT_FILL",
+            "STROKE_COLOR"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.grey.250}",
+          "dark": "{primitive.color.ink.600}"
+        }
+      }
+    },
+    "scrim": {
+      "$value": "{primitive.color.scrim.72}",
+      "$description": "The layer behind an open Dialog. Separates by dimming, not by shadow: the system stays flat (brand §06) and the overlay itself carries surface and line-strong.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ]
+        },
+        "modes": {
+          "light": "{primitive.color.scrim.40}",
+          "dark": "{primitive.color.scrim.72}"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "$description": "4px base, fifteen named steps. Auto-layout gaps and padding in Figma bind to the same variables the Tailwind utilities read, so a step is one value in two places.",
+    "none": {
+      "$value": "{primitive.size.0}",
+      "$description": "Collapse a gap or padding without leaving the scale. Dense table rows and flush-joined controls.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-none)"
+          }
+        }
+      }
+    },
+    "2xs": {
+      "$value": "{primitive.size.2}",
+      "$description": "Icon to label inside a control, and the optical nudges that used to be written as mt-[2px].",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-2xs)"
+          }
+        }
+      }
+    },
+    "xs": {
+      "$value": "{primitive.size.4}",
+      "$description": "Tightest real gap. Chip internals, inline meta.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-xs)"
+          }
+        }
+      }
+    },
+    "sm": {
+      "$value": "{primitive.size.8}",
+      "$description": "Dense table cell padding, gap between adjacent controls.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-sm)"
+          }
+        }
+      }
+    },
+    "md": {
+      "$value": "{primitive.size.12}",
+      "$description": "Default gap between related elements.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-md)"
+          }
+        }
+      }
+    },
+    "lg": {
+      "$value": "{primitive.size.16}",
+      "$description": "Default padding inside a control or cell.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-lg)"
+          }
+        }
+      }
+    },
+    "xl": {
+      "$value": "{primitive.size.20}",
+      "$description": "Comfortable control padding.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-xl)"
+          }
+        }
+      }
+    },
+    "2xl": {
+      "$value": "{primitive.size.24}",
+      "$description": "Card and panel padding.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-2xl)"
+          }
+        }
+      }
+    },
+    "3xl": {
+      "$value": "{primitive.size.32}",
+      "$description": "Gap between groups within a panel.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-3xl)"
+          }
+        }
+      }
+    },
+    "4xl": {
+      "$value": "{primitive.size.40}",
+      "$description": "Gap between panels.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-4xl)"
+          }
+        }
+      }
+    },
+    "5xl": {
+      "$value": "{primitive.size.48}",
+      "$description": "Section padding inside a page.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-5xl)"
+          }
+        }
+      }
+    },
+    "6xl": {
+      "$value": "{primitive.size.64}",
+      "$description": "Gap between page sections.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-6xl)"
+          }
+        }
+      }
+    },
+    "7xl": {
+      "$value": "{primitive.size.80}",
+      "$description": "Page gutter on wide viewports.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-7xl)"
+          }
+        }
+      }
+    },
+    "8xl": {
+      "$value": "{primitive.size.96}",
+      "$description": "Empty states and full-page notices.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-8xl)"
+          }
+        }
+      }
+    },
+    "9xl": {
+      "$value": "{primitive.size.128}",
+      "$description": "Marketing sections and the space above a page title on a landing view.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "GAP",
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--spacing-9xl)"
+          }
+        }
+      }
+    }
+  },
+  "border": {
+    "$type": "dimension",
+    "$description": "Stroke weights. The system separates surfaces with a line rather than with elevation, so weight is doing work that shadow does elsewhere.",
+    "none": {
+      "$value": "{primitive.size.0}",
+      "$description": "Remove an edge in a variant without dropping off the scale.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--border-none)"
+          }
+        }
+      }
+    },
+    "hairline": {
+      "$value": "{primitive.size.1}",
+      "$description": "Every rule, panel edge, table row and input outline. The default.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--border-hairline)"
+          }
+        }
+      }
+    },
+    "strong": {
+      "$value": "{primitive.size.2}",
+      "$description": "Emphasis. A selected table row, an active tab, the open item in a list.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--border-strong)"
+          }
+        }
+      }
+    },
+    "focus": {
+      "$value": "{primitive.size.2}",
+      "$description": "The focus ring, drawn as an outline with a 2px offset. Same weight as strong, kept separate so changing the ring never moves the selection state.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--border-focus)"
+          }
+        }
+      }
+    },
+    "accent": {
+      "$value": "{primitive.size.4}",
+      "$description": "A leading edge that carries meaning: the left bar on an alert or callout, keyed to a status colour.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--border-accent)"
+          }
+        }
+      }
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "$description": "Corners come from the mark: its slide has a 4px corner, so controls take 4px and the panels that hold them take 8px. The dot family is fully round. SPC-BRAND-001 v1.2, section 07.",
+    "none": {
+      "$value": "{primitive.size.0}",
+      "$description": "Square. Rules, table cells, tabs, anything that is structure rather than an object.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--radius-none)"
+          }
+        }
+      }
+    },
+    "sm": {
+      "$value": "{primitive.size.4}",
+      "$description": "Controls: buttons, fields, selects, checkboxes, tags, menu items, tooltips. The mark's own corner.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--radius-sm)"
+          }
+        }
+      }
+    },
+    "md": {
+      "$value": "{primitive.size.8}",
+      "$description": "Panels that float or frame: dialogs, popovers, menus, toasts, the command menu, preview frames.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--radius-md)"
+          }
+        }
+      }
+    },
+    "full": {
+      "$value": "{primitive.size.full}",
+      "$description": "The dot family: the specimen dot, radios, the switch track and its thumb.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--radius-full)"
+          }
+        }
+      }
+    }
+  },
+  "text": {
+    "$type": "dimension",
+    "$description": "Type scale derived from sizes already in the codebase. Each step becomes a Figma text style and a Tailwind text-* utility.",
+    "micro": {
+      "$value": "{primitive.font-size.10}",
+      "$description": "The tag. Uppercase, wide tracking.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--text-micro)"
+          }
+        }
+      }
+    },
+    "label": {
+      "$value": "{primitive.font-size.11}",
+      "$description": "Field labels, meta rows. Most common size in the codebase.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--text-label)"
+          }
+        }
+      }
+    },
+    "caption": {
+      "$value": "{primitive.font-size.12}",
+      "$description": "Secondary copy, table cells.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--text-caption)"
+          }
+        }
+      }
+    },
+    "body": {
+      "$value": "{primitive.font-size.13}",
+      "$description": "Default reading size.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--text-body)"
+          }
+        }
+      }
+    },
+    "body-lg": {
+      "$value": "{primitive.font-size.15}",
+      "$description": "Lead paragraph.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--text-body-lg)"
+          }
+        }
+      }
+    },
+    "heading": {
+      "$value": "{primitive.font-size.24}",
+      "$description": "Section heading.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--text-heading)"
+          }
+        }
+      }
+    },
+    "display": {
+      "$value": "{primitive.font-size.32}",
+      "$description": "Page display. One per view.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--text-display)"
+          }
+        }
+      }
+    }
+  },
+  "font": {
+    "$type": "fontFamily",
+    "$description": "The two families. Mono is the default voice; sans appears only where a paragraph has to be read at length.",
+    "mono": {
+      "$value": "{primitive.font-family.mono}",
+      "$description": "IBM Plex Mono. The default voice of the system.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--font-mono)"
+          }
+        }
+      }
+    },
+    "text": {
+      "$value": "{primitive.font-family.sans}",
+      "$description": "Archivo Variable. Used sparingly for display.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--font-text)"
+          }
+        }
+      }
+    }
+  },
+  "tracking": {
+    "$type": "dimension",
+    "$description": "Letter spacing, applied through the Text/* styles as a percentage rather than bound to a variable.",
+    "label": {
+      "$value": "{primitive.tracking.16}",
+      "$description": "Uppercase labels. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--tracking-label)"
+          }
+        }
+      }
+    },
+    "tag": {
+      "$value": "{primitive.tracking.12}",
+      "$description": "The tag component. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--tracking-tag)"
+          }
+        }
+      }
+    },
+    "display": {
+      "$value": "{primitive.tracking.minus-2}",
+      "$description": "Tightened display type. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--tracking-display)"
+          }
+        }
+      }
+    },
+    "wordmark": {
+      "$value": "{primitive.tracking.minus-1}",
+      "$description": "The wordmark only. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--tracking-wordmark)"
+          }
+        }
+      }
+    }
+  },
+  "leading": {
+    "$type": "number",
+    "$description": "Line height as a unitless ratio. Taken from the values already in use in the codebase.",
+    "tight": {
+      "$value": "{primitive.line-height.120}",
+      "$description": "Headings and display type.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--leading-tight)"
+          }
+        }
+      }
+    },
+    "normal": {
+      "$value": "{primitive.line-height.160}",
+      "$description": "Interface copy.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--leading-normal)"
+          }
+        }
+      }
+    },
+    "relaxed": {
+      "$value": "{primitive.line-height.170}",
+      "$description": "Reading paragraphs.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--leading-relaxed)"
+          }
+        }
+      }
+    },
+    "loose": {
+      "$value": "{primitive.line-height.190}",
+      "$description": "Long-form body, docs pages.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--leading-loose)"
+          }
+        }
+      }
+    }
+  },
+  "duration": {
+    "$type": "duration",
+    "$description": "How long a transition or loop runs.",
+    "fast": {
+      "$value": "{primitive.duration.150}",
+      "$description": "Colour and opacity transitions.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--duration-fast)"
+          }
+        }
+      }
+    },
+    "blink": {
+      "$value": "{primitive.duration.1100}",
+      "$description": "The cursor blink in .spc-cursor. step-end, infinite.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--duration-blink)"
+          }
+        }
+      }
+    },
+    "pulse": {
+      "$value": "{primitive.duration.2400}",
+      "$description": "The pulse in .spc-pulse. ease-in-out, infinite.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--duration-pulse)"
+          }
+        }
+      }
+    }
+  },
+  "ease": {
+    "$type": "cubicBezier",
+    "$description": "The single easing curve in the system.",
+    "spc": {
+      "$value": "{primitive.easing.decelerate}",
+      "$description": "Motion: slow, small, seldom.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--ease-spc)"
+          }
+        }
+      }
+    }
+  },
+  "breakpoint": {
+    "$type": "dimension",
+    "$description": "Tailwind v4 defaults, recorded so Figma frame widths and CSS agree. Min-width, mobile first.",
+    "sm": {
+      "$value": "{primitive.viewport.640}",
+      "$description": "Large phone and up. 14 uses in the codebase.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--breakpoint-sm)"
+          }
+        }
+      }
+    },
+    "md": {
+      "$value": "{primitive.viewport.768}",
+      "$description": "Tablet portrait and up.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--breakpoint-md)"
+          }
+        }
+      }
+    },
+    "lg": {
+      "$value": "{primitive.viewport.1024}",
+      "$description": "Tablet landscape and small laptop. 4 uses.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--breakpoint-lg)"
+          }
+        }
+      }
+    },
+    "xl": {
+      "$value": "{primitive.viewport.1280}",
+      "$description": "Desktop. 1 use.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--breakpoint-xl)"
+          }
+        }
+      }
+    },
+    "2xl": {
+      "$value": "{primitive.viewport.1536}",
+      "$description": "Wide desktop.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [],
+          "codeSyntax": {
+            "WEB": "var(--breakpoint-2xl)"
+          }
+        }
+      }
+    }
+  },
+  "measure": {
+    "$type": "dimension",
+    "$description": "Maximum line length for readable copy. Separate from the spacing scale.",
+    "measure-sm": {
+      "$value": "{primitive.measure.440}",
+      "$description": "Short body copy, notices.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--container-measure-sm)"
+          }
+        }
+      }
+    },
+    "measure-md": {
+      "$value": "{primitive.measure.520}",
+      "$description": "Lead paragraphs.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--container-measure-md)"
+          }
+        }
+      }
+    },
+    "measure-lg": {
+      "$value": "{primitive.measure.560}",
+      "$description": "Panels and setup notices.",
+      "$extensions": {
+        "com.figma": {
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": {
+            "WEB": "var(--container-measure-lg)"
+          }
+        }
+      }
+    }
+  }
+}

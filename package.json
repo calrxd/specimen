@@ -1,0 +1,43 @@
+{
+  "name": "specimen-design-system",
+  "private": true,
+  "version": "0.1.0",
+  "description": "specimen_: an open-source design system for B2B SaaS product teams. Tokens, components, Storybook and a Figma drift check.",
+  "license": "MIT",
+  "author": "Callum Radcliffe (https://callumrad.co.uk)",
+  "homepage": "https://specimen.systems/docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calrxd/specimen.git"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "tokens": "node scripts/build-tokens.mjs",
+    "contract": "node scripts/build-contract.mjs",
+    "ds:build": "npm run tokens && npm run contract",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "figma:check": "node scripts/figma-check.mjs",
+    "test:figma-check": "node scripts/__tests__/figma-check.test.mjs"
+  },
+  "dependencies": {
+    "next": "^16.3.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.0",
+    "@storybook/addon-docs": "^10.6.0",
+    "@storybook/nextjs-vite": "^10.6.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "postcss": "^8.5.26",
+    "react-docgen-typescript": "^2.4.0",
+    "storybook": "^10.6.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}

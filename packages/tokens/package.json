@@ -1,0 +1,28 @@
+{
+  "name": "@specimen/tokens",
+  "version": "0.1.0",
+  "description": "specimen_ design tokens: one DTCG source, CSS custom properties, a Tailwind v4 theme and the Figma variable manifest, all generated together.",
+  "license": "MIT",
+  "author": "Callum Radcliffe (https://callumrad.co.uk)",
+  "homepage": "https://specimen.systems",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calrxd/specimen.git",
+    "directory": "packages/tokens"
+  },
+  "keywords": ["design-tokens", "design-system", "dtcg", "tailwindcss", "figma", "css-variables"],
+  "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE"],
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./figma-variables.json": "./dist/figma-variables.json",
+    "./package.json": "./package.json"
+  },
+  "style": "./dist/tokens.css",
+  "sideEffects": ["*.css"],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

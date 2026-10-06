@@ -1,0 +1,2339 @@
+{
+  "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
+  "sourceHash": "08858c8521db",
+  "components": [
+    {
+      "name": "Mark",
+      "description": "The mark: a microscope slide, and the green dot is the specimen. Clearspace is twice the\ndot's diameter. Below 22px wide, use the dot alone.",
+      "storybookTitle": "Components/Mark",
+      "source": "src/components/Mark.tsx",
+      "storyFile": "src/components/Mark.stories.tsx",
+      "importPath": "@/components/Mark",
+      "props": [
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "required": false,
+          "default": "md",
+          "description": null,
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "showBar",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": true,
+          "description": null,
+          "figma": {
+            "name": "showBar",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": true
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "size": "md"
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "size": "sm"
+          }
+        },
+        {
+          "name": "Large",
+          "args": {
+            "size": "lg",
+            "showBar": true
+          }
+        },
+        {
+          "name": "LargeWithoutBar",
+          "args": {
+            "size": "lg",
+            "showBar": false
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        }
+      ],
+      "expectedVariantCount": 3
+    },
+    {
+      "name": "Wordmark",
+      "description": "The wordmark: lowercase \"specimen\" and an underscore in the accent green. With cursor on,\nthe underscore blinks, so the system reads as still being written. One instance per view.",
+      "storybookTitle": "Components/Wordmark",
+      "source": "src/components/Mark.tsx",
+      "storyFile": "src/components/Wordmark.stories.tsx",
+      "importPath": "@/components/Mark",
+      "props": [
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "sm",
+            "md"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "Type size in px: md 17, sm 15. Fixed brand geometry, not the type scale.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "cursor",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "The underscore blinks like a cursor instead of sitting still in the accent green.",
+          "figma": {
+            "name": "cursor",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "size": "md",
+            "cursor": false
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "size": "sm",
+            "cursor": false
+          }
+        },
+        {
+          "name": "WithCursor",
+          "args": {
+            "size": "md",
+            "cursor": true
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "Button",
+      "description": "A mono, hairline-bordered button with the mark's 4px corner. Structure comes from the border, so the\ndisabled state drops the fill rather than dimming it, and the danger variant is a\nfill only because a destructive confirm has to look different from everything else.",
+      "storybookTitle": "Components/Button",
+      "source": "src/components/ui/Button.tsx",
+      "storyFile": "src/components/ui/Button.stories.tsx",
+      "importPath": "@/components/ui/Button",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The text on the button. Sentence case, starting with a verb: \"Notify me\", \"Publish\", \"Delete\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "primary",
+            "secondary",
+            "ghost",
+            "danger"
+          ],
+          "required": false,
+          "default": "primary",
+          "description": "Which job the button does. One primary per view.",
+          "figma": {
+            "name": "variant",
+            "figmaType": "VARIANT",
+            "values": [
+              "primary",
+              "secondary",
+              "ghost",
+              "danger"
+            ],
+            "defaultValue": "primary"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "sm",
+            "md"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "md for forms and page actions, sm for table rows and toolbars.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "sm",
+              "md"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Every variant collapses to the same outlined, muted form so a disabled control reads the same everywhere.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Notify me",
+            "variant": "primary",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Secondary",
+          "args": {
+            "label": "Save draft",
+            "variant": "secondary",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Ghost",
+          "args": {
+            "label": "Cancel",
+            "variant": "ghost",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Danger",
+          "args": {
+            "label": "Delete specimen",
+            "variant": "danger",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "label": "Restore",
+            "variant": "secondary",
+            "size": "sm",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Publish",
+            "variant": "primary",
+            "size": "md",
+            "disabled": true
+          }
+        },
+        {
+          "name": "Matrix",
+          "args": {
+            "label": "Label",
+            "variant": "primary",
+            "size": "md",
+            "disabled": false
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "variant",
+          "values": [
+            "primary",
+            "secondary",
+            "ghost",
+            "danger"
+          ]
+        },
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md"
+          ]
+        }
+      ],
+      "expectedVariantCount": 8
+    },
+    {
+      "name": "Checkbox",
+      "description": "A box with the mark's 4px corner, hairline border, green fill with an ink tick when on. The native input\nis drawn with appearance:none so it keeps keyboard, focus ring and form semantics while\nmatching the Figma component pixel for pixel. Never pre-tick a consent box.",
+      "storybookTitle": "Components/Checkbox",
+      "source": "src/components/ui/Checkbox.tsx",
+      "storyFile": "src/components/ui/Checkbox.stories.tsx",
+      "importPath": "@/components/ui/Checkbox",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The text beside the box. Sentence case, no full stop.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the label, in faint. The consent wording on a signup form is the model.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Whether the box starts ticked. Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "checked",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Box and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Also send me occasional updates about the system",
+            "checked": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Checked",
+          "args": {
+            "label": "Publish on save",
+            "checked": true
+          }
+        },
+        {
+          "name": "WithDescription",
+          "args": {
+            "label": "Required to submit",
+            "description": "The visitor cannot send the form until this is ticked.",
+            "checked": false
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Ticked by default",
+            "description": "Not valid consent under UK GDPR, so this stays off.",
+            "checked": false,
+            "disabled": true
+          }
+        },
+        {
+          "name": "DisabledChecked",
+          "args": {
+            "label": "System page",
+            "checked": true,
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "CommandMenu",
+      "description": "Search across every action in the product and run one from the keyboard. A modal on the\nnative dialog element, with the search field as a combobox over a listbox: typing filters,\narrows move the active option, Enter runs it, Escape closes. Focus stays in the field the\nwhole time; the active option is announced through aria-activedescendant.",
+      "storybookTitle": "Components/CommandMenu",
+      "source": "src/components/ui/CommandMenu.tsx",
+      "storyFile": "src/components/ui/CommandMenu.stories.tsx",
+      "importPath": "@/components/ui/CommandMenu",
+      "props": [
+        {
+          "name": "open",
+          "type": "boolean",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Whether it is showing. Controlled: set it false from onClose.",
+          "figma": {
+            "name": "open",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "groups",
+          "type": "CommandGroup[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The commands, grouped. Content, not a Figma property: the library shows two groups.",
+          "figma": {
+            "name": "groups",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Type a command",
+          "description": "Inside the empty search field.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Type a command",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "emptyText",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "No commands match. Try another word.",
+          "description": "Shown when nothing matches.",
+          "figma": {
+            "name": "emptyText",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "No commands match. Try another word.",
+            "companionBoolean": "emptyTextVisible"
+          }
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Called on Escape, on a click outside the panel, and after a command runs.",
+          "figma": {
+            "name": "onClose",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "open": true,
+            "groups": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Type a command",
+            "emptyText": "No commands match. Try another word.",
+            "onClose": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "Empty",
+          "args": {
+            "open": true,
+            "groups": [],
+            "placeholder": "Type a command",
+            "emptyText": "No commands match. Try another word.",
+            "onClose": {
+              "$dynamic": "Identifier"
+            }
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Dialog",
+      "description": "A modal for a decision that blocks everything else. Built on the native dialog element,\nso focus is trapped, the page behind is inert, and Escape closes it without extra code.\nFlat, per brand section 06: the page dims behind the scrim token, and the panel\nseparates with surface fill and a line-strong edge rather than a shadow.",
+      "storybookTitle": "Components/Dialog",
+      "source": "src/components/ui/Dialog.tsx",
+      "storyFile": "src/components/ui/Dialog.stories.tsx",
+      "importPath": "@/components/ui/Dialog",
+      "props": [
+        {
+          "name": "open",
+          "type": "boolean",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Whether the dialog is showing. Controlled: set it false from onClose.",
+          "figma": {
+            "name": "open",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "A question or a noun phrase, sentence case: \"Delete this release?\"",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the title saying what will happen.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The body, and the actions as a row of Buttons at the end.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Called on Escape, on a click outside the panel, and on the close control.",
+          "figma": {
+            "name": "onClose",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "open": true,
+            "title": "Publish v0.1.0?",
+            "description": "The tokens package goes to npm and the changelog entry goes live.",
+            "children": {
+              "$dynamic": "CallExpression"
+            },
+            "onClose": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Destructive",
+          "args": {
+            "open": true,
+            "title": "Delete this release?",
+            "description": "The changelog entry is removed. The npm version stays, because npm versions cannot be deleted.",
+            "children": {
+              "$dynamic": "CallExpression"
+            },
+            "onClose": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "TitleOnly",
+          "args": {
+            "open": true,
+            "title": "Discard unsaved changes?",
+            "children": {
+              "$dynamic": "CallExpression"
+            },
+            "onClose": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Field",
+      "description": "A labelled text input with the hint and error slots every form needs. The border does\nthe work: line-interactive at rest (3:1, per WCAG 1.4.11), sample on focus, danger on\nerror, line when read-only, disabled when disabled.",
+      "storybookTitle": "Components/Field",
+      "source": "src/components/ui/Field.tsx",
+      "storyFile": "src/components/ui/Field.stories.tsx",
+      "importPath": "@/components/ui/Field",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the input. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shown inside the empty input, in faint.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the input. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and the native required attribute.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Displayed, not editable. Loses the interactive border, since there is nothing to find and click.",
+          "figma": {
+            "name": "readOnly",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Email",
+            "placeholder": "you@studio.com",
+            "required": false,
+            "disabled": false,
+            "readOnly": false
+          }
+        },
+        {
+          "name": "WithHint",
+          "args": {
+            "label": "Email",
+            "placeholder": "you@studio.com",
+            "hint": "One email at v1.0, one at the Figma kit drop."
+          }
+        },
+        {
+          "name": "Required",
+          "args": {
+            "label": "Site name",
+            "placeholder": "specimen",
+            "required": true
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Email",
+            "placeholder": "you@studio.com",
+            "hint": "We never share it.",
+            "error": "That does not look like an email address."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Catalogue number",
+            "placeholder": "SPC-000",
+            "disabled": true
+          }
+        },
+        {
+          "name": "ReadOnly",
+          "args": {
+            "label": "Workspace ID",
+            "defaultValue": "ws_7f3a9c21e04b",
+            "readOnly": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Menu",
+      "description": "A list of actions opened from a button. Opens below its trigger with focus on the first\nitem; arrow keys move, Home and End jump, Enter or Space runs the item and closes the\nmenu, Escape closes it and returns focus to the trigger, Tab closes it and moves on.",
+      "storybookTitle": "Components/Menu",
+      "source": "src/components/ui/Menu.tsx",
+      "storyFile": "src/components/ui/Menu.stories.tsx",
+      "importPath": "@/components/ui/Menu",
+      "props": [
+        {
+          "name": "trigger",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The button that opens it. Must render a native button.",
+          "figma": {
+            "name": "trigger",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "items",
+          "type": "MenuItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The actions, in order. Content, not a Figma property: the library shows four.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "align",
+          "type": "enum",
+          "values": [
+            "start",
+            "end"
+          ],
+          "required": false,
+          "default": "start",
+          "description": "Which edge of the trigger the menu lines up with. end for a menu at the right of a row.",
+          "figma": {
+            "name": "align",
+            "figmaType": "VARIANT",
+            "values": [
+              "start",
+              "end"
+            ],
+            "defaultValue": "start"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "align": "start",
+            "trigger": {
+              "$dynamic": "JSXElement"
+            },
+            "items": [
+              {
+                "id": "duplicate",
+                "label": "Duplicate",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "copy",
+                "label": "Copy link",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "archive",
+                "label": "Archive",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                },
+                "disabled": true
+              },
+              {
+                "id": "delete",
+                "label": "Delete",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                },
+                "tone": "danger"
+              }
+            ]
+          }
+        },
+        {
+          "name": "AlignEnd",
+          "args": {
+            "align": "end",
+            "trigger": {
+              "$dynamic": "JSXElement"
+            },
+            "items": [
+              {
+                "id": "edit",
+                "label": "Edit",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "export",
+                "label": "Export CSV",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "unsubscribe",
+                "label": "Unsubscribe",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                },
+                "tone": "danger"
+              }
+            ]
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "align",
+          "values": [
+            "start",
+            "end"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "Popover",
+      "description": "A panel of extra content opened from a button, dismissed by Escape or a click outside.\nNot modal: the page stays usable behind it. Use Dialog when the user must answer before\ngoing on. Flat like every overlay: surface fill and a line-strong edge, no shadow.",
+      "storybookTitle": "Components/Popover",
+      "source": "src/components/ui/Popover.tsx",
+      "storyFile": "src/components/ui/Popover.stories.tsx",
+      "importPath": "@/components/ui/Popover",
+      "props": [
+        {
+          "name": "trigger",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The button that opens it. Must render a native button: the browser wires the two together.",
+          "figma": {
+            "name": "trigger",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What the panel holds: a short form, a set of filters, a definition.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "side",
+          "type": "enum",
+          "values": [
+            "bottom",
+            "top"
+          ],
+          "required": false,
+          "default": "bottom",
+          "description": "Which side of the trigger it opens on.",
+          "figma": {
+            "name": "side",
+            "figmaType": "VARIANT",
+            "values": [
+              "bottom",
+              "top"
+            ],
+            "defaultValue": "bottom"
+          }
+        },
+        {
+          "name": "align",
+          "type": "enum",
+          "values": [
+            "start",
+            "end"
+          ],
+          "required": false,
+          "default": "start",
+          "description": "Which edge of the trigger the panel lines up with.",
+          "figma": {
+            "name": "align",
+            "figmaType": "VARIANT",
+            "values": [
+              "start",
+              "end"
+            ],
+            "defaultValue": "start"
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The panel's heading. Sentence case, a noun: \"Filters\". Also its accessible name.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Filters",
+            "side": "bottom",
+            "align": "start",
+            "trigger": {
+              "$dynamic": "JSXElement"
+            },
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "Definition",
+          "args": {
+            "label": "Interactive line",
+            "side": "bottom",
+            "align": "end",
+            "trigger": {
+              "$dynamic": "JSXElement"
+            },
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "side",
+          "values": [
+            "bottom",
+            "top"
+          ]
+        },
+        {
+          "name": "align",
+          "values": [
+            "start",
+            "end"
+          ]
+        }
+      ],
+      "expectedVariantCount": 4
+    },
+    {
+      "name": "Radio",
+      "description": "One option in a set where exactly one can be chosen. Group options with a shared\n`name` inside a fieldset whose legend asks the question. The only round control in the\nsystem: it belongs to the dot family, so the selected state is the green specimen dot.",
+      "storybookTitle": "Components/Radio",
+      "source": "src/components/ui/Radio.tsx",
+      "storyFile": "src/components/ui/Radio.stories.tsx",
+      "importPath": "@/components/ui/Radio",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The text beside the circle. Sentence case, no full stop.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the label, in faint.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Whether this option starts selected. Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "checked",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Circle and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Monthly",
+            "checked": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Checked",
+          "args": {
+            "label": "Yearly",
+            "checked": true
+          }
+        },
+        {
+          "name": "WithDescription",
+          "args": {
+            "label": "Team",
+            "description": "Up to twenty seats, billed to one card.",
+            "checked": false
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Enterprise",
+            "description": "Talk to us first.",
+            "disabled": true
+          }
+        },
+        {
+          "name": "Group",
+          "args": {
+            "label": "Monthly"
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "SectionHeader",
+      "description": "Opens a section: the label left, optional metadata right, and the hairline that divides\nsections in place of boxes or shadows.",
+      "storybookTitle": "Components/SectionHeader",
+      "source": "src/components/ui/SectionHeader.tsx",
+      "storyFile": "src/components/ui/SectionHeader.stories.tsx",
+      "importPath": "@/components/ui/SectionHeader",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What the section holds. Sentence case.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "meta",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Right-aligned detail in muted: a count, a date, a catalogue number.",
+          "figma": {
+            "name": "meta",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "metaVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Components",
+            "meta": "12 total"
+          }
+        },
+        {
+          "name": "WithoutMeta",
+          "args": {
+            "label": "Foundations"
+          }
+        },
+        {
+          "name": "LongLabel",
+          "args": {
+            "label": "Accessibility and contrast requirements",
+            "meta": "WCAG 2.2 AA"
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Select",
+      "description": "A native select drawn to match Field: same label, hint and error slots, same border\nrules. Native so it keeps the platform picker, keyboard behaviour and form semantics.\nThe chevron is a stroke, not a fill, so it follows the text colour.",
+      "storybookTitle": "Components/Select",
+      "source": "src/components/ui/Select.tsx",
+      "storyFile": "src/components/ui/Select.stories.tsx",
+      "importPath": "@/components/ui/Select",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "options",
+          "type": "SelectOption[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The choices. Content, not a Figma property: the library shows a representative value.",
+          "figma": {
+            "name": "options",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shown as the first, unselectable choice when nothing is chosen yet.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and the native required attribute.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border, text and chevron go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Site mode",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Choose a mode",
+            "required": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "WithValue",
+          "args": {
+            "label": "Site mode",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": "coming_soon",
+            "hint": "Flips the public page without a deploy."
+          }
+        },
+        {
+          "name": "Required",
+          "args": {
+            "label": "Role",
+            "options": [
+              {
+                "value": "owner",
+                "label": "Owner"
+              },
+              {
+                "value": "editor",
+                "label": "Editor"
+              }
+            ],
+            "placeholder": "Choose a role",
+            "required": true
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Site mode",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Choose a mode",
+            "error": "Pick a mode before publishing."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Catalogue",
+            "options": [
+              {
+                "value": "spc",
+                "label": "SPC-000"
+              }
+            ],
+            "defaultValue": "spc",
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Switch",
+      "description": "A setting that takes effect immediately. Use Checkbox instead when the choice is\nsubmitted with a form. A native checkbox with role=\"switch\", drawn as a pill whose thumb\nis the specimen dot: the line is an inset ring so the 8px dot sits exactly 4px from every\nedge and travels one spacing step (lg, 16px).",
+      "storybookTitle": "Components/Switch",
+      "source": "src/components/ui/Switch.tsx",
+      "storyFile": "src/components/ui/Switch.stories.tsx",
+      "importPath": "@/components/ui/Switch",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What turns on. Name the setting, not the action: \"publish on save\", not \"enable\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the label, in faint.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Whether it starts on. Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "checked",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Track, thumb and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Publish on save",
+            "checked": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "On",
+          "args": {
+            "label": "Publish on save",
+            "checked": true
+          }
+        },
+        {
+          "name": "WithDescription",
+          "args": {
+            "label": "Signups open",
+            "description": "The form on the home page accepts new addresses.",
+            "checked": true
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Maintenance mode",
+            "description": "Set by the deploy, not here.",
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Table",
+      "description": "A plain data table. Rows separate with decorative hairlines (line), the header with\nline-strong; no zebra stripes and no cell borders, so structure comes from lines as the\nbrand asks. Numbers align to the end with tabular figures.",
+      "storybookTitle": "Components/Table",
+      "source": "src/components/ui/Table.tsx",
+      "storyFile": "src/components/ui/Table.stories.tsx",
+      "importPath": "@/components/ui/Table",
+      "props": [
+        {
+          "name": "columns",
+          "type": "TableColumn[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Column definitions, in order. Content, not a Figma property.",
+          "figma": {
+            "name": "columns",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "rows",
+          "type": "Record<string, ReactNode>[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "One record per row, keyed by column key. Content, not a Figma property.",
+          "figma": {
+            "name": "rows",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "caption",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Says what the table holds. Above the table, in the caption style.",
+          "figma": {
+            "name": "caption",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "captionVisible"
+          }
+        },
+        {
+          "name": "density",
+          "type": "enum",
+          "values": [
+            "comfortable",
+            "compact"
+          ],
+          "required": false,
+          "default": "comfortable",
+          "description": "compact for admin lists and anything scanned rather than read. Decided 10 Sep 2026: a prop on Table, not a global mode.",
+          "figma": {
+            "name": "density",
+            "figmaType": "VARIANT",
+            "values": [
+              "comfortable",
+              "compact"
+            ],
+            "defaultValue": "comfortable"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "columns": {
+              "$dynamic": "Identifier"
+            },
+            "rows": {
+              "$dynamic": "Identifier"
+            },
+            "caption": "Colour roles on canvas, dark theme",
+            "density": "comfortable"
+          }
+        },
+        {
+          "name": "Compact",
+          "args": {
+            "columns": {
+              "$dynamic": "Identifier"
+            },
+            "rows": {
+              "$dynamic": "Identifier"
+            },
+            "caption": "Colour roles on canvas, dark theme",
+            "density": "compact"
+          }
+        },
+        {
+          "name": "WithTags",
+          "args": {
+            "density": "compact",
+            "columns": [
+              {
+                "key": "email",
+                "header": "Email"
+              },
+              {
+                "key": "status",
+                "header": "Status"
+              },
+              {
+                "key": "joined",
+                "header": "Joined",
+                "align": {
+                  "$dynamic": "TSAsExpression"
+                }
+              }
+            ],
+            "rows": [
+              {
+                "email": "a@studio.com",
+                "status": {
+                  "$dynamic": "JSXElement"
+                },
+                "joined": "02 Oct"
+              },
+              {
+                "email": "b@studio.com",
+                "status": {
+                  "$dynamic": "JSXElement"
+                },
+                "joined": "03 Oct"
+              },
+              {
+                "email": "c@studio.com",
+                "status": {
+                  "$dynamic": "JSXElement"
+                },
+                "joined": "04 Oct"
+              }
+            ]
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "density",
+          "values": [
+            "comfortable",
+            "compact"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "Tabs",
+      "description": "Sections of one view that are read one at a time. The selected tab carries a 2px\nsample bar on the shared hairline, the same device as the section headers. Arrow keys\nmove between tabs and select as they go; Home and End jump to either end. Give the set\na name with aria-label.",
+      "storybookTitle": "Components/Tabs",
+      "source": "src/components/ui/Tabs.tsx",
+      "storyFile": "src/components/ui/Tabs.stories.tsx",
+      "importPath": "@/components/ui/Tabs",
+      "props": [
+        {
+          "name": "items",
+          "type": "TabItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The tabs and their panels. Content, not a Figma property: the library shows three.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "aria-label": "Component",
+            "items": [
+              {
+                "id": "usage",
+                "label": "Usage",
+                "content": "One primary button per view. Sentence case, starting with a verb."
+              },
+              {
+                "id": "props",
+                "label": "Props",
+                "content": "Four props: variant, size, disabled and label."
+              },
+              {
+                "id": "tokens",
+                "label": "Tokens",
+                "content": "Reads sample-fill, on-sample, line-interactive and disabled."
+              }
+            ]
+          }
+        },
+        {
+          "name": "WithDisabled",
+          "args": {
+            "aria-label": "Release",
+            "items": [
+              {
+                "id": "notes",
+                "label": "Notes",
+                "content": "Button gains a danger variant."
+              },
+              {
+                "id": "diff",
+                "label": "Diff",
+                "content": "Three files changed."
+              },
+              {
+                "id": "publish",
+                "label": "Publish",
+                "content": "Waiting on review.",
+                "disabled": true
+              }
+            ]
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Tag",
+      "description": "The tag: 1px stroke, no fill, small caps, wide tracking. Metadata only, never a\nheadline. It is a label, not a control, so it carries no hover and no focus.",
+      "storybookTitle": "Components/Tag",
+      "source": "src/components/ui/Tag.tsx",
+      "storyFile": "src/components/ui/Tag.stories.tsx",
+      "importPath": "@/components/ui/Tag",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Catalogue text: \"SPC-014 · BUTTON · STABLE\". Rendered uppercase. Use middle dots to separate.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "tone",
+          "type": "enum",
+          "values": [
+            "sample",
+            "muted",
+            "success",
+            "info",
+            "warn",
+            "danger"
+          ],
+          "required": false,
+          "default": "sample",
+          "description": "Colour of stroke and text. sample for catalogue labels, muted for inert metadata, the four status tones for state.",
+          "figma": {
+            "name": "tone",
+            "figmaType": "VARIANT",
+            "values": [
+              "sample",
+              "muted",
+              "success",
+              "info",
+              "warn",
+              "danger"
+            ],
+            "defaultValue": "sample"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "SPC-000 · PRE-RELEASE",
+            "tone": "sample"
+          }
+        },
+        {
+          "name": "Muted",
+          "args": {
+            "label": "Draft",
+            "tone": "muted"
+          }
+        },
+        {
+          "name": "Success",
+          "args": {
+            "label": "Stable",
+            "tone": "success"
+          }
+        },
+        {
+          "name": "Info",
+          "args": {
+            "label": "Beta",
+            "tone": "info"
+          }
+        },
+        {
+          "name": "Warn",
+          "args": {
+            "label": "Breaking",
+            "tone": "warn"
+          }
+        },
+        {
+          "name": "Danger",
+          "args": {
+            "label": "Deprecated",
+            "tone": "danger"
+          }
+        },
+        {
+          "name": "AllTones",
+          "args": {
+            "label": "Label",
+            "tone": "sample"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "tone",
+          "values": [
+            "sample",
+            "muted",
+            "success",
+            "info",
+            "warn",
+            "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 6
+    },
+    {
+      "name": "Textarea",
+      "description": "Field for more than one line: same label, hint and error slots, same border rules.\nFour rows by default and resizable vertically only, so a long answer can grow without\nbreaking the column it sits in.",
+      "storybookTitle": "Components/Textarea",
+      "source": "src/components/ui/Textarea.tsx",
+      "storyFile": "src/components/ui/Textarea.stories.tsx",
+      "importPath": "@/components/ui/Textarea",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the box. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shown inside the empty box, in faint.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the box. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and the native required attribute.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Displayed, not editable. Loses the interactive border, since there is nothing to find and click.",
+          "figma": {
+            "name": "readOnly",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Release notes",
+            "placeholder": "What changed, and why",
+            "required": false,
+            "disabled": false,
+            "readOnly": false
+          }
+        },
+        {
+          "name": "WithHint",
+          "args": {
+            "label": "Release notes",
+            "placeholder": "What changed, and why",
+            "hint": "Markdown is rendered on the changelog page."
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Release notes",
+            "error": "A release needs at least one line of notes.",
+            "required": true
+          }
+        },
+        {
+          "name": "ReadOnly",
+          "args": {
+            "label": "Published notes",
+            "defaultValue": "Button gains a danger variant. Field reads its border from line-interactive.",
+            "readOnly": true
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Release notes",
+            "placeholder": "Locked while the release is building",
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Toast",
+      "description": "A short notice about something that just happened. Flat: surface fill, line-strong\nedge, and the status colour as a 4px bar on the left rather than a filled background,\nso four tones never turn a screen into a traffic light. Put toasts in a ToastRegion.",
+      "storybookTitle": "Components/Toast",
+      "source": "src/components/ui/Toast.tsx",
+      "storyFile": "src/components/ui/Toast.stories.tsx",
+      "importPath": "@/components/ui/Toast",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What happened, past tense, sentence case: \"Token copied\", \"Release published\".",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line of detail or the next step.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "tone",
+          "type": "enum",
+          "values": [
+            "info",
+            "success",
+            "warn",
+            "danger"
+          ],
+          "required": false,
+          "default": "info",
+          "description": "The status colour of the bar. danger is announced assertively; the rest politely.",
+          "figma": {
+            "name": "tone",
+            "figmaType": "VARIANT",
+            "values": [
+              "info",
+              "success",
+              "warn",
+              "danger"
+            ],
+            "defaultValue": "info"
+          }
+        },
+        {
+          "name": "onDismiss",
+          "type": "(() => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shows a close control. Leave it off for a toast that clears itself.",
+          "figma": {
+            "name": "onDismiss",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "title": "Token copied",
+            "description": "--color-sample-fill is on the clipboard.",
+            "tone": "info",
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Success",
+          "args": {
+            "title": "Release published",
+            "description": "v0.1.0 is live on npm.",
+            "tone": "success",
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Warn",
+          "args": {
+            "title": "Figma check skipped",
+            "description": "The API did not answer. The next scheduled run will retry.",
+            "tone": "warn",
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Danger",
+          "args": {
+            "title": "Drift found",
+            "description": "Button.size has different values in Figma and in code.",
+            "tone": "danger",
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "TitleOnly",
+          "args": {
+            "title": "Saved",
+            "tone": "success"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "tone",
+          "values": [
+            "info",
+            "success",
+            "warn",
+            "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 4
+    },
+    {
+      "name": "Tooltip",
+      "description": "A label that appears on hover and on keyboard focus, and goes on Escape or when either\nends. Flat like every overlay in the system: surface fill, line-strong edge, no shadow.\nThe trigger is described by it, so a screen reader hears the label after the name.",
+      "storybookTitle": "Components/Tooltip",
+      "source": "src/components/ui/Tooltip.tsx",
+      "storyFile": "src/components/ui/Tooltip.stories.tsx",
+      "importPath": "@/components/ui/Tooltip",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "One short line. A tooltip names or explains; it never holds anything the user must read to proceed.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "side",
+          "type": "enum",
+          "values": [
+            "top",
+            "bottom"
+          ],
+          "required": false,
+          "default": "top",
+          "description": "Which side of the trigger it opens on.",
+          "figma": {
+            "name": "side",
+            "figmaType": "VARIANT",
+            "values": [
+              "top",
+              "bottom"
+            ],
+            "defaultValue": "top"
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The trigger: one focusable element, usually an icon-only button.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Copy token name",
+            "side": "top",
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "Bottom",
+          "args": {
+            "label": "Opens the changelog",
+            "side": "bottom",
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "side",
+          "values": [
+            "top",
+            "bottom"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    }
+  ],
+  "skipped": [
+    {
+      "file": "src/stories/Foundations.stories.tsx",
+      "reason": "no `component` in meta (docs-only story)"
+    }
+  ]
+}

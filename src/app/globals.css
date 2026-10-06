@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "./tokens.generated.css";
+
+
+@layer base {
+  /* color-scheme now comes from tokens.generated.css, per theme. */
+  html,
+  body {
+    margin: 0;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Links default to the sample green; utilities still win. */
+  a {
+    color: var(--color-sample);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-spc);
+  }
+  a:hover {
+    color: var(--color-sample-hover);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-faint);
+  }
+
+  :focus-visible {
+    outline: var(--border-focus) solid var(--color-sample);
+    outline-offset: var(--spacing-2xs);
+  }
+}
+
+/* Motion: slow, small, seldom. */
+@keyframes spc-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes spc-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.spc-cursor {
+  color: var(--color-sample);
+  animation: spc-blink var(--duration-blink) step-end infinite;
+}
+.spc-pulse {
+  animation: spc-pulse var(--duration-pulse) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spc-cursor,
+  .spc-pulse {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* The tag — 1px stroke, no fill, small caps, middle-dot separators. */
+.spc-tag {
+  border: var(--border-hairline) solid var(--color-sample);
+  color: var(--color-sample);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-tag);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: inline-block;
+  text-transform: uppercase;
+}

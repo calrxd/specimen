@@ -1,0 +1,49 @@
+name: design system
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  contract:
+    name: tokens and contract are in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # The generated files are outputs, not sources. If regenerating them changes
+      # anything, someone edited an output by hand or forgot to run the build.
+      - name: regenerate
+        run: npm run ds:build
+      - name: generated files match their sources
+        run: |
+          if ! git diff --exit-code -- src/app/tokens.generated.css tokens/figma-variables.json tokens/component-contract.json packages/tokens/dist; then
+            echo "::error::A generated file is out of date or was edited by hand. Run 'npm run ds:build' and commit the result."
+            exit 1
+          fi
+
+      # Exercises the drift checker itself against a stub API. No token, no network.
+      - name: drift checker behaves
+        run: npm run test:figma-check
+
+      - name: typecheck
+        run: npm run typecheck
+
+  storybook:
+    name: storybook builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build-storybook

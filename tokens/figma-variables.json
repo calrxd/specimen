@@ -1,0 +1,2498 @@
+{
+  "$comment": "GENERATED FILE - DO NOT EDIT. Source: tokens/specimen.tokens.json. Rebuild: npm run tokens.",
+  "sourceHash": "a614539398ca",
+  "collections": [
+    {
+      "name": "specimen_ primitives",
+      "modes": [
+        "Value"
+      ]
+    },
+    {
+      "name": "specimen_ color",
+      "modes": [
+        "Light",
+        "Dark"
+      ]
+    },
+    {
+      "name": "specimen_ scale",
+      "modes": [
+        "Value"
+      ]
+    }
+  ],
+  "primitives": [
+    {
+      "name": "color/ink/600",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-ink-600",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#5E665C",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-ink-600)"
+      },
+      "description": "Dark control boundary. 3.29:1 on ink-950, clears the 3:1 floor for a form control edge."
+    },
+    {
+      "name": "color/ink/700",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-ink-700",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#3A4038",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-ink-700)"
+      },
+      "description": "Dark emphasised rules."
+    },
+    {
+      "name": "color/ink/800",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-ink-800",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#22261F",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-ink-800)"
+      },
+      "description": "Dark rules."
+    },
+    {
+      "name": "color/ink/900",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-ink-900",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#101211",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-ink-900)"
+      },
+      "description": "One step off the darkest ground."
+    },
+    {
+      "name": "color/ink/950",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-ink-950",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#0B0C0B",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-ink-950)"
+      },
+      "description": "The darkest ground."
+    },
+    {
+      "name": "color/grey/200",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-grey-200",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#D9DDD6",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-grey-200)"
+      },
+      "description": "Light rules."
+    },
+    {
+      "name": "color/grey/250",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-grey-250",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#7F867D",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-grey-250)"
+      },
+      "description": "Light control boundary. 3.39:1 on paper-50."
+    },
+    {
+      "name": "color/grey/300",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-grey-300",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#B4BAB1",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-grey-300)"
+      },
+      "description": "Light emphasised rules."
+    },
+    {
+      "name": "color/grey/400",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-grey-400",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#767C77",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-grey-400)"
+      },
+      "description": "Dark tertiary text. 4.59:1 on ink-950."
+    },
+    {
+      "name": "color/grey/500",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-grey-500",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#8B928C",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-grey-500)"
+      },
+      "description": "Dark secondary text. 6.15:1 on ink-950."
+    },
+    {
+      "name": "color/grey/600",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-grey-600",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#565C57",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-grey-600)"
+      },
+      "description": "Light secondary text. 6.20:1 on paper-50."
+    },
+    {
+      "name": "color/grey/650",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-grey-650",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#6B716C",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-grey-650)"
+      },
+      "description": "Light tertiary text. 4.52:1 on paper-50."
+    },
+    {
+      "name": "color/paper/0",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-paper-0",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#FFFFFF",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-paper-0)"
+      },
+      "description": "Light raised surface."
+    },
+    {
+      "name": "color/paper/50",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-paper-50",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#F2F4F1",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-paper-50)"
+      },
+      "description": "The lightest ground."
+    },
+    {
+      "name": "color/green/50",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-green-50",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#E2F5EA",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-green-50)"
+      },
+      "description": "Light success surface. green-800 text sits on it at 5.10:1."
+    },
+    {
+      "name": "color/green/300",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-green-300",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#7DF5BC",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-green-300)"
+      },
+      "description": "Lifted green, for hover on dark."
+    },
+    {
+      "name": "color/green/500",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-green-500",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#2CE98F",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-green-500)"
+      },
+      "description": "The signal green. Ink sits on it at 12.28:1 in both modes."
+    },
+    {
+      "name": "color/green/600",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-green-600",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#19C878",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-green-600)"
+      },
+      "description": "Light hover on a sample fill. Ink on it at 8.93:1, where green-700 was used for both hover and pressed."
+    },
+    {
+      "name": "color/green/700",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-green-700",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#0B9B58",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-green-700)"
+      },
+      "description": "Deepened green."
+    },
+    {
+      "name": "color/green/800",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-green-800",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#07753F",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-green-800)"
+      },
+      "description": "Green that survives as text on paper. 5.24:1."
+    },
+    {
+      "name": "color/green/900",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-green-900",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#0F2A1C",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-green-900)"
+      },
+      "description": "Dark success surface. green-500 text sits on it at 9.62:1."
+    },
+    {
+      "name": "color/red/50",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-red-50",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#FAE8E6",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-red-50)"
+      },
+      "description": "Light danger surface. red-700 text sits on it at 5.54:1."
+    },
+    {
+      "name": "color/red/400",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-red-400",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#CE6459",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-red-400)"
+      },
+      "description": "Dark error text. 5.22:1 on ink-950."
+    },
+    {
+      "name": "color/red/500",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-red-500",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#C0554B",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-red-500)"
+      },
+      "description": "The base red."
+    },
+    {
+      "name": "color/red/700",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-red-700",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#A33A31",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-red-700)"
+      },
+      "description": "Light error text. 5.92:1 on paper-50."
+    },
+    {
+      "name": "color/red/800",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-red-800",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#8A2F27",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-red-800)"
+      },
+      "description": "Hover on a danger fill. Paper on it at 7.54:1."
+    },
+    {
+      "name": "color/red/900",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-red-900",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#2A1512",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-red-900)"
+      },
+      "description": "Dark danger surface. red-400 text sits on it at 4.60:1."
+    },
+    {
+      "name": "color/amber/50",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-amber-50",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#F8EFDA",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-amber-50)"
+      },
+      "description": "Light warning surface. amber-700 text sits on it at 4.83:1."
+    },
+    {
+      "name": "color/amber/500",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-amber-500",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#D9A03F",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-amber-500)"
+      },
+      "description": "Dark warning text. 8.45:1 on ink-950."
+    },
+    {
+      "name": "color/amber/700",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-amber-700",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#8A6115",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-amber-700)"
+      },
+      "description": "Light warning text. 4.99:1 on paper-50."
+    },
+    {
+      "name": "color/amber/900",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-amber-900",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#2A2210",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-amber-900)"
+      },
+      "description": "Dark warning surface. amber-500 text sits on it at 6.78:1."
+    },
+    {
+      "name": "color/blue/50",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-blue-50",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#E5EDF8",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-blue-50)"
+      },
+      "description": "Light info surface. blue-700 text sits on it at 5.62:1."
+    },
+    {
+      "name": "color/blue/400",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-blue-400",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#6FA8E6",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-blue-400)"
+      },
+      "description": "Dark info text. 7.86:1 on ink-950."
+    },
+    {
+      "name": "color/blue/700",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-blue-700",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#2A5E9A",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-blue-700)"
+      },
+      "description": "Light info text. 6.00:1 on paper-50."
+    },
+    {
+      "name": "color/blue/900",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-blue-900",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#13202E",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-blue-900)"
+      },
+      "description": "Dark info surface. blue-400 text sits on it at 6.61:1."
+    },
+    {
+      "name": "color/scrim/40",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-scrim-40",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#0B0C0B66",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-scrim-40)"
+      },
+      "description": "Ink-950 at 40%. Dims a light page without turning it grey."
+    },
+    {
+      "name": "color/scrim/72",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-color-scrim-72",
+      "dtcgType": "color",
+      "figmaType": "COLOR",
+      "value": "#0B0C0BB8",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-color-scrim-72)"
+      },
+      "description": "Ink-950 at 72%. A dark page needs more to read as recessed."
+    },
+    {
+      "name": "size/0",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-0",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 0,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-0)"
+      },
+      "description": "0px on the shared length ramp."
+    },
+    {
+      "name": "size/1",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-1",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 1,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-1)"
+      },
+      "description": "1px on the shared length ramp."
+    },
+    {
+      "name": "size/2",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-2",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 2,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-2)"
+      },
+      "description": "2px on the shared length ramp."
+    },
+    {
+      "name": "size/4",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-4",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 4,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-4)"
+      },
+      "description": "4px on the shared length ramp."
+    },
+    {
+      "name": "size/8",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-8",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 8,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-8)"
+      },
+      "description": "8px on the shared length ramp."
+    },
+    {
+      "name": "size/12",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-12",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 12,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-12)"
+      },
+      "description": "12px on the shared length ramp."
+    },
+    {
+      "name": "size/16",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-16",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 16,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-16)"
+      },
+      "description": "16px on the shared length ramp."
+    },
+    {
+      "name": "size/20",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-20",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 20,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-20)"
+      },
+      "description": "20px on the shared length ramp."
+    },
+    {
+      "name": "size/24",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-24",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 24,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-24)"
+      },
+      "description": "24px on the shared length ramp."
+    },
+    {
+      "name": "size/32",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-32",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 32,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-32)"
+      },
+      "description": "32px on the shared length ramp."
+    },
+    {
+      "name": "size/40",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-40",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 40,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-40)"
+      },
+      "description": "40px on the shared length ramp."
+    },
+    {
+      "name": "size/48",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-48",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 48,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-48)"
+      },
+      "description": "48px on the shared length ramp."
+    },
+    {
+      "name": "size/64",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-64",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 64,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-64)"
+      },
+      "description": "64px on the shared length ramp."
+    },
+    {
+      "name": "size/80",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-80",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 80,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-80)"
+      },
+      "description": "80px on the shared length ramp."
+    },
+    {
+      "name": "size/96",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-96",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 96,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-96)"
+      },
+      "description": "96px on the shared length ramp."
+    },
+    {
+      "name": "size/128",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-128",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 128,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-128)"
+      },
+      "description": "128px on the shared length ramp."
+    },
+    {
+      "name": "size/full",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-size-full",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 9999,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-size-full)"
+      },
+      "description": "Effectively a full round."
+    },
+    {
+      "name": "font-size/10",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-size-10",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 10,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-size-10)"
+      },
+      "description": "10px."
+    },
+    {
+      "name": "font-size/11",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-size-11",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 11,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-size-11)"
+      },
+      "description": "11px."
+    },
+    {
+      "name": "font-size/12",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-size-12",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 12,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-size-12)"
+      },
+      "description": "12px."
+    },
+    {
+      "name": "font-size/13",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-size-13",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 13,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-size-13)"
+      },
+      "description": "13px."
+    },
+    {
+      "name": "font-size/15",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-size-15",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 15,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-size-15)"
+      },
+      "description": "15px."
+    },
+    {
+      "name": "font-size/24",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-size-24",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 24,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-size-24)"
+      },
+      "description": "24px."
+    },
+    {
+      "name": "font-size/32",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-size-32",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 32,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-size-32)"
+      },
+      "description": "32px."
+    },
+    {
+      "name": "font-family/mono",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-family-mono",
+      "dtcgType": "fontFamily",
+      "figmaType": "STRING",
+      "value": "IBM Plex Mono",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-family-mono)"
+      },
+      "description": "IBM Plex Mono."
+    },
+    {
+      "name": "font-family/sans",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-font-family-sans",
+      "dtcgType": "fontFamily",
+      "figmaType": "STRING",
+      "value": "Archivo",
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-font-family-sans)"
+      },
+      "description": "Archivo Variable."
+    },
+    {
+      "name": "tracking/12",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-tracking-12",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 12,
+      "unit": "PERCENT",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-tracking-12)"
+      },
+      "description": "Wide."
+    },
+    {
+      "name": "tracking/16",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-tracking-16",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 16,
+      "unit": "PERCENT",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-tracking-16)"
+      },
+      "description": "Widest."
+    },
+    {
+      "name": "tracking/minus-2",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-tracking-minus-2",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": -2,
+      "unit": "PERCENT",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-tracking-minus-2)"
+      },
+      "description": "Tightened."
+    },
+    {
+      "name": "tracking/minus-1",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-tracking-minus-1",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": -1,
+      "unit": "PERCENT",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-tracking-minus-1)"
+      },
+      "description": "Barely tightened."
+    },
+    {
+      "name": "line-height/120",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-line-height-120",
+      "dtcgType": "number",
+      "figmaType": "FLOAT",
+      "value": 1.2,
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-line-height-120)"
+      },
+      "description": "1.2x."
+    },
+    {
+      "name": "line-height/160",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-line-height-160",
+      "dtcgType": "number",
+      "figmaType": "FLOAT",
+      "value": 1.6,
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-line-height-160)"
+      },
+      "description": "1.6x."
+    },
+    {
+      "name": "line-height/170",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-line-height-170",
+      "dtcgType": "number",
+      "figmaType": "FLOAT",
+      "value": 1.7,
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-line-height-170)"
+      },
+      "description": "1.7x."
+    },
+    {
+      "name": "line-height/190",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-line-height-190",
+      "dtcgType": "number",
+      "figmaType": "FLOAT",
+      "value": 1.9,
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-line-height-190)"
+      },
+      "description": "1.9x."
+    },
+    {
+      "name": "duration/150",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-duration-150",
+      "dtcgType": "duration",
+      "figmaType": "TIMING",
+      "value": 0.15,
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-duration-150)"
+      },
+      "description": "150ms."
+    },
+    {
+      "name": "duration/1100",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-duration-1100",
+      "dtcgType": "duration",
+      "figmaType": "TIMING",
+      "value": 1.1,
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-duration-1100)"
+      },
+      "description": "1100ms."
+    },
+    {
+      "name": "duration/2400",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-duration-2400",
+      "dtcgType": "duration",
+      "figmaType": "TIMING",
+      "value": 2.4,
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-duration-2400)"
+      },
+      "description": "2400ms."
+    },
+    {
+      "name": "easing/decelerate",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-easing-decelerate",
+      "dtcgType": "cubicBezier",
+      "figmaType": "EASING",
+      "value": {
+        "type": "CUSTOM_CUBIC_BEZIER",
+        "easingFunctionCubicBezier": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0.2,
+          "y2": 1
+        }
+      },
+      "unit": null,
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-easing-decelerate)"
+      },
+      "description": "Leaves immediately, settles late."
+    },
+    {
+      "name": "viewport/640",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-viewport-640",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 640,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-viewport-640)"
+      },
+      "description": "640px."
+    },
+    {
+      "name": "viewport/768",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-viewport-768",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 768,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-viewport-768)"
+      },
+      "description": "768px."
+    },
+    {
+      "name": "viewport/1024",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-viewport-1024",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 1024,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-viewport-1024)"
+      },
+      "description": "1024px."
+    },
+    {
+      "name": "viewport/1280",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-viewport-1280",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 1280,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-viewport-1280)"
+      },
+      "description": "1280px."
+    },
+    {
+      "name": "viewport/1536",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-viewport-1536",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 1536,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-viewport-1536)"
+      },
+      "description": "1536px."
+    },
+    {
+      "name": "measure/440",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-measure-440",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 440,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-measure-440)"
+      },
+      "description": "440px."
+    },
+    {
+      "name": "measure/520",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-measure-520",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 520,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-measure-520)"
+      },
+      "description": "520px."
+    },
+    {
+      "name": "measure/560",
+      "collection": "specimen_ primitives",
+      "cssVar": "--p-measure-560",
+      "dtcgType": "dimension",
+      "figmaType": "FLOAT",
+      "value": 560,
+      "unit": "PIXELS",
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--p-measure-560)"
+      },
+      "description": "560px."
+    }
+  ],
+  "semantic": [
+    {
+      "name": "color/canvas",
+      "collection": "specimen_ color",
+      "cssVar": "--color-canvas",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/paper/50",
+        "Dark": "color/ink/950"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-canvas)"
+      },
+      "description": "The page ground."
+    },
+    {
+      "name": "color/surface",
+      "collection": "specimen_ color",
+      "cssVar": "--color-surface",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/paper/0",
+        "Dark": "color/ink/900"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-surface)"
+      },
+      "description": "A raised surface: panels, menus, table headers. One step away from the canvas in both modes."
+    },
+    {
+      "name": "color/ink",
+      "collection": "specimen_ color",
+      "cssVar": "--color-ink",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/ink/950",
+        "Dark": "color/paper/50"
+      },
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-ink)"
+      },
+      "description": "Primary text. The name is the role, not the colour: it resolves to paper on a dark canvas."
+    },
+    {
+      "name": "color/muted",
+      "collection": "specimen_ color",
+      "cssVar": "--color-muted",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/grey/600",
+        "Dark": "color/grey/500"
+      },
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-muted)"
+      },
+      "description": "Secondary text. Clears AA in both modes."
+    },
+    {
+      "name": "color/faint",
+      "collection": "specimen_ color",
+      "cssVar": "--color-faint",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/grey/650",
+        "Dark": "color/grey/400"
+      },
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-faint)"
+      },
+      "description": "Tertiary text and placeholders. Clears AA in both modes, which the old dark value did not."
+    },
+    {
+      "name": "color/line",
+      "collection": "specimen_ color",
+      "cssVar": "--color-line",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/grey/200",
+        "Dark": "color/ink/800"
+      },
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-line)"
+      },
+      "description": "The default rule. Decorative, so it sits below the 3:1 floor on purpose."
+    },
+    {
+      "name": "color/line-strong",
+      "collection": "specimen_ color",
+      "cssVar": "--color-line-strong",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/grey/300",
+        "Dark": "color/ink/700"
+      },
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-line-strong)"
+      },
+      "description": "An emphasised rule. Still decorative."
+    },
+    {
+      "name": "color/line-interactive",
+      "collection": "specimen_ color",
+      "cssVar": "--color-line-interactive",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/grey/250",
+        "Dark": "color/ink/600"
+      },
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-line-interactive)"
+      },
+      "description": "The boundary of a form control. Clears 3:1 in both modes, which WCAG 1.4.11 requires and a decorative rule does not."
+    },
+    {
+      "name": "color/sample",
+      "collection": "specimen_ color",
+      "cssVar": "--color-sample",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/green/800",
+        "Dark": "color/green/500"
+      },
+      "scopes": [
+        "TEXT_FILL",
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-sample)"
+      },
+      "description": "Signal green as text, links and borders. Darkens in light mode so it stays readable on paper."
+    },
+    {
+      "name": "color/sample-fill",
+      "collection": "specimen_ color",
+      "cssVar": "--color-sample-fill",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/green/500",
+        "Dark": "color/green/500"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-sample-fill)"
+      },
+      "description": "Signal green as a surface: buttons, the specimen dot. The same green in both modes, always with on-sample text over it."
+    },
+    {
+      "name": "color/sample-hover",
+      "collection": "specimen_ color",
+      "cssVar": "--color-sample-hover",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/green/600",
+        "Dark": "color/green/300"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "TEXT_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-sample-hover)"
+      },
+      "description": "Hover on a sample fill. Lifted in dark, deepened in light. Ink stays readable on both."
+    },
+    {
+      "name": "color/sample-pressed",
+      "collection": "specimen_ color",
+      "cssVar": "--color-sample-pressed",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/green/700",
+        "Dark": "color/green/700"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL",
+        "TEXT_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-sample-pressed)"
+      },
+      "description": "Pressed state on a sample fill. Was green-800 in light, where ink on it fell to 3.38:1."
+    },
+    {
+      "name": "color/on-sample",
+      "collection": "specimen_ color",
+      "cssVar": "--color-on-sample",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/ink/950",
+        "Dark": "color/ink/950"
+      },
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-on-sample)"
+      },
+      "description": "Text and icons sitting on sample-fill. Ink in both modes: 12.28:1 either way."
+    },
+    {
+      "name": "color/danger",
+      "collection": "specimen_ color",
+      "cssVar": "--color-danger",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/red/700",
+        "Dark": "color/red/400"
+      },
+      "scopes": [
+        "TEXT_FILL",
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-danger)"
+      },
+      "description": "Error text and borders. Clears AA in both modes, which the old dark value did not."
+    },
+    {
+      "name": "color/warn",
+      "collection": "specimen_ color",
+      "cssVar": "--color-warn",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/amber/700",
+        "Dark": "color/amber/500"
+      },
+      "scopes": [
+        "TEXT_FILL",
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-warn)"
+      },
+      "description": "Warning text and borders."
+    },
+    {
+      "name": "color/success",
+      "collection": "specimen_ color",
+      "cssVar": "--color-success",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/green/800",
+        "Dark": "color/green/500"
+      },
+      "scopes": [
+        "TEXT_FILL",
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-success)"
+      },
+      "description": "Success text and borders. Success is the brand green doing its job as a status: the specimen is alive."
+    },
+    {
+      "name": "color/info",
+      "collection": "specimen_ color",
+      "cssVar": "--color-info",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/blue/700",
+        "Dark": "color/blue/400"
+      },
+      "scopes": [
+        "TEXT_FILL",
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-info)"
+      },
+      "description": "Informational text and borders. The only hue that is not brand or status-red/amber."
+    },
+    {
+      "name": "color/danger-subtle",
+      "collection": "specimen_ color",
+      "cssVar": "--color-danger-subtle",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/red/50",
+        "Dark": "color/red/900"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-danger-subtle)"
+      },
+      "description": "Low-emphasis danger surface for inline alerts, invalid rows and toasts. Always with danger text over it."
+    },
+    {
+      "name": "color/warn-subtle",
+      "collection": "specimen_ color",
+      "cssVar": "--color-warn-subtle",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/amber/50",
+        "Dark": "color/amber/900"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-warn-subtle)"
+      },
+      "description": "Low-emphasis warning surface. Always with warn text over it."
+    },
+    {
+      "name": "color/success-subtle",
+      "collection": "specimen_ color",
+      "cssVar": "--color-success-subtle",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/green/50",
+        "Dark": "color/green/900"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-success-subtle)"
+      },
+      "description": "Low-emphasis success surface. Always with success text over it."
+    },
+    {
+      "name": "color/info-subtle",
+      "collection": "specimen_ color",
+      "cssVar": "--color-info-subtle",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/blue/50",
+        "Dark": "color/blue/900"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-info-subtle)"
+      },
+      "description": "Low-emphasis info surface. Always with info text over it."
+    },
+    {
+      "name": "color/danger-fill",
+      "collection": "specimen_ color",
+      "cssVar": "--color-danger-fill",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/red/700",
+        "Dark": "color/red/700"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-danger-fill)"
+      },
+      "description": "Destructive action as a surface: the confirm button in a delete dialog. Same red in both modes, always with on-danger text."
+    },
+    {
+      "name": "color/danger-hover",
+      "collection": "specimen_ color",
+      "cssVar": "--color-danger-hover",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/red/800",
+        "Dark": "color/red/800"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-danger-hover)"
+      },
+      "description": "Hover and pressed on a danger fill."
+    },
+    {
+      "name": "color/on-danger",
+      "collection": "specimen_ color",
+      "cssVar": "--color-on-danger",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/paper/50",
+        "Dark": "color/paper/50"
+      },
+      "scopes": [
+        "TEXT_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-on-danger)"
+      },
+      "description": "Text and icons sitting on danger-fill. Paper in both modes: 5.92:1."
+    },
+    {
+      "name": "color/disabled",
+      "collection": "specimen_ color",
+      "cssVar": "--color-disabled",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/grey/250",
+        "Dark": "color/ink/600"
+      },
+      "scopes": [
+        "TEXT_FILL",
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-disabled)"
+      },
+      "description": "Text and border of a disabled control. Around 3.3:1 in both modes: legible, clearly inert, and exempt from the AA text floor. Replaces opacity."
+    },
+    {
+      "name": "color/scrim",
+      "collection": "specimen_ color",
+      "cssVar": "--color-scrim",
+      "figmaType": "COLOR",
+      "aliases": {
+        "Light": "color/scrim/40",
+        "Dark": "color/scrim/72"
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--color-scrim)"
+      },
+      "description": "The layer behind an open Dialog. Separates by dimming, not by shadow: the system stays flat (brand §06) and the overlay itself carries surface and line-strong."
+    },
+    {
+      "name": "spacing/none",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-none",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/0"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-none)"
+      },
+      "description": "Collapse a gap or padding without leaving the scale. Dense table rows and flush-joined controls."
+    },
+    {
+      "name": "spacing/2xs",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-2xs",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/2"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-2xs)"
+      },
+      "description": "Icon to label inside a control, and the optical nudges that used to be written as mt-[2px]."
+    },
+    {
+      "name": "spacing/xs",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-xs",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/4"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-xs)"
+      },
+      "description": "Tightest real gap. Chip internals, inline meta."
+    },
+    {
+      "name": "spacing/sm",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-sm",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/8"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-sm)"
+      },
+      "description": "Dense table cell padding, gap between adjacent controls."
+    },
+    {
+      "name": "spacing/md",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-md",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/12"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-md)"
+      },
+      "description": "Default gap between related elements."
+    },
+    {
+      "name": "spacing/lg",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-lg",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/16"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-lg)"
+      },
+      "description": "Default padding inside a control or cell."
+    },
+    {
+      "name": "spacing/xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/20"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-xl)"
+      },
+      "description": "Comfortable control padding."
+    },
+    {
+      "name": "spacing/2xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-2xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/24"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-2xl)"
+      },
+      "description": "Card and panel padding."
+    },
+    {
+      "name": "spacing/3xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-3xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/32"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-3xl)"
+      },
+      "description": "Gap between groups within a panel."
+    },
+    {
+      "name": "spacing/4xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-4xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/40"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-4xl)"
+      },
+      "description": "Gap between panels."
+    },
+    {
+      "name": "spacing/5xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-5xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/48"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-5xl)"
+      },
+      "description": "Section padding inside a page."
+    },
+    {
+      "name": "spacing/6xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-6xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/64"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-6xl)"
+      },
+      "description": "Gap between page sections."
+    },
+    {
+      "name": "spacing/7xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-7xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/80"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-7xl)"
+      },
+      "description": "Page gutter on wide viewports."
+    },
+    {
+      "name": "spacing/8xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-8xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/96"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-8xl)"
+      },
+      "description": "Empty states and full-page notices."
+    },
+    {
+      "name": "spacing/9xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--spacing-9xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/128"
+      },
+      "scopes": [
+        "GAP",
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--spacing-9xl)"
+      },
+      "description": "Marketing sections and the space above a page title on a landing view."
+    },
+    {
+      "name": "border/none",
+      "collection": "specimen_ scale",
+      "cssVar": "--border-none",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/0"
+      },
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--border-none)"
+      },
+      "description": "Remove an edge in a variant without dropping off the scale."
+    },
+    {
+      "name": "border/hairline",
+      "collection": "specimen_ scale",
+      "cssVar": "--border-hairline",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/1"
+      },
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--border-hairline)"
+      },
+      "description": "Every rule, panel edge, table row and input outline. The default."
+    },
+    {
+      "name": "border/strong",
+      "collection": "specimen_ scale",
+      "cssVar": "--border-strong",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/2"
+      },
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--border-strong)"
+      },
+      "description": "Emphasis. A selected table row, an active tab, the open item in a list."
+    },
+    {
+      "name": "border/focus",
+      "collection": "specimen_ scale",
+      "cssVar": "--border-focus",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/2"
+      },
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--border-focus)"
+      },
+      "description": "The focus ring, drawn as an outline with a 2px offset. Same weight as strong, kept separate so changing the ring never moves the selection state."
+    },
+    {
+      "name": "border/accent",
+      "collection": "specimen_ scale",
+      "cssVar": "--border-accent",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/4"
+      },
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--border-accent)"
+      },
+      "description": "A leading edge that carries meaning: the left bar on an alert or callout, keyed to a status colour."
+    },
+    {
+      "name": "radius/none",
+      "collection": "specimen_ scale",
+      "cssVar": "--radius-none",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/0"
+      },
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--radius-none)"
+      },
+      "description": "Square. Rules, table cells, tabs, anything that is structure rather than an object."
+    },
+    {
+      "name": "radius/sm",
+      "collection": "specimen_ scale",
+      "cssVar": "--radius-sm",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/4"
+      },
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--radius-sm)"
+      },
+      "description": "Controls: buttons, fields, selects, checkboxes, tags, menu items, tooltips. The mark's own corner."
+    },
+    {
+      "name": "radius/md",
+      "collection": "specimen_ scale",
+      "cssVar": "--radius-md",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/8"
+      },
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--radius-md)"
+      },
+      "description": "Panels that float or frame: dialogs, popovers, menus, toasts, the command menu, preview frames."
+    },
+    {
+      "name": "radius/full",
+      "collection": "specimen_ scale",
+      "cssVar": "--radius-full",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "size/full"
+      },
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--radius-full)"
+      },
+      "description": "The dot family: the specimen dot, radios, the switch track and its thumb."
+    },
+    {
+      "name": "text/micro",
+      "collection": "specimen_ scale",
+      "cssVar": "--text-micro",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "font-size/10"
+      },
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--text-micro)"
+      },
+      "description": "The tag. Uppercase, wide tracking."
+    },
+    {
+      "name": "text/label",
+      "collection": "specimen_ scale",
+      "cssVar": "--text-label",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "font-size/11"
+      },
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--text-label)"
+      },
+      "description": "Field labels, meta rows. Most common size in the codebase."
+    },
+    {
+      "name": "text/caption",
+      "collection": "specimen_ scale",
+      "cssVar": "--text-caption",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "font-size/12"
+      },
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--text-caption)"
+      },
+      "description": "Secondary copy, table cells."
+    },
+    {
+      "name": "text/body",
+      "collection": "specimen_ scale",
+      "cssVar": "--text-body",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "font-size/13"
+      },
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--text-body)"
+      },
+      "description": "Default reading size."
+    },
+    {
+      "name": "text/body-lg",
+      "collection": "specimen_ scale",
+      "cssVar": "--text-body-lg",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "font-size/15"
+      },
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--text-body-lg)"
+      },
+      "description": "Lead paragraph."
+    },
+    {
+      "name": "text/heading",
+      "collection": "specimen_ scale",
+      "cssVar": "--text-heading",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "font-size/24"
+      },
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--text-heading)"
+      },
+      "description": "Section heading."
+    },
+    {
+      "name": "text/display",
+      "collection": "specimen_ scale",
+      "cssVar": "--text-display",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "font-size/32"
+      },
+      "scopes": [
+        "FONT_SIZE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--text-display)"
+      },
+      "description": "Page display. One per view."
+    },
+    {
+      "name": "font/mono",
+      "collection": "specimen_ scale",
+      "cssVar": "--font-mono",
+      "figmaType": "STRING",
+      "aliases": {
+        "Value": "font-family/mono"
+      },
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--font-mono)"
+      },
+      "description": "IBM Plex Mono. The default voice of the system."
+    },
+    {
+      "name": "font/text",
+      "collection": "specimen_ scale",
+      "cssVar": "--font-text",
+      "figmaType": "STRING",
+      "aliases": {
+        "Value": "font-family/sans"
+      },
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--font-text)"
+      },
+      "description": "Archivo Variable. Used sparingly for display."
+    },
+    {
+      "name": "tracking/label",
+      "collection": "specimen_ scale",
+      "cssVar": "--tracking-label",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "tracking/16"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--tracking-label)"
+      },
+      "description": "Uppercase labels. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em."
+    },
+    {
+      "name": "tracking/tag",
+      "collection": "specimen_ scale",
+      "cssVar": "--tracking-tag",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "tracking/12"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--tracking-tag)"
+      },
+      "description": "The tag component. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em."
+    },
+    {
+      "name": "tracking/display",
+      "collection": "specimen_ scale",
+      "cssVar": "--tracking-display",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "tracking/minus-2"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--tracking-display)"
+      },
+      "description": "Tightened display type. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em."
+    },
+    {
+      "name": "tracking/wordmark",
+      "collection": "specimen_ scale",
+      "cssVar": "--tracking-wordmark",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "tracking/minus-1"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--tracking-wordmark)"
+      },
+      "description": "The wordmark only. Applied through the Text/* styles as a percentage, never bound to letterSpacing directly: a FLOAT variable bound to letterSpacing resolves as pixels, not em."
+    },
+    {
+      "name": "leading/tight",
+      "collection": "specimen_ scale",
+      "cssVar": "--leading-tight",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "line-height/120"
+      },
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--leading-tight)"
+      },
+      "description": "Headings and display type."
+    },
+    {
+      "name": "leading/normal",
+      "collection": "specimen_ scale",
+      "cssVar": "--leading-normal",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "line-height/160"
+      },
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--leading-normal)"
+      },
+      "description": "Interface copy."
+    },
+    {
+      "name": "leading/relaxed",
+      "collection": "specimen_ scale",
+      "cssVar": "--leading-relaxed",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "line-height/170"
+      },
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--leading-relaxed)"
+      },
+      "description": "Reading paragraphs."
+    },
+    {
+      "name": "leading/loose",
+      "collection": "specimen_ scale",
+      "cssVar": "--leading-loose",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "line-height/190"
+      },
+      "scopes": [
+        "LINE_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--leading-loose)"
+      },
+      "description": "Long-form body, docs pages."
+    },
+    {
+      "name": "duration/fast",
+      "collection": "specimen_ scale",
+      "cssVar": "--duration-fast",
+      "figmaType": "TIMING",
+      "aliases": {
+        "Value": "duration/150"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--duration-fast)"
+      },
+      "description": "Colour and opacity transitions."
+    },
+    {
+      "name": "duration/blink",
+      "collection": "specimen_ scale",
+      "cssVar": "--duration-blink",
+      "figmaType": "TIMING",
+      "aliases": {
+        "Value": "duration/1100"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--duration-blink)"
+      },
+      "description": "The cursor blink in .spc-cursor. step-end, infinite."
+    },
+    {
+      "name": "duration/pulse",
+      "collection": "specimen_ scale",
+      "cssVar": "--duration-pulse",
+      "figmaType": "TIMING",
+      "aliases": {
+        "Value": "duration/2400"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--duration-pulse)"
+      },
+      "description": "The pulse in .spc-pulse. ease-in-out, infinite."
+    },
+    {
+      "name": "ease/spc",
+      "collection": "specimen_ scale",
+      "cssVar": "--ease-spc",
+      "figmaType": "EASING",
+      "aliases": {
+        "Value": "easing/decelerate"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--ease-spc)"
+      },
+      "description": "Motion: slow, small, seldom."
+    },
+    {
+      "name": "breakpoint/sm",
+      "collection": "specimen_ scale",
+      "cssVar": "--breakpoint-sm",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "viewport/640"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--breakpoint-sm)"
+      },
+      "description": "Large phone and up. 14 uses in the codebase."
+    },
+    {
+      "name": "breakpoint/md",
+      "collection": "specimen_ scale",
+      "cssVar": "--breakpoint-md",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "viewport/768"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--breakpoint-md)"
+      },
+      "description": "Tablet portrait and up."
+    },
+    {
+      "name": "breakpoint/lg",
+      "collection": "specimen_ scale",
+      "cssVar": "--breakpoint-lg",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "viewport/1024"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--breakpoint-lg)"
+      },
+      "description": "Tablet landscape and small laptop. 4 uses."
+    },
+    {
+      "name": "breakpoint/xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--breakpoint-xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "viewport/1280"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--breakpoint-xl)"
+      },
+      "description": "Desktop. 1 use."
+    },
+    {
+      "name": "breakpoint/2xl",
+      "collection": "specimen_ scale",
+      "cssVar": "--breakpoint-2xl",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "viewport/1536"
+      },
+      "scopes": [],
+      "codeSyntax": {
+        "WEB": "var(--breakpoint-2xl)"
+      },
+      "description": "Wide desktop."
+    },
+    {
+      "name": "measure/sm",
+      "collection": "specimen_ scale",
+      "cssVar": "--container-measure-sm",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "measure/440"
+      },
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--container-measure-sm)"
+      },
+      "description": "Short body copy, notices."
+    },
+    {
+      "name": "measure/md",
+      "collection": "specimen_ scale",
+      "cssVar": "--container-measure-md",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "measure/520"
+      },
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--container-measure-md)"
+      },
+      "description": "Lead paragraphs."
+    },
+    {
+      "name": "measure/lg",
+      "collection": "specimen_ scale",
+      "cssVar": "--container-measure-lg",
+      "figmaType": "FLOAT",
+      "aliases": {
+        "Value": "measure/560"
+      },
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--container-measure-lg)"
+      },
+      "description": "Panels and setup notices."
+    }
+  ]
+}
