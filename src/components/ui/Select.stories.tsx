@@ -55,3 +55,7 @@ export const WithError: Story = {
 export const Disabled: Story = {
   args: { label: 'Catalogue', options: [{ value: 'spc', label: 'SPC-000' }], defaultValue: 'spc', disabled: true },
 }
+
+export const WithHint: Story = {
+  args: { label: 'Site mode', options: MODES, placeholder: 'Choose a mode', hint: 'Maintenance shows a holding page to everyone.' },
+}

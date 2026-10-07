@@ -79,7 +79,7 @@ export type AvatarGroupProps = {
 /**
  * A row of overlapping avatars for the people on a record: assignees, reviewers, members.
  * Each avatar is ringed in the canvas colour so the overlap reads as a stack, and anyone past
- * max is counted in a final circle rather than dropped silently.
+ * max is counted in a final circle.
  */
 export function AvatarGroup({ people, max = 4, size = 'md' }: AvatarGroupProps) {
   const shown = people.slice(0, max)

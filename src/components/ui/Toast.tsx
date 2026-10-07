@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { CloseButton } from './parts'
 
 export type ToastTone = 'info' | 'success' | 'warn' | 'danger'
 
@@ -22,7 +23,7 @@ const BAR: Record<ToastTone, string> = {
 
 /**
  * A short notice about something that just happened. Flat: surface fill, line-strong
- * edge, and the status colour as a 4px bar on the left rather than a filled background,
+ * edge, and the status colour as a 4px bar on the left edge,
  * so four tones never turn a screen into a traffic light. Put toasts in a ToastRegion.
  */
 export function Toast({ title, description, tone = 'info', onDismiss }: ToastProps) {
@@ -36,13 +37,7 @@ export function Toast({ title, description, tone = 'info', onDismiss }: ToastPro
         {description && <p className="m-0 font-text text-caption leading-normal text-muted">{description}</p>}
       </div>
       {onDismiss && (
-        <button
-          type="button"
-          onClick={onDismiss}
-          className="shrink-0 cursor-pointer rounded-sm border-0 bg-transparent px-xs font-mono text-caption text-muted transition-colors duration-fast hover:text-ink"
-        >
-          Close
-        </button>
+        <CloseButton onClick={onDismiss} />
       )}
     </div>
   )

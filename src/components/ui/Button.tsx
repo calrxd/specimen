@@ -14,7 +14,8 @@ const VARIANT: Record<ButtonVariant, string> = {
 
 const SIZE: Record<ButtonSize, string> = {
   sm: 'px-lg py-sm text-caption',
-  md: 'px-2xl py-lg text-body',
+  // md matches Field, Select and the other md controls (46px), so a button sits level beside a field.
+  md: 'px-2xl py-md text-body',
 }
 
 export type ButtonProps = {
@@ -30,7 +31,7 @@ export type ButtonProps = {
 
 /**
  * A mono, hairline-bordered button with the mark's 4px corner. Structure comes from the border, so the
- * disabled state drops the fill rather than dimming it, and the danger variant is a
+ * disabled state drops the fill and keeps the outline, and the danger variant is a
  * fill only because a destructive confirm has to look different from everything else.
  */
 export function Button({ label, variant = 'primary', size = 'md', disabled = false, type = 'button', className, ...rest }: ButtonProps) {

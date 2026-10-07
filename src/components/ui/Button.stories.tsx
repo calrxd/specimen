@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Button } from './Button'
+import { Field } from './Field'
+import { SelectButton } from './SelectButton'
 
 /**
  * Story arg names are the contract. `variant` and `size` become the Figma variant
@@ -10,7 +12,7 @@ const meta = {
   title: 'Components/Button',
   component: Button,
   argTypes: {
-    label: { control: 'text', description: 'The text on the button. Lowercase, a verb.' },
+    label: { control: 'text', description: 'The text on the button. Sentence case, starting with a verb.' },
     variant: {
       control: 'inline-radio',
       options: ['primary', 'secondary', 'ghost', 'danger'],
@@ -66,6 +68,27 @@ export const Matrix: Story = {
           <Button label="Disabled" variant="primary" size={size} disabled />
         </div>
       ))}
+    </div>
+  ),
+}
+
+/** md controls share one height, so a field, a segmented control and a button sit level in a row. */
+export const BesideAField: Story = {
+  args: { label: 'Invite', variant: 'primary', size: 'md', disabled: false },
+  render: (args) => (
+    <div className="flex flex-wrap items-end gap-md">
+      <div className="min-w-0 flex-1">
+        <Field label="Email" placeholder="you@studio.com" />
+      </div>
+      <SelectButton
+        label="Role"
+        defaultValue="editor"
+        options={[
+          { value: 'viewer', label: 'Viewer' },
+          { value: 'editor', label: 'Editor' },
+        ]}
+      />
+      <Button {...args} />
     </div>
   ),
 }

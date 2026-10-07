@@ -1,4 +1,5 @@
 import { useId, type ComponentPropsWithoutRef } from 'react'
+import { FieldLabel, FieldMessage, controlBorder, messageId } from './parts'
 
 export type FieldProps = {
   /** Always visible, above the input. Uppercase label style. */
@@ -24,25 +25,15 @@ export type FieldProps = {
  */
 export function Field({ label, placeholder, hint, error, required = false, disabled = false, readOnly = false, type = 'text', ...rest }: FieldProps) {
   const id = useId()
-  const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : undefined
+  const describedBy = messageId(id, hint, error)
 
-  const border = error
-    ? 'border-danger'
-    : readOnly
-      ? 'border-line'
-      : 'border-line-interactive focus-visible:border-sample'
+  const border = controlBorder({ error, readOnly })
 
   return (
     <div className="flex w-full flex-col gap-sm">
-      <label htmlFor={id} className="text-label uppercase text-muted tracking-label">
+      <FieldLabel htmlFor={id} required={required}>
         {label}
-        {required && (
-          <span className="text-sample" aria-hidden>
-            {' '}
-            *
-          </span>
-        )}
-      </label>
+      </FieldLabel>
       <input
         id={id}
         type={type}
@@ -53,7 +44,7 @@ export function Field({ label, placeholder, hint, error, required = false, disab
         aria-invalid={error ? true : undefined}
         aria-describedby={describedBy}
         className={[
-          'min-w-0 rounded-sm border font-mono text-body outline-none transition-colors duration-fast',
+          'min-w-0 rounded-sm border font-mono text-body transition-colors duration-fast',
           'px-lg py-md',
           readOnly ? 'bg-canvas text-muted' : 'bg-surface text-ink',
           border,
@@ -61,15 +52,7 @@ export function Field({ label, placeholder, hint, error, required = false, disab
         ].join(' ')}
         {...rest}
       />
-      {error ? (
-        <p id={`${id}-error`} role="alert" className="font-text text-caption text-danger">
-          {error}
-        </p>
-      ) : hint ? (
-        <p id={`${id}-hint`} className="font-text text-caption text-muted">
-          {hint}
-        </p>
-      ) : null}
+      <FieldMessage id={id} hint={hint} error={error} />
     </div>
   )
 }

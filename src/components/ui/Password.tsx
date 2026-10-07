@@ -1,6 +1,7 @@
 'use client'
 
 import { useId, useState, type ComponentPropsWithoutRef } from 'react'
+import { FieldLabel, FieldMessage, groupBorder, messageId } from './parts'
 
 export type PasswordProps = {
   /** Always visible, above the input. Uppercase label style. */
@@ -37,25 +38,17 @@ export function Password({
 }: PasswordProps) {
   const id = useId()
   const [shown, setShown] = useState(false)
-  const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : undefined
-  const border = error ? 'border-danger' : 'border-line-interactive has-[:focus-visible]:border-sample'
+  const describedBy = messageId(id, hint, error)
 
   return (
     <div className="flex w-full flex-col gap-sm">
-      <label htmlFor={id} className="text-label uppercase text-muted tracking-label">
+      <FieldLabel htmlFor={id} required={required}>
         {label}
-        {required && (
-          <span className="text-sample" aria-hidden>
-            {' '}
-            *
-          </span>
-        )}
-      </label>
+      </FieldLabel>
       <div
         className={[
-          'flex min-w-0 items-center rounded-sm border bg-surface transition-colors duration-fast',
-          border,
-          disabled ? 'border-disabled bg-transparent' : '',
+          'flex min-w-0 items-center rounded-sm border transition-colors duration-fast',
+          groupBorder({ error, disabled }),
         ].join(' ')}
       >
         <input
@@ -84,15 +77,7 @@ export function Password({
           </button>
         )}
       </div>
-      {error ? (
-        <p id={`${id}-error`} role="alert" className="m-0 font-text text-caption text-danger">
-          {error}
-        </p>
-      ) : hint ? (
-        <p id={`${id}-hint`} className="m-0 font-text text-caption text-muted">
-          {hint}
-        </p>
-      ) : null}
+      <FieldMessage id={id} hint={hint} error={error} />
     </div>
   )
 }

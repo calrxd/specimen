@@ -1,6 +1,7 @@
 'use client'
 
 import { useId, useState, type ChangeEvent, type ComponentPropsWithoutRef } from 'react'
+import { labelText } from './parts'
 
 export type SliderProps = {
   /** Always visible, above the track. Uppercase label style. */
@@ -53,7 +54,7 @@ export function Slider({
   return (
     <div className="flex w-full flex-col gap-sm">
       <div className="flex items-baseline justify-between gap-lg">
-        <label htmlFor={id} className="text-label uppercase text-muted tracking-label">
+        <label htmlFor={id} className={labelText}>
           {label}
         </label>
         {showValue && (

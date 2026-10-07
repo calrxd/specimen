@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "18691dc06679",
+  "sourceHash": "5f4e57df731d",
   "components": [
     {
       "name": "Mark",
@@ -419,7 +419,7 @@
     },
     {
       "name": "AvatarGroup",
-      "description": "A row of overlapping avatars for the people on a record: assignees, reviewers, members.\nEach avatar is ringed in the canvas colour so the overlap reads as a stack, and anyone past\nmax is counted in a final circle rather than dropped silently.",
+      "description": "A row of overlapping avatars for the people on a record: assignees, reviewers, members.\nEach avatar is ringed in the canvas colour so the overlap reads as a stack, and anyone past\nmax is counted in a final circle.",
       "storybookTitle": "Components/AvatarGroup",
       "source": "src/components/ui/Avatar.tsx",
       "storyFile": "src/components/ui/AvatarGroup.stories.tsx",
@@ -725,7 +725,7 @@
     },
     {
       "name": "Button",
-      "description": "A mono, hairline-bordered button with the mark's 4px corner. Structure comes from the border, so the\ndisabled state drops the fill rather than dimming it, and the danger variant is a\nfill only because a destructive confirm has to look different from everything else.",
+      "description": "A mono, hairline-bordered button with the mark's 4px corner. Structure comes from the border, so the\ndisabled state drops the fill and keeps the outline, and the danger variant is a\nfill only because a destructive confirm has to look different from everything else.",
       "storybookTitle": "Components/Button",
       "source": "src/components/ui/Button.tsx",
       "storyFile": "src/components/ui/Button.stories.tsx",
@@ -867,6 +867,15 @@
             "size": "md",
             "disabled": false
           }
+        },
+        {
+          "name": "BesideAField",
+          "args": {
+            "label": "Invite",
+            "variant": "primary",
+            "size": "md",
+            "disabled": false
+          }
         }
       ],
       "variantAxes": [
@@ -891,7 +900,7 @@
     },
     {
       "name": "Card",
-      "description": "A framed panel that groups one subject on a screen: a plan, a setting, a summary. Flat\nlike every panel in the system: surface fill, hairline edge, the 8px panel corner. Title\nand description are optional, so a card can also frame a bare table or chart.",
+      "description": "A framed panel that groups one subject on a screen: a plan, a setting, a summary. Flat\nlike every panel in the system: surface fill, hairline edge, the 8px panel corner. Title\nand description are optional, so a card can also frame a bare table or chart. Set\n`headingLevel` to match where the card sits in the page outline, and `titleSize` to lg\nwhen the title is a figure.",
       "storybookTitle": "Components/Card",
       "source": "src/components/ui/Card.tsx",
       "storyFile": "src/components/ui/Card.stories.tsx",
@@ -910,6 +919,45 @@
             "values": null,
             "defaultValue": "",
             "companionBoolean": "titleVisible"
+          }
+        },
+        {
+          "name": "titleSize",
+          "type": "enum",
+          "values": [
+            "md",
+            "lg"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "md for a heading, lg when the title is the figure itself: a price, a total.",
+          "figma": {
+            "name": "titleSize",
+            "figmaType": "VARIANT",
+            "values": [
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "headingLevel",
+          "type": "enum",
+          "values": [
+            "2",
+            "3",
+            "4"
+          ],
+          "required": false,
+          "default": 3,
+          "description": "The heading level of the title, so the card fits the page outline. 3 under a page's h2 sections.",
+          "figma": {
+            "name": "headingLevel",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
           }
         },
         {
@@ -961,6 +1009,8 @@
           "name": "Default",
           "args": {
             "title": "Monthly report",
+            "titleSize": "md",
+            "headingLevel": 3,
             "description": "Revenue, signups and churn for September, sent to the team on the first working day.",
             "children": {
               "$dynamic": "JSXElement"
@@ -996,14 +1046,44 @@
               "$dynamic": "JSXElement"
             }
           }
+        },
+        {
+          "name": "Price",
+          "args": {
+            "title": "£249 a year",
+            "titleSize": "lg",
+            "description": "Pro Bundle for one person. Renews on 12 March 2027.",
+            "actions": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "SectionHeading",
+          "args": {
+            "title": "Payment method",
+            "headingLevel": 2,
+            "description": "Visa ending 4242, expires 08/28.",
+            "actions": {
+              "$dynamic": "JSXElement"
+            }
+          }
         }
       ],
-      "variantAxes": [],
-      "expectedVariantCount": 1
+      "variantAxes": [
+        {
+          "name": "titleSize",
+          "values": [
+            "md",
+            "lg"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
     },
     {
       "name": "Checkbox",
-      "description": "A box with the mark's 4px corner, hairline border, green fill with an ink tick when on. The native input\nis drawn with appearance:none so it keeps keyboard, focus ring and form semantics while\nmatching the Figma component pixel for pixel. Never pre-tick a consent box.",
+      "description": "A box with the mark's 4px corner, hairline border, green fill with an ink tick when on. The native input\nis drawn with appearance:none so it keeps keyboard, focus ring and form semantics while\nmatching the Figma component pixel for pixel. Never pre-tick a consent box.\n\nIt holds its own state, seeded from `checked`, and follows `checked` whenever the prop\nchanges, so a parent can tick or clear a group at once. Pass `onChange` to hear each change.",
       "storybookTitle": "Components/Checkbox",
       "source": "src/components/ui/Checkbox.tsx",
       "storyFile": "src/components/ui/Checkbox.stories.tsx",
@@ -1044,7 +1124,7 @@
           "values": null,
           "required": false,
           "default": false,
-          "description": "Whether the box starts ticked. Uncontrolled; pass onChange to observe it.",
+          "description": "Whether the box is ticked. Follows the prop when it changes, so a parent can drive it; a click flips it either way.",
           "figma": {
             "name": "checked",
             "figmaType": "BOOLEAN",
@@ -1064,6 +1144,21 @@
             "figmaType": "BOOLEAN",
             "values": null,
             "defaultValue": false
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((checked: boolean) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the new state whenever a person ticks or clears the box.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
           }
         }
       ],
@@ -1357,7 +1452,7 @@
     },
     {
       "name": "Dialog",
-      "description": "A modal for a decision that blocks everything else. Built on the native dialog element,\nso focus is trapped, the page behind is inert, and Escape closes it without extra code.\nFlat, per brand section 06: the page dims behind the scrim token, and the panel\nseparates with surface fill and a line-strong edge rather than a shadow.",
+      "description": "A modal for a decision that blocks everything else. Built on the native dialog element,\nso focus is trapped, the page behind is inert, and Escape closes it without extra code.\nFlat, per brand section 06: the page dims behind the scrim token, and the panel\nseparates with surface fill and a line-strong edge. Actions go in `footer`, so they sit in\nthe same place on every dialog: under a hairline, aligned to the end, the primary last.",
       "storybookTitle": "Components/Dialog",
       "source": "src/components/ui/Dialog.tsx",
       "storyFile": "src/components/ui/Dialog.stories.tsx",
@@ -1412,10 +1507,24 @@
           "values": null,
           "required": false,
           "default": null,
-          "description": "The body, and the actions as a row of Buttons at the end.",
+          "description": "The body: a message, a form, a summary.",
           "figma": {
             "name": "children",
             "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "footer",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The actions, usually Buttons, in a row under a hairline at the foot, aligned to the end.",
+          "figma": {
+            "name": "footer",
+            "figmaType": "INSTANCE_SWAP",
             "values": null,
             "defaultValue": null
           }
@@ -1443,7 +1552,7 @@
             "open": true,
             "title": "Publish v0.1.0?",
             "description": "The tokens package goes to npm and the changelog entry goes live.",
-            "children": {
+            "footer": {
               "$dynamic": "CallExpression"
             },
             "onClose": {
@@ -1457,7 +1566,7 @@
             "open": true,
             "title": "Delete this release?",
             "description": "The changelog entry is removed. The npm version stays, because npm versions cannot be deleted.",
-            "children": {
+            "footer": {
               "$dynamic": "CallExpression"
             },
             "onClose": {
@@ -1470,7 +1579,7 @@
           "args": {
             "open": true,
             "title": "Discard unsaved changes?",
-            "children": {
+            "footer": {
               "$dynamic": "CallExpression"
             },
             "onClose": {
@@ -1582,7 +1691,7 @@
     },
     {
       "name": "Drawer",
-      "description": "A side sheet for detail or editing that keeps the page in view behind it. Built on the\nnative dialog element, like Dialog, so focus is trapped, the page is inert and Escape\ncloses it; focus returns to whatever opened it. Flat: the scrim dims the page, and the\npanel takes surface fill, a line-strong edge and the 8px corner on its inner edge only.",
+      "description": "A side sheet for detail or editing that keeps the page in view behind it. Built on the\nnative dialog element, like Dialog, so focus is trapped, the page is inert and Escape\ncloses it; focus returns to whatever opened it. Flat: the scrim dims the page, and the\npanel takes surface fill, a line-strong edge and the 8px corner on its inner edge only.\nActions go in `footer`, which stays pinned to the foot of the sheet while the body scrolls.",
       "storybookTitle": "Components/Drawer",
       "source": "src/components/ui/Drawer.tsx",
       "storyFile": "src/components/ui/Drawer.stories.tsx",
@@ -1657,10 +1766,24 @@
           "values": null,
           "required": false,
           "default": null,
-          "description": "The body: details, a form, filters. Actions go at the end.",
+          "description": "The body: details, a form, filters. Scrolls when it is taller than the sheet.",
           "figma": {
             "name": "children",
             "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "footer",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The actions, usually Buttons, pinned to the foot of the sheet under a hairline.",
+          "figma": {
+            "name": "footer",
+            "figmaType": "INSTANCE_SWAP",
             "values": null,
             "defaultValue": null
           }
@@ -1692,6 +1815,9 @@
             "children": {
               "$dynamic": "JSXElement"
             },
+            "footer": {
+              "$dynamic": "JSXFragment"
+            },
             "onClose": {
               "$dynamic": "ArrowFunctionExpression"
             }
@@ -1705,6 +1831,9 @@
             "side": "end",
             "children": {
               "$dynamic": "JSXElement"
+            },
+            "footer": {
+              "$dynamic": "JSXFragment"
             },
             "onClose": {
               "$dynamic": "ArrowFunctionExpression"
@@ -1988,7 +2117,7 @@
     },
     {
       "name": "InputNumber",
-      "description": "A number field with decrease and increase buttons either side, for quantities a person\nadjusts rather than types: seats, retries, a percentage. A native number input underneath,\nso arrow keys step it and assistive technology announces it as a spin button. The steppers\nstay out of the tab order because the arrow keys already do their job.",
+      "description": "A number field with decrease and increase buttons either side, for quantities a person\nadjusts in steps: seats, retries, a percentage. A native number input underneath,\nso arrow keys step it and assistive technology announces it as a spin button. The steppers\nstay out of the tab order because the arrow keys already do their job.",
       "storybookTitle": "Components/InputNumber",
       "source": "src/components/ui/InputNumber.tsx",
       "storyFile": "src/components/ui/InputNumber.stories.tsx",
@@ -3230,7 +3359,7 @@
     },
     {
       "name": "Select",
-      "description": "A native select drawn to match Field: same label, hint and error slots, same border\nrules. Native so it keeps the platform picker, keyboard behaviour and form semantics.\nThe chevron is a stroke, not a fill, so it follows the text colour.",
+      "description": "A native select drawn to match Field: same label, hint and error slots, same border\nrules. Native so it keeps the platform picker, keyboard behaviour and form semantics.\nThe chevron is a stroke in the text colour.",
       "storybookTitle": "Components/Select",
       "source": "src/components/ui/Select.tsx",
       "storyFile": "src/components/ui/Select.stories.tsx",
@@ -3404,6 +3533,17 @@
             ],
             "defaultValue": "spc",
             "disabled": true
+          }
+        },
+        {
+          "name": "WithHint",
+          "args": {
+            "label": "Site mode",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Choose a mode",
+            "hint": "Maintenance shows a holding page to everyone."
           }
         }
       ],
@@ -4087,7 +4227,7 @@
     },
     {
       "name": "Switch",
-      "description": "A setting that takes effect immediately. Use Checkbox instead when the choice is\nsubmitted with a form. A native checkbox with role=\"switch\", drawn as a pill whose thumb\nis the specimen dot: the line is an inset ring so the 8px dot sits exactly 4px from every\nedge and travels one spacing step (lg, 16px).",
+      "description": "A setting that takes effect immediately. Use Checkbox instead when the choice is\nsubmitted with a form. A native checkbox with role=\"switch\", drawn as a pill whose thumb\nis the specimen dot: the line is an inset ring so the 8px dot sits exactly 4px from every\nedge and travels one spacing step (lg, 16px).\n\nIt holds its own state, seeded from `checked`, and follows `checked` whenever the prop\nchanges, so a parent can turn a group off at once (a \"pause all\" switch). Pass `onChange`\nto hear every flip. With `labelVisible` off, the label is read out but not drawn, for a\ngrid of switches whose row and column already say what each one does.",
       "storybookTitle": "Components/Switch",
       "source": "src/components/ui/Switch.tsx",
       "storyFile": "src/components/ui/Switch.stories.tsx",
@@ -4128,12 +4268,26 @@
           "values": null,
           "required": false,
           "default": false,
-          "description": "Whether it starts on. Uncontrolled; pass onChange to observe it.",
+          "description": "Whether it is on. Follows the prop when it changes, so a parent can drive it; a click flips it either way.",
           "figma": {
             "name": "checked",
             "figmaType": "BOOLEAN",
             "values": null,
             "defaultValue": false
+          }
+        },
+        {
+          "name": "labelVisible",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": true,
+          "description": "Show the label beside the switch. Off hides it visually; it stays the accessible name.",
+          "figma": {
+            "name": "labelVisible",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": true
           }
         },
         {
@@ -4149,6 +4303,21 @@
             "values": null,
             "defaultValue": false
           }
+        },
+        {
+          "name": "onChange",
+          "type": "((checked: boolean) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the new state whenever a person flips it.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
         }
       ],
       "stories": [
@@ -4157,6 +4326,7 @@
           "args": {
             "label": "Publish on save",
             "checked": false,
+            "labelVisible": true,
             "disabled": false
           }
         },
@@ -4181,6 +4351,29 @@
             "label": "Maintenance mode",
             "description": "Set by the deploy, not here.",
             "disabled": true
+          }
+        },
+        {
+          "name": "DisabledOn",
+          "args": {
+            "label": "Audit log",
+            "description": "Required on the Enterprise plan.",
+            "checked": true,
+            "disabled": true
+          }
+        },
+        {
+          "name": "HiddenLabel",
+          "args": {
+            "label": "Email me when an invoice is paid",
+            "labelVisible": false,
+            "checked": true
+          }
+        },
+        {
+          "name": "PauseAll",
+          "args": {
+            "label": "Pause all notifications"
           }
         }
       ],
@@ -4424,7 +4617,7 @@
     },
     {
       "name": "Tag",
-      "description": "The tag: 1px stroke, no fill, small caps, wide tracking. Metadata only, never a\nheadline. It is a label, not a control, so it carries no hover and no focus.",
+      "description": "The tag: 1px stroke, no fill, small caps, wide tracking. Metadata only, never a\nheadline. It is a label, so it carries no hover and no focus.",
       "storybookTitle": "Components/Tag",
       "source": "src/components/ui/Tag.tsx",
       "storyFile": "src/components/ui/Tag.stories.tsx",
@@ -4698,7 +4891,7 @@
     },
     {
       "name": "Toast",
-      "description": "A short notice about something that just happened. Flat: surface fill, line-strong\nedge, and the status colour as a 4px bar on the left rather than a filled background,\nso four tones never turn a screen into a traffic light. Put toasts in a ToastRegion.",
+      "description": "A short notice about something that just happened. Flat: surface fill, line-strong\nedge, and the status colour as a 4px bar on the left edge,\nso four tones never turn a screen into a traffic light. Put toasts in a ToastRegion.",
       "storybookTitle": "Components/Toast",
       "source": "src/components/ui/Toast.tsx",
       "storyFile": "src/components/ui/Toast.stories.tsx",

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useId, useRef, type ReactNode } from 'react'
+import { CloseButton } from './parts'
 
 export type DialogProps = {
   /** Whether the dialog is showing. Controlled: set it false from onClose. */
@@ -9,8 +10,10 @@ export type DialogProps = {
   title: string
   /** One line under the title saying what will happen. */
   description?: string
-  /** The body, and the actions as a row of Buttons at the end. */
+  /** The body: a message, a form, a summary. */
   children?: ReactNode
+  /** The actions, usually Buttons, in a row under a hairline at the foot, aligned to the end. */
+  footer?: ReactNode
   /** Called on Escape, on a click outside the panel, and on the close control. */
   onClose: () => void
 }
@@ -19,9 +22,10 @@ export type DialogProps = {
  * A modal for a decision that blocks everything else. Built on the native dialog element,
  * so focus is trapped, the page behind is inert, and Escape closes it without extra code.
  * Flat, per brand section 06: the page dims behind the scrim token, and the panel
- * separates with surface fill and a line-strong edge rather than a shadow.
+ * separates with surface fill and a line-strong edge. Actions go in `footer`, so they sit in
+ * the same place on every dialog: under a hairline, aligned to the end, the primary last.
  */
-export function Dialog({ open, title, description, children, onClose }: DialogProps) {
+export function Dialog({ open, title, description, children, footer, onClose }: DialogProps) {
   const ref = useRef<HTMLDialogElement>(null)
   const id = useId()
 
@@ -58,16 +62,11 @@ export function Dialog({ open, title, description, children, onClose }: DialogPr
               </p>
             )}
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="shrink-0 cursor-pointer rounded-sm border-0 bg-transparent px-xs font-mono text-caption text-muted transition-colors duration-fast hover:text-ink"
-          >
-            Close
-          </button>
+          <CloseButton onClick={onClose} />
         </div>
         {children}
       </div>
+      {footer && <div className="flex flex-wrap items-center justify-end gap-sm border-t border-line px-2xl py-lg">{footer}</div>}
     </dialog>
   )
 }

@@ -1,4 +1,5 @@
 import { useId } from 'react'
+import { labelText } from './parts'
 
 export type SelectButtonOption = { value: string; label: string; disabled?: boolean }
 export type SelectButtonSize = 'md' | 'sm'
@@ -22,8 +23,10 @@ export type SelectButtonProps = {
   onChange?: (value: string) => void
 }
 
+// md segments are 40px tall so the whole control, with its border and inset, is 46px: the
+// height of Field, Select and Button md, so a segmented control lines up with them in a row.
 const SIZE: Record<SelectButtonSize, string> = {
-  md: 'px-lg py-sm text-body',
+  md: 'min-h-4xl px-lg text-body',
   sm: 'px-md py-xs text-caption',
 }
 
@@ -48,7 +51,7 @@ export function SelectButton({
 
   return (
     <fieldset className="m-0 flex min-w-0 flex-col gap-sm border-0 p-0" disabled={disabled}>
-      <legend className={labelVisible ? 'mb-sm p-0 text-label uppercase text-muted tracking-label' : 'sr-only'}>{label}</legend>
+      <legend className={labelVisible ? ['mb-sm p-0', labelText].join(' ') : 'sr-only'}>{label}</legend>
       <div
         className={[
           'inline-flex w-fit gap-2xs rounded-sm border p-2xs',
@@ -59,7 +62,7 @@ export function SelectButton({
           <label
             key={o.value}
             className={[
-              'cursor-pointer rounded-sm font-mono text-muted transition-colors duration-fast hover:text-ink',
+              'flex cursor-pointer items-center rounded-sm font-mono text-muted transition-colors duration-fast hover:text-ink',
               'has-[:checked]:bg-sample-fill has-[:checked]:text-on-sample',
               'has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-sample',
               'has-[:disabled]:cursor-not-allowed has-[:disabled]:text-disabled has-[:checked:disabled]:bg-transparent has-[:checked:disabled]:text-disabled',

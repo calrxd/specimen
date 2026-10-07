@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useId, useRef, type ReactNode } from 'react'
+import { CloseButton } from './parts'
 
 export type DrawerSide = 'end' | 'start'
 
@@ -13,8 +14,10 @@ export type DrawerProps = {
   description?: string
   /** Which edge it slides from. end is right in left-to-right languages. */
   side?: DrawerSide
-  /** The body: details, a form, filters. Actions go at the end. */
+  /** The body: details, a form, filters. Scrolls when it is taller than the sheet. */
   children?: ReactNode
+  /** The actions, usually Buttons, pinned to the foot of the sheet under a hairline. */
+  footer?: ReactNode
   /** Called on Escape, on a click outside the panel, and on the close control. */
   onClose: () => void
 }
@@ -29,8 +32,9 @@ const SIDE: Record<DrawerSide, string> = {
  * native dialog element, like Dialog, so focus is trapped, the page is inert and Escape
  * closes it; focus returns to whatever opened it. Flat: the scrim dims the page, and the
  * panel takes surface fill, a line-strong edge and the 8px corner on its inner edge only.
+ * Actions go in `footer`, which stays pinned to the foot of the sheet while the body scrolls.
  */
-export function Drawer({ open, title, description, side = 'end', children, onClose }: DrawerProps) {
+export function Drawer({ open, title, description, side = 'end', children, footer, onClose }: DrawerProps) {
   const ref = useRef<HTMLDialogElement>(null)
   const id = useId()
 
@@ -72,15 +76,10 @@ export function Drawer({ open, title, description, side = 'end', children, onClo
               </p>
             )}
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="shrink-0 cursor-pointer rounded-sm border-0 bg-transparent px-xs font-mono text-caption text-muted transition-colors duration-fast hover:text-ink"
-          >
-            Close
-          </button>
+          <CloseButton onClick={onClose} />
         </div>
         <div className="flex-1 overflow-y-auto p-2xl">{children}</div>
+        {footer && <div className="flex flex-wrap items-center justify-end gap-sm border-t border-line px-2xl py-lg">{footer}</div>}
       </div>
     </dialog>
   )

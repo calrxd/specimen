@@ -45,10 +45,14 @@ const parser = docgen.withCompilerOptions(
 
 /* ---------------------------------------------------------------- helpers */
 
+const PRO_DIR = resolve(root, 'src/components/pro')
+
 function walk(dir, out = []) {
   for (const entry of readdirSync(dir)) {
     const full = join(dir, entry)
-    if (statSync(full).isDirectory()) walk(full, out)
+    // Pro components are a paid product with their own catalogue. They never enter the public
+    // contract, which is mirrored to the open-source repository and drives the Basic Figma file.
+    if (statSync(full).isDirectory()) { if (full !== PRO_DIR) walk(full, out) }
     else if (/\.stories\.tsx?$/.test(entry)) out.push(full)
   }
   return out
@@ -216,6 +220,12 @@ function figmaProperty(name, { type, values }, required, codeDefault) {
 
   // Event handlers are behaviour. A designer cannot set onClose, and Figma has nowhere to put it.
   if (/=>/.test(type)) return { name, figmaType: 'NONE', values: null, defaultValue: null, note: 'handler, no Figma property' }
+
+  // A union of number literals (a heading level, 2 | 3 | 4) is still a number: it sets
+  // structure, not a look, and it goes the same way as plain numbers.
+  if (type === 'enum' && values.every((v) => /^-?\d+(\.\d+)?$/.test(String(v)))) {
+    return { name, figmaType: 'NONE', values: null, defaultValue: null, note: 'number, no Figma property' }
+  }
 
   if (type === 'enum') {
     const def = values.includes(codeDefault) ? codeDefault : values[0]

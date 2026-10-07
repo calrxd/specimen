@@ -1,4 +1,5 @@
 import { useId, type ComponentPropsWithoutRef } from 'react'
+import { FieldLabel, FieldMessage, controlBorder, messageId } from './parts'
 
 export type SelectOption = { value: string; label: string }
 
@@ -22,24 +23,18 @@ export type SelectProps = {
 /**
  * A native select drawn to match Field: same label, hint and error slots, same border
  * rules. Native so it keeps the platform picker, keyboard behaviour and form semantics.
- * The chevron is a stroke, not a fill, so it follows the text colour.
+ * The chevron is a stroke in the text colour.
  */
 export function Select({ label, options, placeholder, hint, error, required = false, disabled = false, defaultValue, ...rest }: SelectProps) {
   const id = useId()
-  const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : undefined
-  const border = error ? 'border-danger' : 'border-line-interactive focus-visible:border-sample'
+  const describedBy = messageId(id, hint, error)
+  const border = controlBorder({ error })
 
   return (
     <div className="flex w-full flex-col gap-sm">
-      <label htmlFor={id} className="text-label uppercase text-muted tracking-label">
+      <FieldLabel htmlFor={id} required={required}>
         {label}
-        {required && (
-          <span className="text-sample" aria-hidden>
-            {' '}
-            *
-          </span>
-        )}
-      </label>
+      </FieldLabel>
       <span className="relative flex">
         <select
           id={id}
@@ -51,7 +46,7 @@ export function Select({ label, options, placeholder, hint, error, required = fa
           aria-invalid={error ? true : undefined}
           aria-describedby={describedBy}
           className={[
-            'min-w-0 flex-1 cursor-pointer appearance-none rounded-sm border bg-surface py-md pr-5xl pl-lg font-mono text-body text-ink outline-none transition-colors duration-fast',
+            'min-w-0 flex-1 cursor-pointer appearance-none rounded-sm border bg-surface py-md pr-5xl pl-lg font-mono text-body text-ink transition-colors duration-fast',
             border,
             'disabled:cursor-not-allowed disabled:border-disabled disabled:bg-transparent disabled:text-disabled',
           ].join(' ')}
@@ -76,15 +71,7 @@ export function Select({ label, options, placeholder, hint, error, required = fa
           <path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
         </svg>
       </span>
-      {error ? (
-        <p id={`${id}-error`} role="alert" className="font-text text-caption text-danger">
-          {error}
-        </p>
-      ) : hint ? (
-        <p id={`${id}-hint`} className="font-text text-caption text-muted">
-          {hint}
-        </p>
-      ) : null}
+      <FieldMessage id={id} hint={hint} error={error} />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
-import { useId, useState, type ChangeEvent, type ComponentPropsWithoutRef } from 'react'
+import { useId, useRef, useState, type ChangeEvent, type ComponentPropsWithoutRef } from 'react'
+import { FieldLabel, FieldMessage, groupBorder } from './parts'
 
 export type InputNumberProps = {
   /** Always visible, above the input. Uppercase label style. */
@@ -32,7 +33,7 @@ const clamp = (n: number, min?: number, max?: number) => Math.min(max ?? Infinit
 
 /**
  * A number field with decrease and increase buttons either side, for quantities a person
- * adjusts rather than types: seats, retries, a percentage. A native number input underneath,
+ * adjusts in steps: seats, retries, a percentage. A native number input underneath,
  * so arrow keys step it and assistive technology announces it as a spin button. The steppers
  * stay out of the tab order because the arrow keys already do their job.
  */
@@ -55,32 +56,33 @@ export function InputNumber({
   const describedBy = [error ? `${id}-error` : hint ? `${id}-hint` : '', unit ? `${id}-unit` : ''].filter(Boolean).join(' ') || undefined
   const current = value === '' ? (min ?? 0) : Number(value)
 
-  const nudge = (direction: 1 | -1) => setValue(String(clamp(current + direction * step, min, max)))
+  const inputRef = useRef<HTMLInputElement>(null)
+  // The steppers write through the input, as typing does, so onChange sees every change.
+  // React tracks the value through the native setter, so set it there and fire an input event.
+  const nudge = (direction: 1 | -1) => {
+    const input = inputRef.current
+    if (!input) return
+    const next = String(clamp(current + direction * step, min, max))
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set?.call(input, next)
+    input.dispatchEvent(new Event('input', { bubbles: true }))
+  }
   const handle = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
     onChange?.(e)
   }
 
-  const border = error ? 'border-danger' : 'border-line-interactive has-[:focus-visible]:border-sample'
   const stepper =
     'flex w-4xl shrink-0 cursor-pointer items-center justify-center border-0 bg-transparent font-mono text-body text-muted transition-colors duration-fast hover:bg-canvas hover:text-ink disabled:cursor-not-allowed disabled:bg-transparent disabled:text-disabled'
 
   return (
     <div className="flex w-full flex-col gap-sm">
-      <label htmlFor={id} className="text-label uppercase text-muted tracking-label">
+      <FieldLabel htmlFor={id} required={required}>
         {label}
-        {required && (
-          <span className="text-sample" aria-hidden>
-            {' '}
-            *
-          </span>
-        )}
-      </label>
+      </FieldLabel>
       <div
         className={[
-          'flex min-w-0 items-stretch overflow-hidden rounded-sm border bg-surface transition-colors duration-fast',
-          border,
-          disabled ? 'border-disabled bg-transparent' : '',
+          'flex min-w-0 items-stretch overflow-hidden rounded-sm border transition-colors duration-fast',
+          groupBorder({ error, disabled }),
         ].join(' ')}
       >
         <button
@@ -94,6 +96,7 @@ export function InputNumber({
           −
         </button>
         <input
+          ref={inputRef}
           id={id}
           type="number"
           inputMode="decimal"
@@ -125,15 +128,7 @@ export function InputNumber({
           +
         </button>
       </div>
-      {error ? (
-        <p id={`${id}-error`} role="alert" className="m-0 font-text text-caption text-danger">
-          {error}
-        </p>
-      ) : hint ? (
-        <p id={`${id}-hint`} className="m-0 font-text text-caption text-muted">
-          {hint}
-        </p>
-      ) : null}
+      <FieldMessage id={id} hint={hint} error={error} />
     </div>
   )
 }

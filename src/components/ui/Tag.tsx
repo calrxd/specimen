@@ -18,7 +18,7 @@ export type TagProps = {
 
 /**
  * The tag: 1px stroke, no fill, small caps, wide tracking. Metadata only, never a
- * headline. It is a label, not a control, so it carries no hover and no focus.
+ * headline. It is a label, so it carries no hover and no focus.
  */
 export function Tag({ label, tone = 'sample' }: TagProps) {
   return (

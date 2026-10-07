@@ -49,7 +49,7 @@ export function Tooltip({ label, side = 'top', children }: TooltipProps) {
         className={[
           'pointer-events-none absolute left-1/2 z-10 w-max max-w-(--container-measure-sm) -translate-x-1/2 rounded-sm border border-line-strong bg-surface px-sm py-xs text-caption text-ink',
           SIDE[side],
-          // Hidden, not just transparent: a closed tooltip must not widen the page on a narrow
+          // Hidden with display, so a closed tooltip cannot widen the page on a narrow
           // screen. aria-describedby still reads a hidden element's text.
           open ? 'block' : 'hidden',
         ].join(' ')}

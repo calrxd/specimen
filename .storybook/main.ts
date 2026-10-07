@@ -1,7 +1,14 @@
 import type { StorybookConfig } from '@storybook/nextjs-vite'
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.@(ts|tsx)'],
+  // Pro stories build only when STORYBOOK_PRO=1. The public Storybook (deployed by CI on every
+  // push) never sets it, so Pro code never reaches storybook.specimen.systems.
+  stories: [
+    '../src/!(components)/**/*.stories.@(ts|tsx)',
+    '../src/components/!(pro)/**/*.stories.@(ts|tsx)',
+    '../src/components/*.stories.@(ts|tsx)',
+    ...(process.env.STORYBOOK_PRO === '1' ? ['../src/components/pro/**/*.stories.@(ts|tsx)'] : []),
+  ],
   addons: ['@storybook/addon-docs', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/nextjs-vite',

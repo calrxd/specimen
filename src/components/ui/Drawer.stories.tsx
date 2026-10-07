@@ -7,7 +7,8 @@ import { Field } from './Field'
 /**
  * Story arg names are the contract. `title` is the text property; `description` is optional
  * text with a `descriptionVisible` boolean; `side` is the variant axis; `open` is a boolean
- * that shows the scrim and panel; `children` is a slot for the body.
+ * that shows the scrim and panel; `children` is a slot for the body; `footer` swaps in the
+ * actions pinned to the foot of the sheet.
  */
 const meta = {
   title: 'Components/Drawer',
@@ -40,13 +41,13 @@ export const Default: Story = {
     description: 'Harbour & Hale, due 3 October.',
     side: 'end',
     children: (
-      <div className="flex flex-col gap-xl">
-        <p className="m-0 font-text text-body leading-relaxed text-muted">£1,240 for the October plan. The card on file was declined.</p>
-        <div className="flex gap-sm">
-          <Button label="Retry payment" size="sm" />
-          <Button label="Send reminder" variant="secondary" size="sm" />
-        </div>
-      </div>
+      <p className="m-0 font-text text-body leading-relaxed text-muted">£1,240 for the October plan. The card on file was declined.</p>
+    ),
+    footer: (
+      <>
+        <Button label="Send reminder" variant="secondary" size="sm" />
+        <Button label="Retry payment" size="sm" />
+      </>
     ),
     onClose: () => {},
   },
@@ -61,11 +62,13 @@ export const Form: Story = {
       <div className="flex flex-col gap-xl">
         <Field label="Company name" placeholder="Harbour & Hale" />
         <Field label="Billing email" placeholder="accounts@harbourhale.com" />
-        <div className="flex justify-end gap-sm">
-          <Button label="Cancel" variant="secondary" size="sm" />
-          <Button label="Save changes" size="sm" />
-        </div>
       </div>
+    ),
+    footer: (
+      <>
+        <Button label="Cancel" variant="secondary" size="sm" />
+        <Button label="Save changes" size="sm" />
+      </>
     ),
     onClose: () => {},
   },

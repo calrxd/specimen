@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { CloseButton } from './parts'
 
 export type MessageTone = 'info' | 'success' | 'warn' | 'danger'
 
@@ -42,13 +43,7 @@ export function Message({ title, description, tone = 'info', action, onDismiss }
         {action && <div className="flex flex-wrap gap-sm">{action}</div>}
       </div>
       {onDismiss && (
-        <button
-          type="button"
-          onClick={onDismiss}
-          className="shrink-0 cursor-pointer rounded-sm border-0 bg-transparent px-xs font-mono text-caption text-muted transition-colors duration-fast hover:text-ink"
-        >
-          Close
-        </button>
+        <CloseButton onClick={onDismiss} />
       )}
     </div>
   )
