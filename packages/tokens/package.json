@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "specimen_ design tokens: one DTCG source, CSS custom properties, a Tailwind v4 theme and the Figma variable manifest, all generated together.",
   "license": "MIT",
-  "author": "Callum Radcliffe (https://callumrad.co.uk)",
+  "author": "Callum Radmilovic (https://callumrad.co.uk)",
   "homepage": "https://specimen.systems",
   "repository": {
     "type": "git",

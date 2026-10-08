@@ -74,3 +74,14 @@
   display: inline-block;
   text-transform: uppercase;
 }
+
+/* Screenshots shipped in both themes: show the one that matches the page. */
+.spc-shot-light {
+  display: none;
+}
+[data-theme="light"] .spc-shot-light {
+  display: block;
+}
+[data-theme="light"] .spc-shot-dark {
+  display: none;
+}

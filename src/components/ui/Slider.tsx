@@ -73,7 +73,18 @@ export function Slider({
         disabled={disabled}
         aria-valuetext={text}
         onChange={handle}
-        className="h-lg w-full cursor-pointer accent-sample-fill disabled:cursor-not-allowed disabled:accent-disabled"
+        // Drawn from the tokens instead of the browser's own range control, which paints the
+        // unfilled track near-black in light mode next to a light accent. The filled part is a
+        // gradient stop at the current value; the thumb is the dot, a full circle.
+        style={{ ['--spc-fill' as string]: `${max > min ? ((value - min) / (max - min)) * 100 : 0}%` }}
+        className={[
+          'my-sm h-xs w-full cursor-pointer appearance-none rounded-full disabled:cursor-not-allowed',
+          'bg-[linear-gradient(to_right,var(--color-sample-fill)_var(--spc-fill),var(--color-line-strong)_var(--spc-fill))]',
+          'disabled:bg-[linear-gradient(to_right,var(--color-disabled)_var(--spc-fill),var(--color-line)_var(--spc-fill))]',
+          '[&::-webkit-slider-thumb]:size-lg [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-0 [&::-webkit-slider-thumb]:bg-sample-fill',
+          '[&::-moz-range-thumb]:size-lg [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-sample-fill',
+          'disabled:[&::-webkit-slider-thumb]:bg-disabled disabled:[&::-moz-range-thumb]:bg-disabled',
+        ].join(' ')}
         {...rest}
       />
       <div aria-hidden className="flex justify-between font-mono text-caption text-muted tabular-nums">

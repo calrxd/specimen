@@ -190,6 +190,8 @@ for (const component of contract.components) {
 
 const codeNames = new Set(contract.components.map((c) => c.name))
 for (const name of [...componentSets.keys(), ...components.keys()]) {
+  // Icons (Icon/Search) are swap targets for INSTANCE_SWAP props, not code components.
+  if (name.startsWith('Icon/')) continue
   if (!codeNames.has(name)) warnings.push(`${name}: in the Figma file with no component in code`)
 }
 for (const node of unboundPaints) warnings.push(`${node}: solid fill not bound to a variable`)

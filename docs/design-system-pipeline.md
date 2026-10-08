@@ -7,7 +7,7 @@ automation stops. This document describes the loop and the rules that keep both 
 
 `specimen_ Design System`: https://www.figma.com/design/48sAYLBAAByDizTB2gfsu6
 
-Contents: 162 variables across three collections; 9 text styles; 41 components. Everything in
+Contents: 162 variables across three collections; 9 text styles; 51 components. Everything in
 it was generated from the two files below.
 
 | Collection | Modes | Count | Holds |
@@ -75,6 +75,16 @@ Spinner
 Skeleton
 Drawer
 EmptyState
+Banner
+ConfirmDialog
+Stat
+Timeline
+MeterGroup
+DescriptionList
+SplitButton
+Fieldset
+InputGroup
+Listbox
 ```
 
 ## Direction of travel
@@ -596,6 +606,37 @@ Patterns the Figma build settled on:
 - Plugin API: an instance's `children` and `findAll` skip hidden sublayers, so never build a
   component that hides content for stories to reveal. And a failed `use_figma` script rolls
   back as a whole.
+
+## Components: the second PrimeNG pass, 8 Oct 2026
+
+The 7 October audit picked ten more for the free core, the ones B2B screens draw by hand
+today. All ten exist in code, Storybook (axe clean in both themes) and Figma, and
+`figma:check` reports no drift across 51.
+
+| Group | Components |
+|---|---|
+| Form | InputGroup, SplitButton, Fieldset, Listbox |
+| Overlay | ConfirmDialog |
+| Feedback | Banner, MeterGroup |
+| Content | Stat, Timeline, DescriptionList |
+
+More patterns the Figma build settled on:
+
+- A frame's own stroke draws above its children. A state border that has to show over the
+  resting one (InputGroup's error) is a `state / rest` layer, never the frame's stroke; a
+  divider inside a bordered cell needs that side's stroke weight at `border/none`
+  (SplitButton's primary arrow).
+- An empty auto-layout frame keeps its 100px creation height. Resize it to its real height
+  before setting it to hug (a slot, an empty input box).
+- A property cannot drive a layer inside a nested instance. Where a parent property names a
+  button's label (ConfirmDialog's confirm and cancel), the button is drawn as a frame in
+  Button's tokens, not an instance.
+- `children` slots come from `component.createSlot()`, renamed to `children`. A slot may hold
+  default content (Fieldset holds three Fields).
+- Optional INSTANCE_SWAP props draw their default, as before (Message, Card, PageHeader); a
+  story that has none hides the layer with an instance override. The default for InputGroup's
+  icon is `Icon/Search`, a component on its page; `figma:check` skips `Icon/` names, since
+  icons are swap targets with no code component.
 
 ## Free and Pro
 

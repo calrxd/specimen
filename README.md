@@ -34,7 +34,7 @@ The pipeline, the naming rules and every decision behind them are in [`docs/desi
 | | |
 |---|---|
 | Tokens | 162: 83 primitives, 26 colour roles with a dark and a light value each, 53 scale roles. Every role aliases one primitive. Every colour pair is measured against WCAG 2.2 AA. |
-| Components | 41: Button, Field, Textarea, Select, Checkbox, Radio, Switch, Tag, Table, Tabs, Dialog, Popover, Menu, CommandMenu, Toast, Tooltip, SectionHeader, Mark, Wordmark, InputNumber, Password, Slider, SelectButton, Chip, Avatar, AvatarGroup, Badge, Accordion, Card, Divider, Breadcrumb, Paginator, Stepper, Toolbar, PageHeader, Message, ProgressBar, Spinner, Skeleton, Drawer, EmptyState. React, in `src/components`. |
+| Components | 51: Button, Field, Textarea, Select, Checkbox, Radio, Switch, Tag, Table, Tabs, Dialog, Popover, Menu, CommandMenu, Toast, Tooltip, SectionHeader, Mark, Wordmark, InputNumber, Password, Slider, SelectButton, Chip, Avatar, AvatarGroup, Badge, Accordion, Card, Divider, Breadcrumb, Paginator, Stepper, Toolbar, PageHeader, Message, ProgressBar, Spinner, Skeleton, Drawer, EmptyState, InputGroup, SplitButton, Fieldset, Listbox, ConfirmDialog, Banner, MeterGroup, Stat, Timeline, DescriptionList. React, in `src/components`. |
 | Packages | [`@specimen.systems/tokens`](packages/tokens) |
 
 The look is flat and monospaced: IBM Plex Mono for the voice, Archivo for long text, hairlines for structure, and one green accent used as a signal. Corners come from the mark's own 4px corner: 4px on controls, 8px on panels, round for the dot family. There are no shadows; overlays separate with a surface fill, a stronger line and a scrim.

@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "5f4e57df731d",
+  "sourceHash": "376f96989226",
   "components": [
     {
       "name": "Mark",
@@ -634,6 +634,160 @@
         }
       ],
       "expectedVariantCount": 3
+    },
+    {
+      "name": "Banner",
+      "description": "A page-level announcement that runs edge to edge across the top of an app or a page: a\nmaintenance window, a trial that is ending, a new feature. It is about the whole product,\nnot one part of it. Use Message for a notice inside the content, next to what it is about,\nand Toast for something that just happened and clears itself. A Banner stays put until its\ncause goes away or the reader dismisses it.\nSquare, like the page frame it sits in: the tone's subtle fill with a hairline in the tone\ncolour under it, ink text over it (above 13:1 in both themes) and muted controls (above 4.8:1).",
+      "storybookTitle": "Components/Banner",
+      "source": "src/components/ui/Banner.tsx",
+      "storyFile": "src/components/ui/Banner.stories.tsx",
+      "importPath": "@/components/ui/Banner",
+      "props": [
+        {
+          "name": "message",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "One or two sentences about the whole app or page, sentence case: \"Scheduled maintenance on Sunday 12 October, 02:00 to 04:00 UTC.\"",
+          "figma": {
+            "name": "message",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "tone",
+          "type": "enum",
+          "values": [
+            "info",
+            "success",
+            "warn",
+            "danger"
+          ],
+          "required": false,
+          "default": "info",
+          "description": "The status colour of the fill and the rule under it. danger is announced assertively; the rest politely.",
+          "figma": {
+            "name": "tone",
+            "figmaType": "VARIANT",
+            "values": [
+              "info",
+              "success",
+              "warn",
+              "danger"
+            ],
+            "defaultValue": "info"
+          }
+        },
+        {
+          "name": "action",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One action that follows from the message: a link to the details or a small Button.",
+          "figma": {
+            "name": "action",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "onDismiss",
+          "type": "(() => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shows a dismiss control. Leave it off for a banner that stays until its cause is fixed.",
+          "figma": {
+            "name": "onDismiss",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "message": "Scheduled maintenance on Sunday 12 October, 02:00 to 04:00 UTC. Invoicing will be read-only.",
+            "tone": "info",
+            "action": {
+              "$dynamic": "CallExpression"
+            },
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "TrialEnding",
+          "args": {
+            "message": "Your trial ends in 3 days. Add a payment method to keep Harbour & Hale running.",
+            "tone": "warn",
+            "action": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "NewFeature",
+          "args": {
+            "message": "Recurring invoices are here. Set a schedule once and every client is billed on time.",
+            "tone": "success",
+            "action": {
+              "$dynamic": "CallExpression"
+            },
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Danger",
+          "args": {
+            "message": "Payments are failing for some card customers. We are working on a fix.",
+            "tone": "danger",
+            "action": {
+              "$dynamic": "CallExpression"
+            }
+          }
+        },
+        {
+          "name": "MessageOnly",
+          "args": {
+            "message": "You are viewing Harbour & Hale as a guest. Changes are not saved.",
+            "tone": "info"
+          }
+        },
+        {
+          "name": "InPage",
+          "args": {
+            "message": "Your trial ends in 3 days. Add a payment method to keep Harbour & Hale running.",
+            "tone": "warn",
+            "onDismiss": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "tone",
+          "values": [
+            "info",
+            "success",
+            "warn",
+            "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 4
     },
     {
       "name": "Breadcrumb",
@@ -1451,6 +1605,447 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "ConfirmDialog",
+      "description": "The confirm step before a destructive or important action, built on Dialog. Focus lands on\nthe cancel button when it opens, so a reflexive Enter backs out rather than going ahead. The\nconfirm button names the action, and the danger tone turns it into the red fill. While the\naction runs, pending holds the dialog open with both buttons inert and a spinner beside them.\nFor an action that cannot be undone and takes a lot with it (deleting a workspace), pass\nconfirmText: confirm stays locked until the reader types it exactly.",
+      "storybookTitle": "Components/ConfirmDialog",
+      "source": "src/components/ui/ConfirmDialog.tsx",
+      "storyFile": "src/components/ui/ConfirmDialog.stories.tsx",
+      "importPath": "@/components/ui/ConfirmDialog",
+      "props": [
+        {
+          "name": "open",
+          "type": "boolean",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Whether the dialog is showing. Controlled: set it false from onCancel, and from onConfirm once the action succeeds.",
+          "figma": {
+            "name": "open",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The decision as a question, sentence case: \"Delete the Harbour & Hale workspace?\"",
+          "figma": {
+            "name": "title",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "What will happen, and what cannot be undone.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Extra detail under the description, such as a list of what will be removed.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "confirmLabel",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Says exactly what the confirm button does: \"Delete workspace\", never \"OK\" or \"Yes\".",
+          "figma": {
+            "name": "confirmLabel",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "cancelLabel",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Cancel",
+          "description": "The safe way out. Takes focus when the dialog opens.",
+          "figma": {
+            "name": "cancelLabel",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Cancel",
+            "companionBoolean": "cancelLabelVisible"
+          }
+        },
+        {
+          "name": "tone",
+          "type": "enum",
+          "values": [
+            "primary",
+            "danger"
+          ],
+          "required": false,
+          "default": "primary",
+          "description": "primary for an important action, danger for one that destroys something. Sets the confirm button's variant.",
+          "figma": {
+            "name": "tone",
+            "figmaType": "VARIANT",
+            "values": [
+              "primary",
+              "danger"
+            ],
+            "defaultValue": "primary"
+          }
+        },
+        {
+          "name": "pending",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "The action is running. Both buttons go inert, a spinner shows, and Escape and the close control do nothing until it ends.",
+          "figma": {
+            "name": "pending",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "pendingLabel",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the confirm label while pending, present tense: \"Deleting workspace\". Also what the spinner announces.",
+          "figma": {
+            "name": "pendingLabel",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "pendingLabelVisible"
+          }
+        },
+        {
+          "name": "confirmText",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "For the most destructive actions: the exact text, usually the name, the reader must type before confirm unlocks. Case-sensitive.",
+          "figma": {
+            "name": "confirmText",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "confirmTextVisible"
+          }
+        },
+        {
+          "name": "onConfirm",
+          "type": "() => void",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Called on the confirm button, and on Enter in the type-to-confirm field once it matches.",
+          "figma": {
+            "name": "onConfirm",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "onCancel",
+          "type": "() => void",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Called on the cancel button, on Escape, on a click outside the panel and on the close control.",
+          "figma": {
+            "name": "onCancel",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "open": true,
+            "title": "Send 14 invoices?",
+            "description": "Each client gets an email with their invoice attached. Sent invoices can be voided but not edited.",
+            "confirmLabel": "Send invoices",
+            "cancelLabel": "Cancel",
+            "tone": "primary",
+            "pending": false,
+            "onConfirm": {
+              "$dynamic": "ArrowFunctionExpression"
+            },
+            "onCancel": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Danger",
+          "args": {
+            "open": true,
+            "title": "Remove Priya Shah from Harbour & Hale?",
+            "description": "She loses access to every project straight away. Her invoices and comments stay.",
+            "confirmLabel": "Remove member",
+            "cancelLabel": "Keep member",
+            "tone": "danger",
+            "pending": false,
+            "onConfirm": {
+              "$dynamic": "ArrowFunctionExpression"
+            },
+            "onCancel": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "Pending",
+          "args": {
+            "open": true,
+            "title": "Remove Priya Shah from Harbour & Hale?",
+            "description": "She loses access to every project straight away. Her invoices and comments stay.",
+            "confirmLabel": "Remove member",
+            "cancelLabel": "Keep member",
+            "tone": "danger",
+            "pending": true,
+            "pendingLabel": "Removing member",
+            "onConfirm": {
+              "$dynamic": "ArrowFunctionExpression"
+            },
+            "onCancel": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        },
+        {
+          "name": "TypeToConfirm",
+          "args": {
+            "open": true,
+            "title": "Delete the Harbour & Hale workspace?",
+            "description": "This deletes 12 projects, 418 invoices and every file uploaded to them. It cannot be undone.",
+            "confirmLabel": "Delete workspace",
+            "cancelLabel": "Cancel",
+            "tone": "danger",
+            "pending": false,
+            "pendingLabel": "Deleting workspace",
+            "confirmText": "harbour-hale",
+            "onConfirm": {
+              "$dynamic": "ArrowFunctionExpression"
+            },
+            "onCancel": {
+              "$dynamic": "ArrowFunctionExpression"
+            }
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "tone",
+          "values": [
+            "primary",
+            "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "DescriptionList",
+      "description": "Key and value details for a record: an account, an invoice, a plan. A real dl, so each term\nnames its value for assistive technology. Horizontal rows give the term a third of the row\nand separate with hairlines, the way a details card reads; stacked groups put the term above\na value and drop the lines, for a summary of short figures. Terms are muted mono, values ink\nwith tabular figures so amounts and dates line up.",
+      "storybookTitle": "Components/DescriptionList",
+      "source": "src/components/ui/DescriptionList.tsx",
+      "storyFile": "src/components/ui/DescriptionList.stories.tsx",
+      "importPath": "@/components/ui/DescriptionList",
+      "props": [
+        {
+          "name": "items",
+          "type": "DescriptionListItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The details, in reading order. Content, not a Figma property: the library shows four.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "layout",
+          "type": "enum",
+          "values": [
+            "horizontal",
+            "stacked"
+          ],
+          "required": false,
+          "default": "horizontal",
+          "description": "horizontal puts the term beside its value on a hairline row; stacked puts it above, for short values in a grid.",
+          "figma": {
+            "name": "layout",
+            "figmaType": "VARIANT",
+            "values": [
+              "horizontal",
+              "stacked"
+            ],
+            "defaultValue": "horizontal"
+          }
+        },
+        {
+          "name": "columns",
+          "type": "enum",
+          "values": [
+            "1",
+            "2",
+            "3"
+          ],
+          "required": false,
+          "default": 1,
+          "description": "How many columns the details flow into from md up. Below md they always stack in one.",
+          "figma": {
+            "name": "columns",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "layout": "horizontal",
+            "columns": 1
+          }
+        },
+        {
+          "name": "Stacked",
+          "args": {
+            "layout": "stacked",
+            "columns": 3,
+            "items": [
+              {
+                "term": "Billed to",
+                "description": "Harbour & Hale Ltd, 12 Quay Street, Bristol BS1 4DJ"
+              },
+              {
+                "term": "Issued",
+                "description": "22 Sep 2026"
+              },
+              {
+                "term": "Due",
+                "description": "22 Oct 2026"
+              },
+              {
+                "term": "Amount",
+                "description": "£1,216.00"
+              },
+              {
+                "term": "Status",
+                "description": {
+                  "$dynamic": "JSXElement"
+                }
+              },
+              {
+                "term": "Reference",
+                "description": "INV-2048"
+              }
+            ]
+          }
+        },
+        {
+          "name": "TwoColumns",
+          "args": {
+            "layout": "horizontal",
+            "columns": 2,
+            "items": [
+              {
+                "term": "Plan",
+                "description": "Scale"
+              },
+              {
+                "term": "Seats",
+                "description": "42 of 50"
+              },
+              {
+                "term": "Monthly",
+                "description": "£1,216.00"
+              },
+              {
+                "term": "Next invoice",
+                "description": "1 November 2026"
+              },
+              {
+                "term": "Payment method",
+                "description": "Visa ending 4417, expires 08/28"
+              },
+              {
+                "term": "Region",
+                "description": "England"
+              }
+            ]
+          }
+        },
+        {
+          "name": "InCard",
+          "args": {
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "layout": "horizontal",
+            "columns": 1
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "layout",
+          "values": [
+            "horizontal",
+            "stacked"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
       "name": "Dialog",
       "description": "A modal for a decision that blocks everything else. Built on the native dialog element,\nso focus is trapped, the page behind is inert, and Escape closes it without extra code.\nFlat, per brand section 06: the page dims behind the scrim token, and the panel\nseparates with surface fill and a line-strong edge. Actions go in `footer`, so they sit in\nthe same place on every dialog: under a hairline, aligned to the end, the primary last.",
       "storybookTitle": "Components/Dialog",
@@ -2116,6 +2711,341 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "Fieldset",
+      "description": "A titled group of related form fields: a native fieldset and legend, so assistive technology\nannounces the legend when focus enters the group, and disabled reaches every control inside\nwithout each one being told. The legend is a sentence-case title rather than a capitalised\nfield label, so it reads as a level above the labels it holds. Legend and description keep\ntheir colours when the group is disabled: the controls show the state, the title stays legible.",
+      "storybookTitle": "Components/Fieldset",
+      "source": "src/components/ui/Fieldset.tsx",
+      "storyFile": "src/components/ui/Fieldset.stories.tsx",
+      "importPath": "@/components/ui/Fieldset",
+      "props": [
+        {
+          "name": "legend",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the group, above its fields. Sentence case: \"Billing address\", \"Notifications\".",
+          "figma": {
+            "name": "legend",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One or two sentences under the legend that explain the group. Read with every field inside.",
+          "figma": {
+            "name": "description",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "descriptionVisible"
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Disables every control inside at once, through the native fieldset attribute.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The fields in the group, stacked with a large gap.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "legend": "Billing address",
+            "disabled": false,
+            "children": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "WithDescription",
+          "args": {
+            "legend": "Billing address",
+            "description": "Printed on every invoice. Use the address registered with Companies House.",
+            "disabled": false,
+            "children": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "legend": "Single sign-on",
+            "description": "Managed by your identity provider. Ask an owner to change it.",
+            "disabled": true,
+            "children": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "InputGroup",
+      "description": "Field with addons: a text input that carries its unit or context with it, such as a price in\npounds, a rate in percent or a search field with its glass. Same label, hint, error and states\nas Field, drawn from the same parts. The text addons sit in cells divided from the input by a\nhairline and are named in aria-describedby, so \"£\" is read with the price. The icon sits\ninside the input's cell and is decorative; the label says what the field is for.",
+      "storybookTitle": "Components/InputGroup",
+      "source": "src/components/ui/InputGroup.tsx",
+      "storyFile": "src/components/ui/InputGroup.stories.tsx",
+      "importPath": "@/components/ui/InputGroup",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the input. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shown inside the empty input, in faint.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "prefix",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A short addon before the input, in its own cell: \"£\", \"https://\", \"@\". Read with the input.",
+          "figma": {
+            "name": "prefix",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "prefixVisible"
+          }
+        },
+        {
+          "name": "suffix",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A short addon after the input, in its own cell: \"%\", \"kg\", \"per seat\". Read with the input.",
+          "figma": {
+            "name": "suffix",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "suffixVisible"
+          }
+        },
+        {
+          "name": "icon",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A 16px icon inside the border, before the input: a search glass on a search field. Decorative, so it is hidden from assistive technology.",
+          "figma": {
+            "name": "icon",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the input. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and the native required attribute.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border, addons and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Displayed, not editable. Loses the interactive border, since there is nothing to find and click.",
+          "figma": {
+            "name": "readOnly",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Monthly price",
+            "placeholder": "0.00",
+            "prefix": "£",
+            "required": false,
+            "disabled": false,
+            "readOnly": false
+          }
+        },
+        {
+          "name": "WithSuffix",
+          "args": {
+            "label": "Annual discount",
+            "placeholder": "0",
+            "suffix": "%",
+            "inputMode": "decimal",
+            "hint": "Applied to every invoice on a yearly plan."
+          }
+        },
+        {
+          "name": "PrefixAndSuffix",
+          "args": {
+            "label": "Seat price",
+            "placeholder": "0.00",
+            "prefix": "£",
+            "suffix": "per seat",
+            "inputMode": "decimal",
+            "required": true
+          }
+        },
+        {
+          "name": "WithIcon",
+          "args": {
+            "label": "Search customers",
+            "placeholder": "Name, email or account ID",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "type": "search"
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Parcel weight",
+            "placeholder": "0",
+            "suffix": "kg",
+            "inputMode": "decimal",
+            "error": "Enter a weight under 30 kg."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Monthly price",
+            "defaultValue": "49.00",
+            "prefix": "£",
+            "disabled": true,
+            "hint": "Set by your plan."
+          }
+        },
+        {
+          "name": "ReadOnly",
+          "args": {
+            "label": "Workspace address",
+            "defaultValue": "harbour-hale",
+            "prefix": "https://",
+            "suffix": ".specimen.app",
+            "readOnly": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "InputNumber",
       "description": "A number field with decrease and increase buttons either side, for quantities a person\nadjusts in steps: seats, retries, a percentage. A native number input underneath,\nso arrow keys step it and assistive technology announces it as a spin button. The steppers\nstay out of the tab order because the arrow keys already do their job.",
       "storybookTitle": "Components/InputNumber",
@@ -2313,6 +3243,232 @@
             "defaultValue": 5,
             "disabled": true,
             "hint": "Seats are set by your plan."
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Listbox",
+      "description": "A list of options that stays on the page, for a choice a person makes while looking at all\nof it: the columns to export, the regions a report covers. One tab stop; arrow keys move,\nHome and End jump, typing a few letters jumps to the option that starts with them, and Space\nor Enter selects. With one choice, moving also selects, as a radio group does. With multiple,\nmoving only moves, Space toggles, and Ctrl or Command with A selects every option. Use Select when the list can hide until it is needed.",
+      "storybookTitle": "Components/Listbox",
+      "source": "src/components/ui/Listbox.tsx",
+      "storyFile": "src/components/ui/Listbox.stories.tsx",
+      "importPath": "@/components/ui/Listbox",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the list. Uppercase label style. Names the list for assistive technology.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "options",
+          "type": "ListboxOption[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The choices, in order. Content, not a Figma property: the library shows five.",
+          "figma": {
+            "name": "options",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Lets a person pick more than one option. Off, picking one clears the last.",
+          "figma": {
+            "name": "multiple",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string[]",
+          "values": null,
+          "required": false,
+          "default": {
+            "$expression": "[]"
+          },
+          "description": "The values selected at first. Uncontrolled; pass onChange to observe it. One value unless multiple is on.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submits the selected values with a form under this name, one entry per value.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the list. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and options go to the disabled colour, and the list leaves the tab order.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((value: string[]) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with every selected value, in option order, whenever the selection changes.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Data region",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": [
+              "uk"
+            ],
+            "multiple": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Multiple",
+          "args": {
+            "label": "Columns to export",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": [
+              "customer",
+              "invoice",
+              "amount"
+            ],
+            "multiple": true,
+            "hint": "Columns export in the order shown."
+          }
+        },
+        {
+          "name": "WithDisabledOption",
+          "args": {
+            "label": "Data region",
+            "options": [
+              {
+                "$dynamic": "SpreadElement"
+              },
+              {
+                "value": "us",
+                "label": "United States",
+                "disabled": true
+              },
+              {
+                "$dynamic": "MemberExpression"
+              }
+            ],
+            "defaultValue": [
+              "eu"
+            ],
+            "hint": "United States hosting is on the Enterprise plan."
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Columns to export",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "multiple": true,
+            "error": "Choose at least one column."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Data region",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": [
+              "uk"
+            ],
+            "disabled": true,
+            "hint": "Set when the workspace was created."
           }
         }
       ],
@@ -2606,6 +3762,197 @@
         }
       ],
       "expectedVariantCount": 4
+    },
+    {
+      "name": "MeterGroup",
+      "description": "One bar split into the shares that fill a quota: storage by file type, seats by team.\nThe track is the line colour, like ProgressBar's, and each share is a segment with a 2px\ngap before the next, so neighbours stay apart without relying on colour. The bar is one\nmeter for the total; the legend under it gives every share as text, which is how a screen\nreader gets the breakdown. Over quota, the bar scales to the total and the figure says so.",
+      "storybookTitle": "Components/MeterGroup",
+      "source": "src/components/ui/MeterGroup.tsx",
+      "storyFile": "src/components/ui/MeterGroup.stories.tsx",
+      "importPath": "@/components/ui/MeterGroup",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What is being measured, sentence case: \"Storage\". Also the meter's accessible name.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "items",
+          "type": "MeterGroupItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The shares, in the order they fill the bar. Content, not a Figma property: the library shows three.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 100,
+          "description": "The quota the shares fill. The bar's full width.",
+          "figma": {
+            "name": "max",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "unit",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The unit after every figure: \"GB\", \"seats\". Leave it out for a bare count.",
+          "figma": {
+            "name": "unit",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "unitVisible"
+          }
+        },
+        {
+          "name": "showValue",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": true,
+          "description": "Shows the total used against max beside the label.",
+          "figma": {
+            "name": "showValue",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": true
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Storage",
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "max": 100,
+            "unit": "GB",
+            "showValue": true
+          }
+        },
+        {
+          "name": "Seats",
+          "args": {
+            "label": "Seats",
+            "max": 50,
+            "unit": "seats",
+            "items": [
+              {
+                "id": "finance",
+                "label": "Finance",
+                "value": 12,
+                "tone": "sample"
+              },
+              {
+                "id": "operations",
+                "label": "Operations",
+                "value": 17,
+                "tone": "info"
+              },
+              {
+                "id": "support",
+                "label": "Support",
+                "value": 9,
+                "tone": "muted"
+              }
+            ]
+          }
+        },
+        {
+          "name": "NearlyFull",
+          "args": {
+            "label": "Email sends this month",
+            "max": 10000,
+            "items": [
+              {
+                "id": "invoices",
+                "label": "Invoices",
+                "value": 6420,
+                "tone": "sample"
+              },
+              {
+                "id": "reminders",
+                "label": "Reminders",
+                "value": 2910,
+                "tone": "warn"
+              },
+              {
+                "id": "receipts",
+                "label": "Receipts",
+                "value": 480,
+                "tone": "info"
+              }
+            ]
+          }
+        },
+        {
+          "name": "OverLimit",
+          "args": {
+            "label": "Storage",
+            "max": 50,
+            "unit": "GB",
+            "items": [
+              {
+                "id": "documents",
+                "label": "Documents",
+                "value": 31.4
+              },
+              {
+                "id": "images",
+                "label": "Images",
+                "value": 22.8
+              },
+              {
+                "id": "exports",
+                "label": "Exports",
+                "value": 4.2
+              }
+            ]
+          }
+        },
+        {
+          "name": "WithoutValue",
+          "args": {
+            "label": "Storage",
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "max": 100,
+            "unit": "GB",
+            "showValue": false
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
     },
     {
       "name": "PageHeader",
@@ -4114,6 +5461,483 @@
       "expectedVariantCount": 2
     },
     {
+      "name": "SplitButton",
+      "description": "A main action joined to an arrow that opens the actions next to it, for a button with one\ncommon job and a few less common ones: \"Send invoice\" with \"Send a test\", \"Schedule\" and\n\"Download PDF\". The left half is a Button and the right half opens a Menu, so the colours,\nkeyboard handling and popover come from those two. On primary an ink rule divides the\nhalves; on secondary they share one border.",
+      "storybookTitle": "Components/SplitButton",
+      "source": "src/components/ui/SplitButton.tsx",
+      "storyFile": "src/components/ui/SplitButton.stories.tsx",
+      "importPath": "@/components/ui/SplitButton",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The main action, on the left. Sentence case, starting with a verb: \"Send invoice\", \"Publish\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "items",
+          "type": "MenuItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The other actions, in the menu the arrow opens. Content, not a Figma property: the library shows three.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "primary",
+            "secondary"
+          ],
+          "required": false,
+          "default": "primary",
+          "description": "primary when the main action is the one green action in the view, secondary otherwise.",
+          "figma": {
+            "name": "variant",
+            "figmaType": "VARIANT",
+            "values": [
+              "primary",
+              "secondary"
+            ],
+            "defaultValue": "primary"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "md",
+            "sm"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "md for forms and page actions, sm for table rows and toolbars.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "md",
+              "sm"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "menuLabel",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "More actions",
+          "description": "Names the arrow for assistive technology, since it shows no text.",
+          "figma": {
+            "name": "menuLabel",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "More actions",
+            "companionBoolean": "menuLabelVisible"
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Both halves collapse to the disabled outline, as Button does.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onClick",
+          "type": "(() => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Runs the main action.",
+          "figma": {
+            "name": "onClick",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Send invoice",
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "primary",
+            "size": "md",
+            "menuLabel": "More actions",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Secondary",
+          "args": {
+            "label": "Export CSV",
+            "variant": "secondary",
+            "menuLabel": "More export formats",
+            "items": [
+              {
+                "id": "xlsx",
+                "label": "Export Excel",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "json",
+                "label": "Export JSON",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "label": "Approve",
+            "size": "sm",
+            "menuLabel": "More review actions",
+            "items": [
+              {
+                "id": "changes",
+                "label": "Request changes",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "reassign",
+                "label": "Reassign",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "reject",
+                "label": "Reject",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                },
+                "tone": "danger"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Send invoice",
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "variant",
+          "values": [
+            "primary",
+            "secondary"
+          ]
+        },
+        {
+          "name": "size",
+          "values": [
+            "md",
+            "sm"
+          ]
+        }
+      ],
+      "expectedVariantCount": 4
+    },
+    {
+      "name": "Stat",
+      "description": "A key figure with its label, and how it moved since the last period. The arrow shows the\ndirection; the colour says whether that is good, which depends on the figure: revenue up\nis success, overdue invoices up is danger. The direction is also spoken, so it never rests\non the arrow or the colour alone. Built as a description list (label, figure, caption), so\na row of Stats reads as a set of named values.",
+      "storybookTitle": "Components/Stat",
+      "source": "src/components/ui/Stat.tsx",
+      "storyFile": "src/components/ui/Stat.stories.tsx",
+      "importPath": "@/components/ui/Stat",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "What the figure measures, sentence case: \"Monthly recurring revenue\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The figure, formatted: \"£84,210\", \"112%\", \"9 days\".",
+          "figma": {
+            "name": "value",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "change",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "How far the figure moved against the previous period: \"3.6%\", \"£1,240\", \"3 days\".",
+          "figma": {
+            "name": "change",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "changeVisible"
+          }
+        },
+        {
+          "name": "direction",
+          "type": "enum",
+          "values": [
+            "up",
+            "down",
+            "flat"
+          ],
+          "required": false,
+          "default": "flat",
+          "description": "Which way it moved. Draws the arrow and, with goodDirection, picks the colour. flat is muted.",
+          "figma": {
+            "name": "direction",
+            "figmaType": "VARIANT",
+            "values": [
+              "up",
+              "down",
+              "flat"
+            ],
+            "defaultValue": "flat"
+          }
+        },
+        {
+          "name": "goodDirection",
+          "type": "enum",
+          "values": [
+            "up",
+            "down"
+          ],
+          "required": false,
+          "default": "up",
+          "description": "Which way is good news. up for revenue, down for churn, overdue invoices or time to reply.",
+          "figma": {
+            "name": "goodDirection",
+            "figmaType": "VARIANT",
+            "values": [
+              "up",
+              "down"
+            ],
+            "defaultValue": "up"
+          }
+        },
+        {
+          "name": "caption",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line naming the comparison or the context: \"Against September\", \"6 invoices, up from 4 last week\".",
+          "figma": {
+            "name": "caption",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "captionVisible"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "md",
+            "lg"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "md in a row of figures, lg for the one figure a screen leads with.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "md",
+              "lg"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "card",
+            "plain"
+          ],
+          "required": false,
+          "default": "card",
+          "description": "card frames the figure on its own; plain leaves the frame to a parent, such as a strip of figures sharing hairlines.",
+          "figma": {
+            "name": "variant",
+            "figmaType": "VARIANT",
+            "values": [
+              "card",
+              "plain"
+            ],
+            "defaultValue": "card"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Monthly recurring revenue",
+            "value": "£84,210",
+            "change": "3.6%",
+            "direction": "up",
+            "goodDirection": "up",
+            "caption": "Against September",
+            "size": "md",
+            "variant": "card"
+          }
+        },
+        {
+          "name": "DownIsGood",
+          "args": {
+            "label": "Median time to live",
+            "value": "9 days",
+            "change": "3 days",
+            "direction": "down",
+            "goodDirection": "down",
+            "caption": "Down from 12 days in September"
+          }
+        },
+        {
+          "name": "UpIsBad",
+          "args": {
+            "label": "Overdue",
+            "value": "£4,920",
+            "change": "2 invoices",
+            "direction": "up",
+            "goodDirection": "down",
+            "caption": "6 invoices, up from 4 last week"
+          }
+        },
+        {
+          "name": "Flat",
+          "args": {
+            "label": "Average revenue per seat",
+            "value": "£23.40",
+            "change": "0.0%",
+            "direction": "flat",
+            "caption": "Against September"
+          }
+        },
+        {
+          "name": "NoChange",
+          "args": {
+            "label": "Collected in October",
+            "value": "£21,480",
+            "caption": "26% of the month invoiced so far"
+          }
+        },
+        {
+          "name": "Large",
+          "args": {
+            "label": "Net revenue retention",
+            "value": "112%",
+            "change": "3 points",
+            "direction": "up",
+            "caption": "Against last quarter",
+            "size": "lg"
+          }
+        },
+        {
+          "name": "Strip",
+          "args": {
+            "label": "Monthly recurring revenue",
+            "value": "£84,210",
+            "variant": "plain"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "direction",
+          "values": [
+            "up",
+            "down",
+            "flat"
+          ]
+        },
+        {
+          "name": "goodDirection",
+          "values": [
+            "up",
+            "down"
+          ]
+        },
+        {
+          "name": "size",
+          "values": [
+            "md",
+            "lg"
+          ]
+        },
+        {
+          "name": "variant",
+          "values": [
+            "card",
+            "plain"
+          ]
+        }
+      ],
+      "expectedVariantCount": 24
+    },
+    {
       "name": "Stepper",
       "description": "Shows where someone is in a multi-step flow: which steps are done, which one they are on,\nand what is left. State never rests on colour alone: a complete step shows a tick, the\ncurrent step a filled dot and aria-current=\"step\", and each item carries its state as\nvisually hidden text.",
       "storybookTitle": "Components/Stepper",
@@ -4883,6 +6707,149 @@
             "label": "Release notes",
             "placeholder": "Locked while the release is building",
             "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "Timeline",
+      "description": "A vertical list of events: account activity, an audit trail, the history of an invoice.\nEach event is a dot on a hairline rule, its time in mono above the title, and an optional\nline of detail in Archivo. A muted event draws a hollow dot; the status tones fill it. The\ncolour only reinforces the title, so a failed payment still says \"failed\" in words.",
+      "storybookTitle": "Components/Timeline",
+      "source": "src/components/ui/Timeline.tsx",
+      "storyFile": "src/components/ui/Timeline.stories.tsx",
+      "importPath": "@/components/ui/Timeline",
+      "props": [
+        {
+          "name": "items",
+          "type": "TimelineItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The events, newest first for activity and audit logs. Content, not a Figma property: the library shows four.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Names the list for assistive technology when no heading sits above it: \"Account activity\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "labelVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "label": "Account activity"
+          }
+        },
+        {
+          "name": "AuditLog",
+          "args": {
+            "label": "Audit log",
+            "items": [
+              {
+                "id": "l1",
+                "time": "7 Oct 2026, 10:31",
+                "dateTime": "2026-10-07T10:31",
+                "title": "Ruth Calder changed the billing contact",
+                "tone": "muted"
+              },
+              {
+                "id": "l2",
+                "time": "7 Oct 2026, 10:29",
+                "dateTime": "2026-10-07T10:29",
+                "title": "Ruth Calder signed in from Leeds",
+                "tone": "muted"
+              },
+              {
+                "id": "l3",
+                "time": "6 Oct 2026, 17:02",
+                "dateTime": "2026-10-06T17:02",
+                "title": "Kofi Mensah exported 1,820 invoices",
+                "tone": "muted"
+              },
+              {
+                "id": "l4",
+                "time": "6 Oct 2026, 08:45",
+                "dateTime": "2026-10-06T08:45",
+                "title": "Two-factor authentication turned on",
+                "tone": "muted"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Tones",
+          "args": {
+            "label": "Onboarding for Saltmarsh Foods",
+            "items": [
+              {
+                "id": "t1",
+                "time": "9 Oct 2026",
+                "dateTime": "2026-10-09",
+                "title": "Go-live booked",
+                "description": "Kofi Mensah, 15:00.",
+                "tone": "sample"
+              },
+              {
+                "id": "t2",
+                "time": "8 Oct 2026",
+                "dateTime": "2026-10-08",
+                "title": "Xero import finished",
+                "description": "1,820 invoices imported.",
+                "tone": "success"
+              },
+              {
+                "id": "t3",
+                "time": "7 Oct 2026",
+                "dateTime": "2026-10-07",
+                "title": "VAT number still missing",
+                "description": "Setup cannot finish without it.",
+                "tone": "warn"
+              },
+              {
+                "id": "t4",
+                "time": "6 Oct 2026",
+                "dateTime": "2026-10-06",
+                "title": "Import check scheduled",
+                "tone": "info"
+              },
+              {
+                "id": "t5",
+                "time": "5 Oct 2026",
+                "dateTime": "2026-10-05",
+                "title": "Import from Sage failed",
+                "description": "The export file was empty.",
+                "tone": "danger"
+              },
+              {
+                "id": "t6",
+                "time": "2 Oct 2026",
+                "dateTime": "2026-10-02",
+                "title": "Workspace created",
+                "tone": "muted"
+              }
+            ]
           }
         }
       ],

@@ -27,9 +27,12 @@ export function useAnchoredPopover(side: PopoverSide, align: PopoverAlign) {
     const gap = parseFloat(getComputedStyle(panel).getPropertyValue('--spacing-sm')) || 8
     const top = side === 'bottom' ? t.bottom + gap : t.top - gap - p.height
     const left = align === 'start' ? t.left : t.right - p.width
+    // The measurements are on-screen pixels. Inside a CSS zoom (a scaled preview, say) the
+    // panel's own top and left are zoomed too, so divide by its zoom or it lands twice as far.
+    const zoom = (panel as HTMLElement & { currentCSSZoom?: number }).currentCSSZoom ?? 1
     // Keep the panel on screen: clamp to the viewport with the same gap as a margin.
-    panel.style.top = `${Math.max(gap, Math.min(top, window.innerHeight - p.height - gap))}px`
-    panel.style.left = `${Math.max(gap, Math.min(left, window.innerWidth - p.width - gap))}px`
+    panel.style.top = `${Math.max(gap, Math.min(top, window.innerHeight - p.height - gap)) / zoom}px`
+    panel.style.left = `${Math.max(gap, Math.min(left, window.innerWidth - p.width - gap)) / zoom}px`
   }, [side, align])
 
   useEffect(() => {
