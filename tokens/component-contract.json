@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "960f4b23edb9",
+  "sourceHash": "055f7d6fb437",
   "components": [
     {
       "name": "Mark",
@@ -1516,6 +1516,116 @@
         }
       ],
       "expectedVariantCount": 8
+    },
+    {
+      "name": "ButtonGroup",
+      "description": "Related actions joined into one shape: \"Day, Week, Month\" view buttons, \"Previous, Next\", or\nalignment in an editor toolbar. The buttons stay ordinary Buttons and IconButtons, each in the\ntab order; the group names them with role=\"group\" and joins their borders. For actions that\nonly need to sit together, a row with a gap is enough. Use SelectButton when exactly one\noption is on at a time, and SplitButton for one main action with a few related ones in a menu.",
+      "storybookTitle": "Components/ButtonGroup",
+      "source": "src/components/ui/ButtonGroup.tsx",
+      "storyFile": "src/components/ui/ButtonGroup.stories.tsx",
+      "importPath": "@/components/ui/ButtonGroup",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the group for assistive technology: \"Calendar view\", \"Text alignment\". Sentence case.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The Buttons and IconButtons in the group, in reading order. Give them one variant and one size.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "orientation",
+          "type": "enum",
+          "values": [
+            "horizontal",
+            "vertical"
+          ],
+          "required": false,
+          "default": "horizontal",
+          "description": "horizontal in toolbars and page headers, vertical in a narrow side panel.",
+          "figma": {
+            "name": "orientation",
+            "figmaType": "VARIANT",
+            "values": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Calendar view",
+            "orientation": "horizontal",
+            "children": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "Icons",
+          "args": {
+            "label": "Text alignment",
+            "orientation": "horizontal",
+            "children": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        },
+        {
+          "name": "Pager",
+          "args": {
+            "label": "Pages",
+            "orientation": "horizontal",
+            "children": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        },
+        {
+          "name": "Vertical",
+          "args": {
+            "label": "Export",
+            "orientation": "vertical",
+            "children": {
+              "$dynamic": "JSXFragment"
+            }
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "orientation",
+          "values": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
     },
     {
       "name": "Card",
@@ -4229,6 +4339,242 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "IconButton",
+      "description": "A square button that shows only an icon, for actions that repeat down a table or sit in a\ntoolbar: edit, copy, more, close. The label is required, because it is the button's only\nname, and doubles as the native tooltip. Same variants, colours and disabled outline as\nButton. Pass `pressed` to make it a toggle; it then reports its state with aria-pressed.",
+      "storybookTitle": "Components/IconButton",
+      "source": "src/components/ui/IconButton.tsx",
+      "storyFile": "src/components/ui/IconButton.stories.tsx",
+      "importPath": "@/components/ui/IconButton",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the button for assistive technology and shows as its tooltip, since the icon has no text. Sentence case, a verb: \"Edit customer\", \"Delete row\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "icon",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "A 16px stroke icon in currentColor. Decorative: the label is the button's name.",
+          "figma": {
+            "name": "icon",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "ghost",
+            "secondary",
+            "primary",
+            "danger"
+          ],
+          "required": false,
+          "default": "ghost",
+          "description": "ghost in toolbars and table rows, secondary where it needs an edge, primary and danger as Button.",
+          "figma": {
+            "name": "variant",
+            "figmaType": "VARIANT",
+            "values": [
+              "ghost",
+              "secondary",
+              "primary",
+              "danger"
+            ],
+            "defaultValue": "ghost"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "md",
+            "sm"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "md beside fields and buttons, sm in table rows and dense toolbars.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "md",
+              "sm"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "pressed",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "For a toggle, such as bold in an editor or a pinned row: true while it is on. Turns the fill on and sets aria-pressed.",
+          "figma": {
+            "name": "pressed",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Every variant collapses to the disabled outline, as Button does.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Edit customer",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "ghost",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Secondary",
+          "args": {
+            "label": "Copy link",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "secondary",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Primary",
+          "args": {
+            "label": "Add customer",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "primary",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Danger",
+          "args": {
+            "label": "Delete invoice",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "danger",
+            "size": "md",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "label": "More actions",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "ghost",
+            "size": "sm",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Pressed",
+          "args": {
+            "label": "Pin row",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "ghost",
+            "size": "md",
+            "pressed": true,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Edit customer",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "secondary",
+            "size": "md",
+            "disabled": true
+          }
+        },
+        {
+          "name": "Matrix",
+          "args": {
+            "label": "Edit",
+            "icon": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "BesideAField",
+          "args": {
+            "label": "Copy link",
+            "icon": {
+              "$dynamic": "Identifier"
+            },
+            "variant": "secondary",
+            "size": "md"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "variant",
+          "values": [
+            "ghost",
+            "secondary",
+            "primary",
+            "danger"
+          ]
+        },
+        {
+          "name": "size",
+          "values": [
+            "md",
+            "sm"
+          ]
+        }
+      ],
+      "expectedVariantCount": 8
+    },
+    {
       "name": "InputGroup",
       "description": "Field with addons: a text input that carries its unit or context with it, such as a price in\npounds, a rate in percent or a search field with its glass. Same label, hint, error and states\nas Field, drawn from the same parts. The text addons sit in cells divided from the input by a\nhairline and are named in aria-describedby, so \"£\" is read with the price. The icon sits\ninside the input's cell and is decorative; the label says what the field is for.",
       "storybookTitle": "Components/InputGroup",
@@ -6870,6 +7216,225 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "Rating",
+      "description": "Stars for a score out of five: a review, a satisfaction survey, a supplier's quality. Native\nradios underneath, one per star, so the arrow keys change the score and a form submits it;\nhovering previews the score before a click sets it. A read-only rating draws the same stars as\none image named \"4 out of 5\". Use a Slider for finer scales and a SelectButton for named levels.",
+      "storybookTitle": "Components/Rating",
+      "source": "src/components/ui/Rating.tsx",
+      "storyFile": "src/components/ui/Rating.stories.tsx",
+      "importPath": "@/components/ui/Rating",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the rating, above the stars when shown: \"Your rating\", \"Support quality\". Sentence case.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 0,
+          "description": "The stars filled at first, from 0 to max. Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 5,
+          "description": "How many stars. Five unless a scale says otherwise.",
+          "figma": {
+            "name": "max",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "md",
+            "sm"
+          ],
+          "required": false,
+          "default": "md",
+          "description": "md in forms, sm in table rows and review lists.",
+          "figma": {
+            "name": "size",
+            "figmaType": "VARIANT",
+            "values": [
+              "md",
+              "sm"
+            ],
+            "defaultValue": "md"
+          }
+        },
+        {
+          "name": "labelVisible",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": true,
+          "description": "Shows the label above the stars. Off in a review list, where the column header names it.",
+          "figma": {
+            "name": "labelVisible",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": true
+          }
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows a score that cannot be changed, such as an average. Read as \"4 out of 5\".",
+          "figma": {
+            "name": "readOnly",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. The stars go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submits the value with a form. A generated name is used when omitted.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((value: number) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the number of stars chosen.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Your rating",
+            "defaultValue": 3,
+            "size": "md",
+            "labelVisible": true,
+            "readOnly": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Empty",
+          "args": {
+            "label": "Rate this support reply"
+          }
+        },
+        {
+          "name": "ReadOnly",
+          "args": {
+            "label": "Average rating",
+            "defaultValue": 4,
+            "readOnly": true
+          }
+        },
+        {
+          "name": "Small",
+          "args": {
+            "label": "Supplier quality",
+            "defaultValue": 4,
+            "size": "sm",
+            "labelVisible": false
+          }
+        },
+        {
+          "name": "TenPoint",
+          "args": {
+            "label": "How likely are you to recommend us",
+            "defaultValue": 7,
+            "max": 10,
+            "size": "sm"
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Your rating",
+            "defaultValue": 2,
+            "disabled": true
+          }
+        },
+        {
+          "name": "InAList",
+          "args": {
+            "label": "Rating",
+            "defaultValue": 5,
+            "size": "sm",
+            "readOnly": true,
+            "labelVisible": false
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "size",
+          "values": [
+            "md",
+            "sm"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
       "name": "RichTextEditor",
       "description": "Formatted text for comments, notes and email templates: bold, italic, links, bulleted and\nnumbered lists, and two heading levels. Output is HTML, sanitised on the way in (paste and\ndefaultValue keep only those formats, so styles and scripts from Word or a web page never\narrive). The toolbar is one tab stop with Left and Right between its buttons (APG toolbar);\neach format button shows its state with aria-pressed. Shortcuts: Ctrl or Cmd with B, I and\nK (link), with Shift and 7 or 8 for numbered and bulleted lists. The link form opens in the\ntoolbar, not a browser dialog, and Escape closes it. The editing area is a multiline textbox\nnamed by the label.",
       "storybookTitle": "Components/RichTextEditor",
@@ -9357,6 +9922,284 @@
       ],
       "variantAxes": [],
       "expectedVariantCount": 1
+    },
+    {
+      "name": "TimePicker",
+      "description": "A time field with a list of times, for meetings, bookings and opening hours. The control is a\nbutton drawn like Field; it opens a listbox of times every `step` minutes between `min` and\n`max`. In the list, the arrow keys move one time, Page Up and Page Down move an hour, Home and\nEnd go to the first and last time, typing digits jumps to the first time that starts with\nthem, Enter picks, and Escape closes and returns focus to the field. The value is always\n24-hour \"HH:MM\", whichever format is shown, so it submits and stores the same everywhere.",
+      "storybookTitle": "Components/TimePicker",
+      "source": "src/components/ui/TimePicker.tsx",
+      "storyFile": "src/components/ui/TimePicker.stories.tsx",
+      "importPath": "@/components/ui/TimePicker",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The time on first render, as 24-hour \"HH:MM\": \"09:30\". Uncontrolled; pass onChange to observe it.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((value: string | null) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the chosen time as \"HH:MM\", or null when cleared.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 15,
+          "description": "Minutes between the times in the list. 15 for meetings, 30 for bookings, 5 for fine control.",
+          "figma": {
+            "name": "step",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "00:00",
+          "description": "The earliest time in the list, as \"HH:MM\".",
+          "figma": {
+            "name": "min",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "00:00",
+            "companionBoolean": "minVisible"
+          }
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "23:59",
+          "description": "The latest time in the list, as \"HH:MM\".",
+          "figma": {
+            "name": "max",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "23:59",
+            "companionBoolean": "maxVisible"
+          }
+        },
+        {
+          "name": "format",
+          "type": "enum",
+          "values": [
+            "24h",
+            "12h"
+          ],
+          "required": false,
+          "default": "24h",
+          "description": "24h shows 14:30; 12h shows 2:30 pm. The submitted value is always 24-hour.",
+          "figma": {
+            "name": "format",
+            "figmaType": "VARIANT",
+            "values": [
+              "24h",
+              "12h"
+            ],
+            "defaultValue": "24h"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Choose a time",
+          "description": "Shown in the empty control, in muted.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Choose a time",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submits the value with a form as \"HH:MM\".",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Start time",
+            "defaultValue": "09:30",
+            "format": "24h",
+            "hint": "Shown in your time zone, London."
+          }
+        },
+        {
+          "name": "Empty",
+          "args": {
+            "label": "Start time",
+            "required": true
+          }
+        },
+        {
+          "name": "TwelveHour",
+          "args": {
+            "label": "Pickup time",
+            "defaultValue": "14:30",
+            "format": "12h",
+            "step": 30
+          }
+        },
+        {
+          "name": "OpeningHours",
+          "args": {
+            "label": "Booking slot",
+            "min": "08:00",
+            "max": "18:00",
+            "step": 30,
+            "hint": "Bookings from 8:00 to 18:00."
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "End time",
+            "defaultValue": "08:45",
+            "error": "Choose an end time after the start time."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Start time",
+            "defaultValue": "09:00",
+            "disabled": true,
+            "hint": "Set by the meeting room."
+          }
+        },
+        {
+          "name": "WithADate",
+          "args": {
+            "label": "Time",
+            "defaultValue": "10:00"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "format",
+          "values": [
+            "24h",
+            "12h"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
     },
     {
       "name": "Timeline",

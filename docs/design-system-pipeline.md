@@ -9,7 +9,7 @@ automation stops. This document describes the loop and the rules that keep both 
 
 `specimen_ Pro Kit`: https://www.figma.com/design/mlqEP5MmFzaUPmdK1qj1ps (Pro components and Pro Blocks; never copied into the free file)
 
-Contents: 162 variables across three collections; 9 text styles; 65 components. Everything in
+Contents: 162 variables across three collections; 9 text styles; 69 components. Everything in
 it was generated from the two files below.
 
 | Collection | Modes | Count | Holds |
@@ -29,7 +29,7 @@ Getting started  using the file (variables, themes, text styles, components) and
 FOUNDATIONS
 ↳ Color, Typography, Spacing, Radius, Breakpoints, Border, Motion, Branding
 FORM
-↳ AutoComplete, Button, Checkbox, ColorPicker, DatePicker, Field, Fieldset, InputGroup, InputMask, InputNumber, InputOtp, Listbox, MultiSelect, Password, Radio, RichTextEditor, Select, SelectButton, Slider, SplitButton, Switch, Textarea, TreeSelect
+↳ AutoComplete, Button, ButtonGroup, Checkbox, ColorPicker, DatePicker, Field, Fieldset, IconButton, InputGroup, InputMask, InputNumber, InputOtp, Listbox, MultiSelect, Password, Radio, Rating, RichTextEditor, Select, SelectButton, Slider, SplitButton, Switch, Textarea, TimePicker, TreeSelect
 OVERLAY
 ↳ CommandMenu, ConfirmDialog, ContextMenu, Dialog, Drawer, Menu, Popover, Tooltip
 FEEDBACK
@@ -621,6 +621,26 @@ component (`DataTable<Invoice>`); `build-contract.mjs` now reads through the ins
 `figma:check` reports no drift across 65. Pro keeps 7 components (TreeTable, OrgChart,
 FileUpload, Chart, Scheduler, TaskBoard, Gantt), the Blocks and the starter app; its price did
 not change.
+
+## Components: four from the gap list, 8 Oct 2026
+
+IconButton, ButtonGroup, TimePicker and Rating came from the component comparison against eight
+other libraries, where icon button and button group were the most common gaps.
+
+- **IconButton** shares Button's colours. A 20px box for the 16px icon plus Button's vertical
+  padding makes md 46px square and sm 38px, so it sits level with Field and Button. Its `icon`
+  is an instance swap onto the `Icon/` components drawn on its page (Edit, Copy, Plus, Trash,
+  More, Pin, the three alignments and two chevrons). `pressed` is an overlay layer.
+- **ButtonGroup** always joins its buttons. An `attached` boolean was dropped before it
+  shipped: a Figma boolean can only hide a layer, so it could not switch the gap. Its
+  `children` is a Figma slot (`ComponentNode.createSlot()`), holding three secondary Buttons
+  with only the outer corners rounded.
+- **TimePicker** reuses DatePicker's label, field and state layers, with a listbox in place of
+  the calendar. Its `min`, `max` and `name` are strings, so each has a visibility boolean.
+- **Rating** draws three of five stars, because the value is a number and has no Figma
+  property. A story sets the stars per instance.
+
+`figma:check` reports no drift across 69.
 
 ## Free and Pro
 
