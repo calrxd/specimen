@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "11966ca416fa",
+  "sourceHash": "960f4b23edb9",
   "components": [
     {
       "name": "Mark",
@@ -266,6 +266,195 @@
               }
             ],
             "allowMultiple": false
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "AppSidebar",
+      "description": "The navigation rail down the left of a product. Groups with short headings, the current page\nmarked by aria-current and a 2px sample bar, badges for counts. It collapses to a rail of icons\nthat name themselves on hover and focus, and below md it becomes a Menu button that opens the\nsame navigation in a Drawer. A nav landmark; links are links and actions are buttons, so the\nkeyboard needs nothing beyond Tab.",
+      "storybookTitle": "Components/AppSidebar",
+      "source": "src/components/ui/AppSidebar.tsx",
+      "storyFile": "src/components/ui/AppSidebar.stories.tsx",
+      "importPath": "@/components/ui/AppSidebar",
+      "props": [
+        {
+          "name": "brand",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The product name or logo at the top.",
+          "figma": {
+            "name": "brand",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "groups",
+          "type": "AppSidebarGroup[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The navigation, in groups.",
+          "figma": {
+            "name": "groups",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "activeId",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The id of the page being shown. It carries aria-current=\"page\" and the sample bar.",
+          "figma": {
+            "name": "activeId",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "activeIdVisible"
+          }
+        },
+        {
+          "name": "defaultCollapsed",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Start as the narrow icon rail.",
+          "figma": {
+            "name": "defaultCollapsed",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onCollapsedChange",
+          "type": "((collapsed: boolean) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called when the person collapses or expands the rail.",
+          "figma": {
+            "name": "onCollapsedChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "footer",
+          "type": "node",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Pinned to the bottom: the workspace switcher, the signed-in person.",
+          "figma": {
+            "name": "footer",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Main",
+          "description": "Names the navigation landmark.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Main",
+            "companionBoolean": "labelVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "brand": "specimen_ billing",
+            "groups": {
+              "$dynamic": "Identifier"
+            },
+            "activeId": "invoices",
+            "footer": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "Collapsed",
+          "args": {
+            "brand": "specimen_ billing",
+            "groups": {
+              "$dynamic": "Identifier"
+            },
+            "activeId": "overview",
+            "defaultCollapsed": true,
+            "footer": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "WithoutIcons",
+          "args": {
+            "brand": "specimen_ rota",
+            "activeId": "week",
+            "groups": [
+              {
+                "id": "plan",
+                "items": [
+                  {
+                    "id": "week",
+                    "label": "This week",
+                    "href": "#week"
+                  },
+                  {
+                    "id": "requests",
+                    "label": "Swap requests",
+                    "href": "#requests",
+                    "badge": 3
+                  },
+                  {
+                    "id": "leave",
+                    "label": "Leave",
+                    "href": "#leave"
+                  }
+                ]
+              },
+              {
+                "id": "people",
+                "label": "People",
+                "items": [
+                  {
+                    "id": "staff",
+                    "label": "Staff",
+                    "href": "#staff"
+                  },
+                  {
+                    "id": "sites",
+                    "label": "Sites",
+                    "href": "#sites"
+                  }
+                ]
+              }
+            ]
           }
         }
       ],
@@ -2364,6 +2553,412 @@
           "values": [
             "primary",
             "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "ContextMenu",
+      "description": "A menu of actions on whatever is under the pointer: right-click, a long press on touch, or\nShift F10 and the context menu key when the area has focus. It opens at the pointer, inside\nthe viewport, with focus on the first item. Up and Down move, Home and End jump, typing a\nletter jumps to the next item starting with it, Enter or Space runs the item, Escape and Tab\nclose it and return focus to the area.",
+      "storybookTitle": "Components/ContextMenu",
+      "source": "src/components/ui/ContextMenu.tsx",
+      "storyFile": "src/components/ui/ContextMenu.stories.tsx",
+      "importPath": "@/components/ui/ContextMenu",
+      "props": [
+        {
+          "name": "children",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The area that opens the menu: a table row, a card, a canvas.",
+          "figma": {
+            "name": "children",
+            "figmaType": "SLOT",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the area for keyboard and screen reader users: \"Invoice INV-2048\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "items",
+          "type": "ContextMenuItem[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The actions, in order, with separators between groups.",
+          "figma": {
+            "name": "items",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Invoice INV-2048",
+            "items": {
+              "$dynamic": "Identifier"
+            },
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "OnACard",
+          "args": {
+            "label": "Shift: Tuesday early",
+            "items": [
+              {
+                "id": "edit",
+                "label": "Edit shift",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "dup",
+                "label": "Duplicate to next week",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "swap",
+                "label": "Offer swap",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                }
+              },
+              {
+                "id": "s",
+                "separator": true
+              },
+              {
+                "id": "del",
+                "label": "Delete shift",
+                "onSelect": {
+                  "$dynamic": "Identifier"
+                },
+                "tone": "danger"
+              }
+            ],
+            "children": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "DataTable",
+      "description": "A data grid for large record sets: sort, filter, select, resize, page and scroll through\nten thousand rows without rendering them all. Exposed as an ARIA grid with one tab stop:\narrow keys move between cells, Home and End go to the ends of a row, Ctrl+Home and\nCtrl+End to the first and last cell, Page Up and Page Down by a screenful. On a header,\nEnter sorts (ascending, descending, off) and Shift with the left or right arrow resizes\nthe column; columns also resize by dragging their right edge. With `selectable`, Space\nselects the focused row. Flat like Table: hairlines between rows, line-strong under the\nheader, no zebra stripes, numbers aligned to the end with tabular figures.",
+      "storybookTitle": "Components/DataTable",
+      "source": "src/components/ui/DataTable.tsx",
+      "storyFile": "src/components/ui/DataTable.stories.tsx",
+      "importPath": "@/components/ui/DataTable",
+      "props": [
+        {
+          "name": "caption",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Says what the table holds. Shown above it and used as the grid's accessible name.",
+          "figma": {
+            "name": "caption",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "columns",
+          "type": "DataTableColumn<Row>[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Column definitions, in order.",
+          "figma": {
+            "name": "columns",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "rows",
+          "type": "Row[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The records. Sorting, filtering and paging happen inside the table.",
+          "figma": {
+            "name": "rows",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "getRowId",
+          "type": "(row: Row) => string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "A stable id per row, used for selection and as the React key.",
+          "figma": {
+            "name": "getRowId",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "selectable",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds a checkbox column and Space to select rows.",
+          "figma": {
+            "name": "selectable",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "defaultSelected",
+          "type": "string[]",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Rows selected on first render.",
+          "figma": {
+            "name": "defaultSelected",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "onSelectionChange",
+          "type": "((ids: string[]) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with every selected row id after each change.",
+          "figma": {
+            "name": "onSelectionChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "pageSize",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Splits the rows into pages of this size, with a Paginator underneath.",
+          "figma": {
+            "name": "pageSize",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "A fixed height in pixels. The body scrolls inside it and only the visible rows render.",
+          "figma": {
+            "name": "height",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "density",
+          "type": "enum",
+          "values": [
+            "comfortable",
+            "compact"
+          ],
+          "required": false,
+          "default": "comfortable",
+          "description": "compact for admin lists and anything scanned rather than read.",
+          "figma": {
+            "name": "density",
+            "figmaType": "VARIANT",
+            "values": [
+              "comfortable",
+              "compact"
+            ],
+            "defaultValue": "comfortable"
+          }
+        },
+        {
+          "name": "searchable",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds a filter field above the table that searches every column.",
+          "figma": {
+            "name": "searchable",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "defaultSort",
+          "type": "{ key: string; direction: SortDirection; }",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The sort on first render.",
+          "figma": {
+            "name": "defaultSort",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "emptyMessage",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "No rows match these filters.",
+          "description": "Shown in the body when no row matches the filters.",
+          "figma": {
+            "name": "emptyMessage",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "No rows match these filters.",
+            "companionBoolean": "emptyMessageVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "caption": "Invoices issued in 2026, page by page",
+            "rows": {
+              "$dynamic": "Identifier"
+            },
+            "pageSize": 10,
+            "searchable": true,
+            "selectable": true,
+            "density": "comfortable"
+          }
+        },
+        {
+          "name": "TenThousandRows",
+          "args": {
+            "caption": "Every invoice since 2019",
+            "rows": {
+              "$dynamic": "Identifier"
+            },
+            "height": 480,
+            "searchable": true,
+            "selectable": true
+          }
+        },
+        {
+          "name": "SortedByAmount",
+          "args": {
+            "caption": "Invoices by amount",
+            "rows": {
+              "$dynamic": "Identifier"
+            },
+            "pageSize": 10,
+            "defaultSort": {
+              "key": "amount",
+              "direction": "descending"
+            }
+          }
+        },
+        {
+          "name": "WithSelection",
+          "args": {
+            "caption": "Invoices to approve",
+            "rows": {
+              "$dynamic": "CallExpression"
+            },
+            "selectable": true,
+            "defaultSelected": [
+              "inv-2",
+              "inv-3",
+              "inv-6"
+            ]
+          }
+        },
+        {
+          "name": "Compact",
+          "args": {
+            "caption": "Invoices, compact rows",
+            "rows": {
+              "$dynamic": "Identifier"
+            },
+            "pageSize": 15,
+            "density": "compact"
+          }
+        },
+        {
+          "name": "Empty",
+          "args": {
+            "caption": "Invoices for Fieldcraft Ltd",
+            "rows": [],
+            "searchable": true,
+            "emptyMessage": "No invoices yet. Create one from the billing page."
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "density",
+          "values": [
+            "comfortable",
+            "compact"
           ]
         }
       ],
@@ -4766,6 +5361,67 @@
             ],
             "disabled": true,
             "hint": "Set when the workspace was created."
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "MegaMenu",
+      "description": "A menu bar whose entries open wide panels of grouped links, for products with more pages than\na navbar can hold. Built on the WAI-ARIA menubar pattern. In the bar, Left and Right move between\nentries, Down, Enter or Space opens one and focuses its first link, Home and End jump. In a\npanel, Up and Down move through the links, Left and Right move between columns and then on to\nthe neighbouring entry, Escape closes it and returns focus to the bar, Tab closes it and moves on.\nPanels also open on click; a click outside closes them.",
+      "storybookTitle": "Components/MegaMenu",
+      "source": "src/components/ui/MegaMenu.tsx",
+      "storyFile": "src/components/ui/MegaMenu.stories.tsx",
+      "importPath": "@/components/ui/MegaMenu",
+      "props": [
+        {
+          "name": "entries",
+          "type": "MegaMenuEntry[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The top-level entries, in order.",
+          "figma": {
+            "name": "entries",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the menu bar: \"Product\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Product",
+            "entries": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "LinksOnly",
+          "args": {
+            "label": "Site",
+            "entries": {
+              "$dynamic": "CallExpression"
+            }
           }
         }
       ],
@@ -7453,6 +8109,224 @@
       "expectedVariantCount": 4
     },
     {
+      "name": "Splitter",
+      "description": "Two resizable panes for an editor and its inspector, or a list and its detail. The divider\nis a focusable separator carrying its position in aria-valuenow: Left and Right (Up and Down\nwhen stacked) move it, Home and End jump to the limits, Enter collapses the first pane to its\nminimum and restores it. Dragging uses pointer capture, so it works with a mouse, pen or finger.",
+      "storybookTitle": "Components/Splitter",
+      "source": "src/components/ui/Splitter.tsx",
+      "storyFile": "src/components/ui/Splitter.stories.tsx",
+      "importPath": "@/components/ui/Splitter",
+      "props": [
+        {
+          "name": "orientation",
+          "type": "enum",
+          "values": [
+            "horizontal",
+            "vertical"
+          ],
+          "required": false,
+          "default": "horizontal",
+          "description": "horizontal puts the panes side by side; vertical stacks them.",
+          "figma": {
+            "name": "orientation",
+            "figmaType": "VARIANT",
+            "values": [
+              "horizontal",
+              "vertical"
+            ],
+            "defaultValue": "horizontal"
+          }
+        },
+        {
+          "name": "start",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The first pane: left, or top.",
+          "figma": {
+            "name": "start",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "end",
+          "type": "node",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The second pane: right, or bottom.",
+          "figma": {
+            "name": "end",
+            "figmaType": "INSTANCE_SWAP",
+            "values": null,
+            "defaultValue": null
+          }
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Names the divider for screen readers, after the pane it resizes: \"Resize file list\".",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "defaultSize",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 50,
+          "description": "Size of the first pane at first render, as a percentage of the whole.",
+          "figma": {
+            "name": "defaultSize",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 20,
+          "description": "Smallest the first pane can get, as a percentage.",
+          "figma": {
+            "name": "min",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 80,
+          "description": "Largest the first pane can get, as a percentage.",
+          "figma": {
+            "name": "max",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 5,
+          "description": "How far one arrow key press moves the divider, as a percentage.",
+          "figma": {
+            "name": "step",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "onResize",
+          "type": "((size: number) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the new size of the first pane, as a percentage, after every change.",
+          "figma": {
+            "name": "onResize",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 320,
+          "description": "Height of the whole splitter in pixels. Panes scroll inside it.",
+          "figma": {
+            "name": "height",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "orientation": "horizontal",
+            "label": "Resize invoice list",
+            "defaultSize": 40,
+            "start": {
+              "$dynamic": "JSXElement"
+            },
+            "end": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "Vertical",
+          "args": {
+            "orientation": "vertical",
+            "label": "Resize editor",
+            "defaultSize": 60,
+            "start": {
+              "$dynamic": "JSXElement"
+            },
+            "end": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        },
+        {
+          "name": "Narrow",
+          "args": {
+            "orientation": "horizontal",
+            "label": "Resize invoice list",
+            "defaultSize": 25,
+            "min": 15,
+            "max": 50,
+            "start": {
+              "$dynamic": "JSXElement"
+            },
+            "end": {
+              "$dynamic": "JSXElement"
+            }
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "orientation",
+          "values": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
       "name": "Stat",
       "description": "A key figure with its label, and how it moved since the last period. The arrow shows the\ndirection; the colour says whether that is good, which depends on the figure: revenue up\nis success, overdue invoices up is danger. The direction is also spoken, so it never rests\non the arrow or the colour alone. Built as a description list (label, figure, caption), so\na row of Stats reads as a set of named values.",
       "storybookTitle": "Components/Stat",
@@ -8934,6 +9808,214 @@
         }
       ],
       "expectedVariantCount": 2
+    },
+    {
+      "name": "Tree",
+      "description": "A hierarchy a person can open, select and reorder: folders, accounts, a chart of\naccounts, permissions. ARIA tree with one tab stop. Up and Down move through the visible\nitems; Right opens an item or moves to its first child; Left closes it or moves to its\nparent; Home and End jump; typing a letter moves to the next item starting with it;\nEnter or Space selects. In multiple selection a parent's box ticks its whole branch and\nshows a dash when only part of it is selected. With `reorderable`, drag a row onto the\ntop or bottom half of another to place it before or after, or press Alt with the up or\ndown arrow to move it among its siblings.",
+      "storybookTitle": "Components/Tree",
+      "source": "src/components/ui/Tree.tsx",
+      "storyFile": "src/components/ui/Tree.stories.tsx",
+      "importPath": "@/components/ui/Tree",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The tree's accessible name: \"Workspace folders\". Not drawn; put a visible heading beside it.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "nodes",
+          "type": "TreeNode[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The hierarchy. Uncontrolled: reordering updates an internal copy and reports it.",
+          "figma": {
+            "name": "nodes",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "selection",
+          "type": "enum",
+          "values": [
+            "none",
+            "single",
+            "multiple"
+          ],
+          "required": false,
+          "default": "single",
+          "description": "none for navigation only, single to pick one item, multiple for checkboxes.",
+          "figma": {
+            "name": "selection",
+            "figmaType": "VARIANT",
+            "values": [
+              "none",
+              "single",
+              "multiple"
+            ],
+            "defaultValue": "single"
+          }
+        },
+        {
+          "name": "defaultExpanded",
+          "type": "string[]",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Ids open on first render.",
+          "figma": {
+            "name": "defaultExpanded",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "defaultSelected",
+          "type": "string[]",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Ids selected on first render.",
+          "figma": {
+            "name": "defaultSelected",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "onSelectionChange",
+          "type": "((ids: string[]) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with every selected id after each change.",
+          "figma": {
+            "name": "onSelectionChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "reorderable",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Lets items move by drag, or by Alt with the up or down arrow.",
+          "figma": {
+            "name": "reorderable",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onReorder",
+          "type": "((nodes: TreeNode[]) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the whole tree after a move.",
+          "figma": {
+            "name": "onReorder",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Workspace folders",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "selection": "single",
+            "defaultExpanded": [
+              "clients",
+              "harbour"
+            ],
+            "defaultSelected": [
+              "harbour-invoices"
+            ]
+          }
+        },
+        {
+          "name": "MultipleSelection",
+          "args": {
+            "label": "Permissions for editors",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "selection": "multiple",
+            "defaultExpanded": [
+              "billing",
+              "team"
+            ],
+            "defaultSelected": [
+              "billing-view",
+              "billing-create"
+            ]
+          }
+        },
+        {
+          "name": "Reorderable",
+          "args": {
+            "label": "Templates",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "selection": "single",
+            "reorderable": true,
+            "defaultExpanded": [
+              "clients",
+              "templates"
+            ]
+          }
+        },
+        {
+          "name": "NavigationOnly",
+          "args": {
+            "label": "Workspace folders",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "selection": "none"
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "selection",
+          "values": [
+            "none",
+            "single",
+            "multiple"
+          ]
+        }
+      ],
+      "expectedVariantCount": 3
     },
     {
       "name": "TreeSelect",

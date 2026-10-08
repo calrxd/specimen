@@ -314,7 +314,7 @@ export function DatePicker({
                           className={[
                             'size-3xl border border-transparent p-none text-center tabular-nums outline-none transition-colors duration-fast',
                             between ? 'rounded-none' : 'rounded-sm',
-                            'focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-sample',
+                            'focus-visible:outline-2 focus-visible:outline-solid focus-visible:-outline-offset-2 focus-visible:outline-sample',
                             off ? 'cursor-not-allowed text-disabled' : 'cursor-pointer',
                             ends ? 'bg-sample-fill text-on-sample' : between ? 'bg-success-subtle text-ink' : off ? '' : outside ? 'text-muted hover:bg-canvas' : 'text-ink hover:bg-canvas',
                             same(d, today) && !ends ? 'border-line-strong' : '',

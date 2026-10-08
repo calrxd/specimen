@@ -7,7 +7,7 @@ automation stops. This document describes the loop and the rules that keep both 
 
 `specimen_ Design System`: https://www.figma.com/design/48sAYLBAAByDizTB2gfsu6
 
-Contents: 162 variables across three collections; 9 text styles; 59 components. Everything in
+Contents: 162 variables across three collections; 9 text styles; 65 components. Everything in
 it was generated from the two files below.
 
 | Collection | Modes | Count | Holds |
@@ -93,6 +93,12 @@ TreeSelect
 DatePicker
 ColorPicker
 RichTextEditor
+Tree
+DataTable
+AppSidebar
+Splitter
+ContextMenu
+MegaMenu
 ```
 
 ## Direction of travel
@@ -660,6 +666,15 @@ drawing (`name`, `mask`, `locale`, `min`, `max`) are hidden text layers. Two mor
 lessons: a text layer that starts empty keeps width 0 and cannot be set to fill, so give it a
 fixed width; and a combined set takes its property defaults from its first variant, so a
 story of another variant sets its own text.
+
+## Components: six more from Pro, 8 Oct 2026
+
+Tree, DataTable, AppSidebar, Splitter, ContextMenu and MegaMenu followed the first eight into
+the free core. DataTable had been skipped by the contract because its story names a generic
+component (`DataTable<Invoice>`); `build-contract.mjs` now reads through the instantiation.
+`figma:check` reports no drift across 65. Pro keeps 7 components (TreeTable, OrgChart,
+FileUpload, Chart, Scheduler, TaskBoard, Gantt), the Blocks and the starter app; its price did
+not change.
 
 ## Free and Pro
 

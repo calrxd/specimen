@@ -133,7 +133,9 @@ function readStoryFile(file) {
 
   if (!metaObject && metaName) metaObject = declarations.get(metaName)
   const titleNode = objectProp(metaObject, 'title')
-  const componentNode = objectProp(metaObject, 'component')
+  // A generic component reads `component: DataTable<Invoice>`; the name is inside the instantiation.
+  const rawComponent = objectProp(metaObject, 'component')
+  const componentNode = rawComponent?.type === 'TSInstantiationExpression' ? rawComponent.expression : rawComponent
 
   return {
     title: titleNode?.type === 'StringLiteral' ? titleNode.value : null,

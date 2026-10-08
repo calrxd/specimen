@@ -235,7 +235,7 @@ export function TreeSelect({
                 onFocus={() => setActive(node.id)}
                 className={[
                   'flex cursor-pointer items-center gap-sm rounded-sm py-sm pr-md font-mono text-body outline-none transition-colors duration-fast',
-                  'hover:bg-canvas focus-visible:bg-canvas focus-visible:outline-2 focus-visible:-outline-offset-2',
+                  'hover:bg-canvas focus-visible:bg-canvas focus-visible:outline-2 focus-visible:outline-solid focus-visible:-outline-offset-2',
                   node.disabled ? 'cursor-not-allowed text-disabled' : selected ? 'text-sample' : choosable ? 'text-ink' : 'text-muted',
                 ].join(' ')}
                 style={{ paddingLeft: `calc(var(--spacing-sm) + ${(level - 1) * 1.25}rem)` }}
