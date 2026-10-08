@@ -5,7 +5,9 @@ automation stops. This document describes the loop and the rules that keep both 
 
 ## The Figma file
 
-`specimen_ Design System`: https://www.figma.com/design/48sAYLBAAByDizTB2gfsu6
+`specimen_`: https://www.figma.com/design/48sAYLBAAByDizTB2gfsu6 (the free file, downloaded as the Basic kit)
+
+`specimen_ Pro Kit`: https://www.figma.com/design/mlqEP5MmFzaUPmdK1qj1ps (Pro components and Pro Blocks; never copied into the free file)
 
 Contents: 162 variables across three collections; 9 text styles; 65 components. Everything in
 it was generated from the two files below.
@@ -19,87 +21,31 @@ it was generated from the two files below.
 **Every one of the 79 semantic variables is an alias. None holds a literal.** Nothing in code
 or in a component points at a primitive.
 
-Pages:
+Pages, as sections in capitals and an arrow before each page in a section (reorganised 8 Oct 2026):
 
 ```
-Cover
-Getting Started   install, using the file, the rule, how a change flows
-=== FOUNDATIONS ===
-Color          25 colour roles in both modes, scrim included and every primitive ramp, grouped by role, each swatch bound to its variable
-Typography     families, the 7 size steps, the 2 case treatments, tracking, line height
-Spacing        the 10 named steps, bar widths bound to their variables
-Radius         the 4 radii and where they come from (decided 6 Oct 2026)
-Breakpoints    the 5 min-widths drawn to scale, marked by whether the code uses them
-Border         hairline and focus, shown in place rather than as numbers
-Motion         3 durations and the easing curve plotted against linear
-Branding       the mark, its rules, the wordmark, and the colour ratio
-=== COMPONENTS ===
-SectionHeader
-Mark
-Wordmark
-Button
-Tag
-Field
-Checkbox
-Radio
-Switch
-Select
-Textarea
-Tabs
-Toast
-Table
-Tooltip
-Dialog
-Popover
-Menu
-CommandMenu
-InputNumber
-Password
-Slider
-SelectButton
-Chip
-Avatar
-AvatarGroup
-Badge
-Accordion
-Card
-Divider
-Breadcrumb
-Paginator
-Stepper
-Toolbar
-PageHeader
-Message
-ProgressBar
-Spinner
-Skeleton
-Drawer
-EmptyState
-Banner
-ConfirmDialog
-Stat
-Timeline
-MeterGroup
-DescriptionList
-SplitButton
-Fieldset
-InputGroup
-Listbox
-InputMask
-InputOtp
-AutoComplete
-MultiSelect
-TreeSelect
-DatePicker
-ColorPicker
-RichTextEditor
-Tree
-DataTable
-AppSidebar
-Splitter
-ContextMenu
-MegaMenu
+Cover            dark, branded: the wordmark, the mark, what the kit holds
+Getting started  using the file (variables, themes, text styles, components) and installing the tokens
+FOUNDATIONS
+↳ Color, Typography, Spacing, Radius, Breakpoints, Border, Motion, Branding
+FORM
+↳ AutoComplete, Button, Checkbox, ColorPicker, DatePicker, Field, Fieldset, InputGroup, InputMask, InputNumber, InputOtp, Listbox, MultiSelect, Password, Radio, RichTextEditor, Select, SelectButton, Slider, SplitButton, Switch, Textarea, TreeSelect
+OVERLAY
+↳ CommandMenu, ConfirmDialog, ContextMenu, Dialog, Drawer, Menu, Popover, Tooltip
+FEEDBACK
+↳ Banner, EmptyState, Message, MeterGroup, ProgressBar, Skeleton, Spinner, Toast
+NAVIGATION
+↳ AppSidebar, Breadcrumb, MegaMenu, Paginator, Stepper, Tabs
+LAYOUT
+↳ Accordion, Card, Divider, PageHeader, SectionHeader, Splitter, Toolbar
+CONTENT
+↳ Avatar, AvatarGroup, Badge, Chip, DataTable, DescriptionList, Stat, Table, Tag, Timeline, Tree
+BRAND
+↳ Mark, Wordmark
 ```
+
+Every component page opens with the same header (its group, its name, one line from its JSDoc and the import), then the set, then its Stories frame.
+
 
 ## Direction of travel
 
