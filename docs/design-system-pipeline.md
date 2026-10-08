@@ -7,7 +7,7 @@ automation stops. This document describes the loop and the rules that keep both 
 
 `specimen_ Design System`: https://www.figma.com/design/48sAYLBAAByDizTB2gfsu6
 
-Contents: 162 variables across three collections; 9 text styles; 51 components. Everything in
+Contents: 162 variables across three collections; 9 text styles; 59 components. Everything in
 it was generated from the two files below.
 
 | Collection | Modes | Count | Holds |
@@ -85,6 +85,14 @@ SplitButton
 Fieldset
 InputGroup
 Listbox
+InputMask
+InputOtp
+AutoComplete
+MultiSelect
+TreeSelect
+DatePicker
+ColorPicker
+RichTextEditor
 ```
 
 ## Direction of travel
@@ -637,6 +645,21 @@ More patterns the Figma build settled on:
   story that has none hides the layer with an instance override. The default for InputGroup's
   icon is `Icon/Search`, a component on its page; `figma:check` skips `Icon/` names, since
   icons are swap targets with no code component.
+
+## Components: eight from Pro, 8 Oct 2026
+
+MultiSelect, DatePicker, TreeSelect, RichTextEditor, InputMask, InputOtp, AutoComplete and
+ColorPicker moved from Pro into the free core, with the helpers they share
+(`src/components/ui/internal`). They are in the contract, the public Storybook and the
+Figma file, and `figma:check` reports no drift across 59. Pro keeps 12 components and the
+Blocks; its price did not change. Old `/docs/pro/<slug>` addresses redirect to `/docs/<slug>`.
+
+The Figma sets draw each field with its list or calendar open beneath it, on the shared field
+scaffold (label, box with rest, error and disabled layers, hint, error). Props with no
+drawing (`name`, `mask`, `locale`, `min`, `max`) are hidden text layers. Two more Plugin API
+lessons: a text layer that starts empty keeps width 0 and cannot be set to fill, so give it a
+fixed width; and a combined set takes its property defaults from its first variant, so a
+story of another variant sets its own text.
 
 ## Free and Pro
 

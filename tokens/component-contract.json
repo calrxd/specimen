@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "376f96989226",
+  "sourceHash": "11966ca416fa",
   "components": [
     {
       "name": "Mark",
@@ -266,6 +266,282 @@
               }
             ],
             "allowMultiple": false
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "AutoComplete",
+      "description": "Type-ahead search over local or remote data: customers, addresses, products. An ARIA\ncombobox with a listbox popup. Suggestions appear as the person types; Down opens the\nlist or moves the highlight, Up moves it back, Enter takes the highlighted option, and\nEscape closes the list, or clears the text when the list is already closed. The match\nis picked out in each suggestion, and the number of results is announced. With `search`,\ncalls are debounced, the previous call is aborted, and a spinner shows while it runs.",
+      "storybookTitle": "Components/AutoComplete",
+      "source": "src/components/ui/AutoComplete.tsx",
+      "storyFile": "src/components/ui/AutoComplete.stories.tsx",
+      "importPath": "@/components/ui/AutoComplete",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the input. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "options",
+          "type": "ListOption[]",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Local suggestions, filtered as the person types. Leave out when `search` is given.",
+          "figma": {
+            "name": "options",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "search",
+          "type": "((query: string, signal: AbortSignal) => Promise<ListOption[]>)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Remote suggestions: called with the query after a pause in typing. Return the matches.",
+          "figma": {
+            "name": "search",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "minChars",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 1,
+          "description": "Characters needed before suggestions appear.",
+          "figma": {
+            "name": "minChars",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "debounceMs",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 200,
+          "description": "Pause in typing, in milliseconds, before `search` is called.",
+          "figma": {
+            "name": "debounceMs",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "onSelect",
+          "type": "((option: ListOption | null) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the chosen option, or null when the text no longer matches one.",
+          "figma": {
+            "name": "onSelect",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "",
+          "description": "Text in the input on first render.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shown inside the empty input, in faint.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "emptyMessage",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "No matches. Check the spelling or try fewer letters.",
+          "description": "Shown in the list when nothing matches.",
+          "figma": {
+            "name": "emptyMessage",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "No matches. Check the spelling or try fewer letters.",
+            "companionBoolean": "emptyMessageVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the input. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and the native required attribute.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submits the chosen option's value with a form under this name.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Customer",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Start typing a name",
+            "hint": "Customers you have invoiced before."
+          }
+        },
+        {
+          "name": "Chosen",
+          "args": {
+            "label": "Customer",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": "Harbour & Hale"
+          }
+        },
+        {
+          "name": "RemoteSearch",
+          "args": {
+            "label": "Billing address",
+            "search": {
+              "$dynamic": "Identifier"
+            },
+            "minChars": 2,
+            "placeholder": "Start with a street name",
+            "hint": "Addresses come from the postcode service."
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Customer",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "required": true,
+            "error": "Choose a customer from the list."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Customer",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": "Harbour & Hale",
+            "disabled": true
           }
         }
       ],
@@ -1491,6 +1767,218 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "ColorPicker",
+      "description": "Choose a colour three ways: drag in the saturation and brightness area, move the hue\nslider, or type a hex value; preset swatches sit underneath. Every part works from the\nkeyboard. The area is a slider whose arrows change saturation (Left, Right) and brightness\n(Up, Down), Shift moves ten times as far, and its value is read out in words. The hue\nslider follows the APG slider pattern. Swatches are toggle buttons with the hex as their\nname. The colours on screen are content, the only colour here not drawn from the tokens.",
+      "storybookTitle": "Components/ColorPicker",
+      "source": "src/components/ui/ColorPicker.tsx",
+      "storyFile": "src/components/ui/ColorPicker.stories.tsx",
+      "importPath": "@/components/ui/ColorPicker",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and marks the control required.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "#07753F",
+          "description": "The colour to start with, as #RRGGBB.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "#07753F",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "swatches",
+          "type": "string[]",
+          "values": null,
+          "required": false,
+          "default": {
+            "$expression": "[]"
+          },
+          "description": "Preset colours shown as buttons under the picker: brand colours, label colours.",
+          "figma": {
+            "name": "swatches",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "swatchesOnly",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Hides the saturation and hue picker, leaving the hex field and the swatches.",
+          "figma": {
+            "name": "swatchesOnly",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((hex: string) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with #RRGGBB whenever the colour changes.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submitted with a form under this name, as #RRGGBB.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Brand colour",
+            "defaultValue": "#07753F",
+            "hint": "Used on buttons and links in your customer portal."
+          }
+        },
+        {
+          "name": "WithSwatches",
+          "args": {
+            "label": "Label colour",
+            "defaultValue": "#3E7BD6",
+            "swatches": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "SwatchesOnly",
+          "args": {
+            "label": "Project colour",
+            "defaultValue": "#D9A03F",
+            "swatches": {
+              "$dynamic": "Identifier"
+            },
+            "swatchesOnly": true
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Brand colour",
+            "defaultValue": "#2CE98F",
+            "error": "White text on this colour measures 1.6:1. Choose a darker shade for buttons.",
+            "required": true
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Brand colour",
+            "defaultValue": "#07753F",
+            "swatches": {
+              "$dynamic": "Identifier"
+            },
+            "disabled": true,
+            "hint": "Set by your organisation."
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "CommandMenu",
       "description": "Search across every action in the product and run one from the keyboard. A modal on the\nnative dialog element, with the search field as a combobox over a listbox: typing filters,\narrows move the active option, Enter runs it, Escape closes. Focus stays in the field the\nwhole time; the active option is announced through aria-activedescendant.",
       "storybookTitle": "Components/CommandMenu",
@@ -1876,6 +2364,338 @@
           "values": [
             "primary",
             "danger"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "DatePicker",
+      "description": "A date field with a calendar, for due dates, report periods and bookings. The control is\na button drawn like Field; it opens a non-modal dialog holding a month grid. In the grid,\nthe arrow keys move by a day or a week, Home and End go to the start and end of the week,\nPage Up and Page Down change the month (with Shift, the year), Enter or Space picks the\nday, and Escape closes and returns focus to the field. In range mode the first pick sets\nthe start and the second the end; the days between fill in as you move. Month and\nweekday names, and the displayed format, come from Intl in the given locale.",
+      "storybookTitle": "Components/DatePicker",
+      "source": "src/components/ui/DatePicker.tsx",
+      "storyFile": "src/components/ui/DatePicker.stories.tsx",
+      "importPath": "@/components/ui/DatePicker",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "mode",
+          "type": "enum",
+          "values": [
+            "single",
+            "range"
+          ],
+          "required": false,
+          "default": "single",
+          "description": "single picks one day; range picks a start and an end with two clicks.",
+          "figma": {
+            "name": "mode",
+            "figmaType": "VARIANT",
+            "values": [
+              "single",
+              "range"
+            ],
+            "defaultValue": "single"
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "DatePickerValue",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The value on first render: a Date in single mode, a { start, end } in range mode.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": null,
+            "note": "unmapped type: DatePickerValue"
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((value: DatePickerValue) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the new value: a Date, a range, or null when cleared.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "presets",
+          "type": "DatePreset[]",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shortcuts shown beside the calendar: \"Last 7 days\", \"This month\".",
+          "figma": {
+            "name": "presets",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "locale",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "en-GB",
+          "description": "A BCP 47 tag for month names, weekday names and the date format.",
+          "figma": {
+            "name": "locale",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "en-GB",
+            "companionBoolean": "localeVisible"
+          }
+        },
+        {
+          "name": "weekStartsOn",
+          "type": "enum",
+          "values": [
+            "0",
+            "1"
+          ],
+          "required": false,
+          "default": 1,
+          "description": "1 for Monday (the UK and most of Europe), 0 for Sunday.",
+          "figma": {
+            "name": "weekStartsOn",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "min",
+          "type": "Date",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Days before this cannot be chosen.",
+          "figma": {
+            "name": "min",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "note": "unmapped type: Date"
+          }
+        },
+        {
+          "name": "max",
+          "type": "Date",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Days after this cannot be chosen.",
+          "figma": {
+            "name": "max",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "note": "unmapped type: Date"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Choose a date",
+          "description": "Shown in the empty control, in faint.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Choose a date",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submits the value with a form as ISO dates: one field, or name-start and name-end.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Due date",
+            "defaultValue": {
+              "$dynamic": "NewExpression"
+            },
+            "hint": "Reminders go out three days before."
+          }
+        },
+        {
+          "name": "Empty",
+          "args": {
+            "label": "Due date",
+            "required": true
+          }
+        },
+        {
+          "name": "Range",
+          "args": {
+            "label": "Report period",
+            "mode": "range",
+            "defaultValue": {
+              "start": {
+                "$dynamic": "NewExpression"
+              },
+              "end": {
+                "$dynamic": "NewExpression"
+              }
+            },
+            "presets": {
+              "$dynamic": "Identifier"
+            }
+          }
+        },
+        {
+          "name": "WithLimits",
+          "args": {
+            "label": "Delivery date",
+            "defaultValue": {
+              "$dynamic": "NewExpression"
+            },
+            "min": {
+              "$dynamic": "NewExpression"
+            },
+            "max": {
+              "$dynamic": "NewExpression"
+            },
+            "hint": "Weekdays from 8 October."
+          }
+        },
+        {
+          "name": "OtherLocale",
+          "args": {
+            "label": "Rechnungsdatum",
+            "locale": "de-DE",
+            "defaultValue": {
+              "$dynamic": "NewExpression"
+            }
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Due date",
+            "required": true,
+            "error": "Choose a due date before sending the invoice."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Due date",
+            "defaultValue": {
+              "$dynamic": "NewExpression"
+            },
+            "disabled": true,
+            "hint": "Set by the payment terms."
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "mode",
+          "values": [
+            "single",
+            "range"
           ]
         }
       ],
@@ -3046,6 +3866,230 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "InputMask",
+      "description": "A text input that formats as you type: sort codes, phone numbers, card numbers, VAT\nnumbers or a pattern of your own. The literals (dashes, spaces) are written for the person,\npaste is reformatted, and the form receives the raw characters. It stays a native text\ninput, so selection, undo and screen readers behave as usual; the expected format is in\nthe placeholder and should also be in the hint.",
+      "storybookTitle": "Components/InputMask",
+      "source": "src/components/ui/InputMask.tsx",
+      "storyFile": "src/components/ui/InputMask.stories.tsx",
+      "importPath": "@/components/ui/InputMask",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and marks the control required.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "mask",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "A named format, or your own pattern (9 digit, a letter, * either; other characters are typed for you).",
+          "figma": {
+            "name": "mask",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Shown inside the empty input. Defaults to an example of the pattern, such as 00-00-00.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "",
+          "description": "The unformatted value to start with, digits and letters only.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((raw: string, formatted: string) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called on every change with the raw characters and the formatted text.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submitted with a form under this name. The raw value, without the literals.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "SortCode",
+          "args": {
+            "label": "Sort code",
+            "mask": "sort-code",
+            "hint": "Six digits, on your bank card or statement.",
+            "required": true
+          }
+        },
+        {
+          "name": "Phone",
+          "args": {
+            "label": "Mobile number",
+            "mask": "phone",
+            "defaultValue": "07700900123"
+          }
+        },
+        {
+          "name": "Card",
+          "args": {
+            "label": "Card number",
+            "mask": "card",
+            "defaultValue": "4242424242424242",
+            "autoComplete": "cc-number"
+          }
+        },
+        {
+          "name": "VatNumber",
+          "args": {
+            "label": "VAT number",
+            "mask": "vat",
+            "defaultValue": "123456789",
+            "hint": "GB followed by nine digits."
+          }
+        },
+        {
+          "name": "CustomPattern",
+          "args": {
+            "label": "Company number",
+            "mask": "aa999999",
+            "placeholder": "SC123456",
+            "hint": "Two letters and six digits, from Companies House."
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Sort code",
+            "mask": "sort-code",
+            "defaultValue": "2000",
+            "error": "A sort code has six digits.",
+            "required": true
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Sort code",
+            "mask": "sort-code",
+            "defaultValue": "200000",
+            "disabled": true,
+            "hint": "Contact your administrator to change bank details."
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "InputNumber",
       "description": "A number field with decrease and increase buttons either side, for quantities a person\nadjusts in steps: seats, retries, a percentage. A native number input underneath,\nso arrow keys step it and assistive technology announces it as a spin button. The steppers\nstay out of the tab order because the arrow keys already do their job.",
       "storybookTitle": "Components/InputNumber",
@@ -3248,6 +4292,259 @@
       ],
       "variantAxes": [],
       "expectedVariantCount": 1
+    },
+    {
+      "name": "InputOtp",
+      "description": "A one-time code across separate boxes, one character each. Typing moves to the next box,\nBackspace clears the box and steps back, the arrow keys and Home and End move between\nboxes, and pasting a whole code anywhere fills from the first box. The boxes sit in a\ngroup named by the label, each announced as \"Character 2 of 6\"; the first carries\nautocomplete one-time-code so phones offer the code from a text message.",
+      "storybookTitle": "Components/InputOtp",
+      "source": "src/components/ui/InputOtp.tsx",
+      "storyFile": "src/components/ui/InputOtp.stories.tsx",
+      "importPath": "@/components/ui/InputOtp",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and marks the control required.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "length",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 6,
+          "description": "How many characters the code has. Six for most authenticator and SMS codes.",
+          "figma": {
+            "name": "length",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "numeric",
+            "alphanumeric"
+          ],
+          "required": false,
+          "default": "numeric",
+          "description": "numeric accepts digits only and opens the number keypad on phones; alphanumeric takes letters too.",
+          "figma": {
+            "name": "type",
+            "figmaType": "VARIANT",
+            "values": [
+              "numeric",
+              "alphanumeric"
+            ],
+            "defaultValue": "numeric"
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "",
+          "description": "The code to start with, for an uncontrolled field.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "masked",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows each character as a dot once typed, for codes read over a shoulder.",
+          "figma": {
+            "name": "masked",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((code: string) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the whole code, gaps as empty, on every change.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "onComplete",
+          "type": "((code: string) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called once every box is filled. Submit or verify here.",
+          "figma": {
+            "name": "onComplete",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submitted with a form under this name, as one value.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Verification code",
+            "hint": "We sent six digits to 07700 900123. They expire in ten minutes."
+          }
+        },
+        {
+          "name": "Filled",
+          "args": {
+            "label": "Verification code",
+            "defaultValue": "482913"
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Verification code",
+            "defaultValue": "482910",
+            "error": "That code does not match. Check the latest message, or send a new code.",
+            "required": true
+          }
+        },
+        {
+          "name": "Alphanumeric",
+          "args": {
+            "label": "Recovery code",
+            "type": "alphanumeric",
+            "length": 8,
+            "hint": "Letters and numbers, from the recovery sheet you saved."
+          }
+        },
+        {
+          "name": "Masked",
+          "args": {
+            "label": "Admin PIN",
+            "length": 4,
+            "masked": true,
+            "defaultValue": "73",
+            "hint": "Four digits. Shown as dots once typed."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Verification code",
+            "disabled": true,
+            "hint": "Send a new code to try again."
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "type",
+          "values": [
+            "numeric",
+            "alphanumeric"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
     },
     {
       "name": "Listbox",
@@ -3955,6 +5252,281 @@
       "expectedVariantCount": 1
     },
     {
+      "name": "MultiSelect",
+      "description": "Choose several options from one control: recipients, tags, the columns of a report.\nThe control is a button showing the choices as chips; it opens a listbox where each row\ncarries a checkbox. Down or Enter opens it. In the list, Up and Down move, Home and End\njump, Space or Enter ticks the active option, and Escape or Tab closes it. With\n`searchable`, typing filters the list and the arrow keys still move the highlight; the\nsearch field is the combobox and the list follows it with aria-activedescendant.",
+      "storybookTitle": "Components/MultiSelect",
+      "source": "src/components/ui/MultiSelect.tsx",
+      "storyFile": "src/components/ui/MultiSelect.stories.tsx",
+      "importPath": "@/components/ui/MultiSelect",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "options",
+          "type": "ListOption[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The choices. Give options a `group` to show them under headings.",
+          "figma": {
+            "name": "options",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string[]",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Values chosen on first render.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((values: string[]) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with every chosen value after each change, in option order.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Choose options",
+          "description": "Shown in the empty control, in faint.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Choose options",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "searchable",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds a search field at the top of the list.",
+          "figma": {
+            "name": "searchable",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "selectAll",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds a \"Select all\" row that toggles every enabled option in view.",
+          "figma": {
+            "name": "selectAll",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "maxShown",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 3,
+          "description": "How many chosen values show as chips before the rest collapse into a count.",
+          "figma": {
+            "name": "maxShown",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submits each chosen value with a form under this name.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Report columns",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": [
+              "number",
+              "customer",
+              "amount"
+            ],
+            "selectAll": true
+          }
+        },
+        {
+          "name": "SearchAndGroups",
+          "args": {
+            "label": "Send the report to",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "searchable": true,
+            "selectAll": true,
+            "placeholder": "Choose people",
+            "hint": "Each person gets their own copy."
+          }
+        },
+        {
+          "name": "ManyChosen",
+          "args": {
+            "label": "Report columns",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": [
+              "number",
+              "customer",
+              "issued",
+              "due",
+              "amount",
+              "vat"
+            ],
+            "maxShown": 2
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Send the report to",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "required": true,
+            "error": "Choose at least one person."
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Report columns",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": [
+              "number",
+              "amount"
+            ],
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
       "name": "PageHeader",
       "description": "The header at the top of an app screen: where you are, what the screen is called, and the\none or two actions that belong to it. The title is the page's h1; actions wrap below it\non narrow screens.",
       "storybookTitle": "Components/PageHeader",
@@ -4635,6 +6207,205 @@
           "name": "Group",
           "args": {
             "label": "Monthly"
+          }
+        }
+      ],
+      "variantAxes": [],
+      "expectedVariantCount": 1
+    },
+    {
+      "name": "RichTextEditor",
+      "description": "Formatted text for comments, notes and email templates: bold, italic, links, bulleted and\nnumbered lists, and two heading levels. Output is HTML, sanitised on the way in (paste and\ndefaultValue keep only those formats, so styles and scripts from Word or a web page never\narrive). The toolbar is one tab stop with Left and Right between its buttons (APG toolbar);\neach format button shows its state with aria-pressed. Shortcuts: Ctrl or Cmd with B, I and\nK (link), with Shift and 7 or 8 for numbered and bulleted lists. The link form opens in the\ntoolbar, not a browser dialog, and Escape closes it. The editing area is a multiline textbox\nnamed by the label.",
+      "storybookTitle": "Components/RichTextEditor",
+      "source": "src/components/ui/RichTextEditor.tsx",
+      "storyFile": "src/components/ui/RichTextEditor.stories.tsx",
+      "importPath": "@/components/ui/RichTextEditor",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and marks the control required.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "",
+          "description": "Starting content, as HTML. Sanitised to the formats the editor supports.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Write something",
+          "description": "Shown while the editor is empty.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Write something",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((html: string) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the sanitised HTML on every change.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submitted with a form under this name, as HTML.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "values": null,
+          "required": false,
+          "default": 6,
+          "description": "The editing area's minimum height, in lines of body text.",
+          "figma": {
+            "name": "rows",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "number, no Figma property"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Comment",
+            "placeholder": "Add a note for the team",
+            "hint": "Paste from Word or a web page; only the formatting the editor supports is kept."
+          }
+        },
+        {
+          "name": "EmailTemplate",
+          "args": {
+            "label": "Email template",
+            "defaultValue": {
+              "$dynamic": "Identifier"
+            },
+            "rows": 10
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Release notes",
+            "required": true,
+            "error": "Add release notes before publishing v0.2.0.",
+            "rows": 4
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Email template",
+            "defaultValue": {
+              "$dynamic": "Identifier"
+            },
+            "disabled": true,
+            "hint": "Locked while the campaign is sending."
           }
         }
       ],
@@ -7159,6 +8930,266 @@
           "values": [
             "top",
             "bottom"
+          ]
+        }
+      ],
+      "expectedVariantCount": 2
+    },
+    {
+      "name": "TreeSelect",
+      "description": "Choose one item from a hierarchy without leaving the form: a team inside a department, a\nfolder inside a project. The field is a combobox button that opens a tree below it. In the\ntree, Up and Down move, Right opens a branch or steps into it, Left closes it or steps out\nto its parent, Home and End jump, typing a letter jumps to the next item starting with it,\nEnter or Space chooses, and Escape closes and returns to the field. The tree follows the\nAPG tree view pattern: role tree, treeitem with aria-level, aria-expanded and\naria-selected, and one tab stop.",
+      "storybookTitle": "Components/TreeSelect",
+      "source": "src/components/ui/TreeSelect.tsx",
+      "storyFile": "src/components/ui/TreeSelect.stories.tsx",
+      "importPath": "@/components/ui/TreeSelect",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "Always visible, above the control. Uppercase label style.",
+          "figma": {
+            "name": "label",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": ""
+          }
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "One line under the control. Hidden while an error is showing.",
+          "figma": {
+            "name": "hint",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "hintVisible"
+          }
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Replaces the hint, turns the border danger, and is announced as an alert.",
+          "figma": {
+            "name": "error",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "errorVisible"
+          }
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Adds the green asterisk and marks the control required.",
+          "figma": {
+            "name": "required",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Inert. Border and text go to the disabled colour; no fill.",
+          "figma": {
+            "name": "disabled",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "nodes",
+          "type": "TreeSelectNode[]",
+          "values": null,
+          "required": true,
+          "default": null,
+          "description": "The hierarchy. Content, not a Figma property.",
+          "figma": {
+            "name": "nodes",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "data prop, no Figma property"
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "The id chosen at first, for an uncontrolled field.",
+          "figma": {
+            "name": "defaultValue",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "defaultValueVisible"
+          }
+        },
+        {
+          "name": "selectable",
+          "type": "enum",
+          "values": [
+            "leaf",
+            "any"
+          ],
+          "required": false,
+          "default": "leaf",
+          "description": "leaf allows only items without children; any lets a branch be chosen too.",
+          "figma": {
+            "name": "selectable",
+            "figmaType": "VARIANT",
+            "values": [
+              "leaf",
+              "any"
+            ],
+            "defaultValue": "leaf"
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": "Choose",
+          "description": "Shown in the field while nothing is chosen.",
+          "figma": {
+            "name": "placeholder",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "Choose",
+            "companionBoolean": "placeholderVisible"
+          }
+        },
+        {
+          "name": "showPath",
+          "type": "boolean",
+          "values": null,
+          "required": false,
+          "default": false,
+          "description": "Shows the full path (\"Engineering / Platform / Payments\") in the field instead of the label.",
+          "figma": {
+            "name": "showPath",
+            "figmaType": "BOOLEAN",
+            "values": null,
+            "defaultValue": false
+          }
+        },
+        {
+          "name": "onChange",
+          "type": "((id: string) => void)",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Called with the chosen node's id.",
+          "figma": {
+            "name": "onChange",
+            "figmaType": "NONE",
+            "values": null,
+            "defaultValue": null,
+            "note": "handler, no Figma property"
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "values": null,
+          "required": false,
+          "default": null,
+          "description": "Submitted with a form under this name, as the chosen id.",
+          "figma": {
+            "name": "name",
+            "figmaType": "TEXT",
+            "values": null,
+            "defaultValue": "",
+            "companionBoolean": "nameVisible"
+          }
+        }
+      ],
+      "stories": [
+        {
+          "name": "Default",
+          "args": {
+            "label": "Team",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Choose a team",
+            "hint": "The team that owns this cost centre."
+          }
+        },
+        {
+          "name": "WithValue",
+          "args": {
+            "label": "Team",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": "eng-payments",
+            "showPath": true
+          }
+        },
+        {
+          "name": "AnyLevel",
+          "args": {
+            "label": "Save to folder",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "selectable": "any",
+            "defaultValue": "hh",
+            "hint": "Any folder, including one that holds others."
+          }
+        },
+        {
+          "name": "WithError",
+          "args": {
+            "label": "Team",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Choose a team",
+            "error": "Choose the team that will approve this spend.",
+            "required": true
+          }
+        },
+        {
+          "name": "Disabled",
+          "args": {
+            "label": "Team",
+            "nodes": {
+              "$dynamic": "Identifier"
+            },
+            "defaultValue": "ops-finance",
+            "disabled": true
+          }
+        }
+      ],
+      "variantAxes": [
+        {
+          "name": "selectable",
+          "values": [
+            "leaf",
+            "any"
           ]
         }
       ],
