@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>
 const steps = [
   { id: 'account', label: 'Account', description: 'Name, email and password.' },
   { id: 'workspace', label: 'Workspace', description: 'Name the workspace and invite the team.' },
-  { id: 'plan', label: 'Choose a plan', description: 'Free, Pro Developer or Pro Designer.' },
+  { id: 'plan', label: 'Choose a plan', description: 'Free, the Figma Kit or Pro.' },
   { id: 'done', label: 'Done', description: 'Open the workspace.' },
 ]
 

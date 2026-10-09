@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>
 
 const items = [
   { id: 'licence', title: 'Which licence covers the free components?', content: 'MIT. Use them in any project, commercial or not.' },
-  { id: 'figma', title: 'Is there a Figma file?', content: 'The basic kit is free. The full kit comes with a Pro Designer licence.' },
+  { id: 'figma', title: 'Is there a Figma file?', content: 'The Basic file is free. The full kit comes with the Figma Kit or Pro.' },
   { id: 'updates', title: 'How are updates delivered?', content: 'Through npm. Every release is listed in the changelog.' },
 ]
 

@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "055f7d6fb437",
+  "sourceHash": "0cfc7f4dced3",
   "components": [
     {
       "name": "Mark",
@@ -1779,9 +1779,9 @@
         {
           "name": "Price",
           "args": {
-            "title": "£249 a year",
+            "title": "£149.99",
             "titleSize": "lg",
-            "description": "Pro Bundle for one person. Renews on 12 March 2027.",
+            "description": "Pro for one person, one payment. Updates until 12 March 2027.",
             "actions": {
               "$dynamic": "JSXElement"
             }

@@ -69,10 +69,10 @@ export const Bare: Story = {
 /** The title is the figure: a plan price, with what it buys underneath. */
 export const Price: Story = {
   args: {
-    title: '£249 a year',
+    title: '£149.99',
     titleSize: 'lg',
-    description: 'Pro Bundle for one person. Renews on 12 March 2027.',
-    actions: <Button label="Change plan" variant="secondary" size="sm" />,
+    description: 'Pro for one person, one payment. Updates until 12 March 2027.',
+    actions: <Button label="Renew updates" variant="secondary" size="sm" />,
   },
 }
 
