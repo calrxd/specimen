@@ -1,5 +1,9 @@
 # @specimen.systems/tokens
 
+## 0.1.1
+
+The package author now reads Callum Radmilovic. No token changes.
+
 ## 0.1.0
 
 First release. 162 tokens: 83 primitives, 26 colour roles in a dark and a light theme, and
