@@ -45,6 +45,3 @@ export function FieldFrame({
 
 /** The describedby id for a FieldFrame: the error when there is one, else the hint. */
 export const describedByOf = (id: string, hint?: string, error?: string) => (error ? `${id}-error` : hint ? `${id}-hint` : undefined)
-
-/** Border classes matching Field: line-interactive at rest, sample on focus, danger on error. */
-export const fieldBorder = (error?: string) => (error ? 'border-danger' : 'border-line-interactive focus-within:border-sample')

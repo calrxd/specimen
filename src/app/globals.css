@@ -64,17 +64,6 @@
   }
 }
 
-/* The tag — 1px stroke, no fill, small caps, middle-dot separators. */
-.spc-tag {
-  border: var(--border-hairline) solid var(--color-sample);
-  color: var(--color-sample);
-  font-size: var(--text-micro);
-  letter-spacing: var(--tracking-tag);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  display: inline-block;
-  text-transform: uppercase;
-}
-
 /* Screenshots shipped in both themes: show the one that matches the page. */
 .spc-shot-light {
   display: none;

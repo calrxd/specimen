@@ -19,13 +19,6 @@ export type FieldBaseProps = {
 export const describedByOf = (id: string, error?: string, hint?: string) =>
   error ? `${id}-error` : hint ? `${id}-hint` : undefined
 
-/** The border every control box uses, by state. Matches Field and Password. */
-export function borderOf({ error, disabled, focusWithin = true }: { error?: string; disabled?: boolean; focusWithin?: boolean }) {
-  if (disabled) return 'border-disabled bg-transparent'
-  if (error) return 'border-danger bg-surface'
-  return ['border-line-interactive bg-surface', focusWithin ? 'has-[:focus-visible]:border-sample' : 'focus-visible:border-sample'].join(' ')
-}
-
 /**
  * Field's frame for a Pro control: the label above, the hint or error below. labelFor points
  * the label at a native input; a composite control passes labelId instead and uses
