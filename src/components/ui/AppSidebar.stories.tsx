@@ -11,7 +11,7 @@ const meta = {
     (Story) => (
       <div className="flex h-[36rem] flex-col md:flex-row">
         <Story />
-        <main className="flex-1 p-3xl font-text text-body text-muted">Page content</main>
+        <div className="flex-1 p-3xl font-text text-body text-muted">Page content</div>
       </div>
     ),
   ],

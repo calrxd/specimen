@@ -27,13 +27,13 @@ export const Default: Story = {
 }
 
 export const FirstPage: Story = {
-  args: { page: 1, pageCount: 12 },
+  args: { page: 1, pageCount: 12, 'aria-label': 'Invoice pages' },
 }
 
 export const LastPage: Story = {
-  args: { page: 12, pageCount: 12 },
+  args: { page: 12, pageCount: 12, 'aria-label': 'Order pages' },
 }
 
 export const FewPages: Story = {
-  args: { page: 2, pageCount: 3 },
+  args: { page: 2, pageCount: 3, 'aria-label': 'Search result pages' },
 }

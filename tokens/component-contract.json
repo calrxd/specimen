@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "0cfc7f4dced3",
+  "sourceHash": "11bd1f2e5636",
   "components": [
     {
       "name": "Mark",
@@ -1300,6 +1300,7 @@
         {
           "name": "TwoLevels",
           "args": {
+            "aria-label": "Settings location",
             "items": [
               {
                 "label": "Settings",
@@ -6694,21 +6695,24 @@
           "name": "FirstPage",
           "args": {
             "page": 1,
-            "pageCount": 12
+            "pageCount": 12,
+            "aria-label": "Invoice pages"
           }
         },
         {
           "name": "LastPage",
           "args": {
             "page": 12,
-            "pageCount": 12
+            "pageCount": 12,
+            "aria-label": "Order pages"
           }
         },
         {
           "name": "FewPages",
           "args": {
             "page": 2,
-            "pageCount": 3
+            "pageCount": 3,
+            "aria-label": "Search result pages"
           }
         }
       ],

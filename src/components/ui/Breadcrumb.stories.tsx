@@ -27,6 +27,7 @@ export const Default: Story = {
 
 export const TwoLevels: Story = {
   args: {
+    'aria-label': 'Settings location',
     items: [{ label: 'Settings', href: '#settings' }, { label: 'Team' }],
   },
 }
