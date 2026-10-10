@@ -1,6 +1,6 @@
 # specimen_
 
-An open-source design system for B2B SaaS product teams. One token file generates the CSS, the Tailwind theme and the Figma library, and a checker fails the build when Figma and the code disagree. The core is MIT licensed; Pro components and the full Figma kit are paid, on [specimen.systems/pricing](https://specimen.systems/pricing). Pre-release; v1.0 is planned for December 2026.
+An open-source design system for B2B SaaS product teams. One token file generates the CSS, the Tailwind theme and the Figma library, and a checker fails the build when Figma and the code disagree. The core is MIT licensed; Pro components and the full Figma kit are paid, on [specimen.systems/pricing](https://specimen.systems/pricing). Pre-release; v1.0 is planned for 1 December 2026.
 
 Documentation: [specimen.systems/docs](https://specimen.systems/docs). Storybook: [storybook.specimen.systems](https://storybook.specimen.systems).
 
