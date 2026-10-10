@@ -39,6 +39,7 @@
     "node_modules",
     ".data",
     "packages/pro/starter",
-    "figma/code-connect"
+    "figma/code-connect",
+    "demo"
   ]
 }
