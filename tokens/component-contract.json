@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "11bd1f2e5636",
+  "sourceHash": "e8bd35eb93d4",
   "components": [
     {
       "name": "Mark",
@@ -274,7 +274,7 @@
     },
     {
       "name": "AppSidebar",
-      "description": "The navigation rail down the left of a product. Groups with short headings, the current page\nmarked by aria-current and a 2px sample bar, badges for counts. It collapses to a rail of icons\nthat name themselves on hover and focus, and below md it becomes a Menu button that opens the\nsame navigation in a Drawer. A nav landmark; links are links and actions are buttons, so the\nkeyboard needs nothing beyond Tab.",
+      "description": "The navigation rail down the left of a product. Groups with short headings, the current page\nmarked by aria-current and a 2px sample bar, badges for counts. It collapses to a rail of icons\nthat name themselves on hover and focus, and below md it becomes a Menu button that opens the\nsame navigation in a Drawer. A nav landmark; links are links and actions are buttons, so the\nkeyboard needs nothing beyond Tab.\nThe rail and its footer carry data-slot=\"app-sidebar\" and \"app-sidebar-footer\", so a theme can\nrestyle them (float the rail, round it) from CSS.",
       "storybookTitle": "Components/AppSidebar",
       "source": "src/components/ui/AppSidebar.tsx",
       "storyFile": "src/components/ui/AppSidebar.stories.tsx",
