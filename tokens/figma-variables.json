@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE - DO NOT EDIT. Source: tokens/specimen.tokens.json. Rebuild: npm run tokens.",
-  "sourceHash": "a614539398ca",
+  "sourceHash": "872325d2cc30",
   "collections": [
     {
       "name": "specimen_ primitives",
@@ -2384,11 +2384,13 @@
       "aliases": {
         "Value": "viewport/640"
       },
-      "scopes": [],
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
       "codeSyntax": {
         "WEB": "var(--breakpoint-sm)"
       },
-      "description": "Large phone and up. 14 uses in the codebase."
+      "description": "Large phone and up: two columns where one would run too wide."
     },
     {
       "name": "breakpoint/md",
@@ -2398,11 +2400,13 @@
       "aliases": {
         "Value": "viewport/768"
       },
-      "scopes": [],
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
       "codeSyntax": {
         "WEB": "var(--breakpoint-md)"
       },
-      "description": "Tablet portrait and up."
+      "description": "Tablet portrait and up: where the app sidebar and the shell switch from a menu bar to a rail."
     },
     {
       "name": "breakpoint/lg",
@@ -2412,11 +2416,13 @@
       "aliases": {
         "Value": "viewport/1024"
       },
-      "scopes": [],
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
       "codeSyntax": {
         "WEB": "var(--breakpoint-lg)"
       },
-      "description": "Tablet landscape and small laptop. 4 uses."
+      "description": "Tablet landscape and small laptop: filter rows and dashboard grids go side by side."
     },
     {
       "name": "breakpoint/xl",
@@ -2426,11 +2432,13 @@
       "aliases": {
         "Value": "viewport/1280"
       },
-      "scopes": [],
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
       "codeSyntax": {
         "WEB": "var(--breakpoint-xl)"
       },
-      "description": "Desktop. 1 use."
+      "description": "Desktop: the widest layouts, such as a chart beside its breakdown."
     },
     {
       "name": "breakpoint/2xl",
@@ -2440,11 +2448,13 @@
       "aliases": {
         "Value": "viewport/1536"
       },
-      "scopes": [],
+      "scopes": [
+        "WIDTH_HEIGHT"
+      ],
       "codeSyntax": {
         "WEB": "var(--breakpoint-2xl)"
       },
-      "description": "Wide desktop."
+      "description": "Wide desktop. Not used yet; content stops widening at the page measure before this."
     },
     {
       "name": "measure/sm",

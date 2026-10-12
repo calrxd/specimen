@@ -1,5 +1,11 @@
 # @specimen.systems/tokens
 
+## Unreleased
+
+The five breakpoint roles are scoped to width and height in `figma-variables.json`, so a Figma
+frame's width can be bound to `breakpoint/md` and the rest. Their descriptions say what each
+step is for instead of how often the codebase used it. No values change.
+
 ## 0.1.1
 
 The package author now reads Callum Radmilovic. No token changes.

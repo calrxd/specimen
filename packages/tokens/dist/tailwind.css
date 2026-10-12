@@ -313,7 +313,7 @@
   /* ease: The single easing curve in the system. */
   --ease-spc: var(--p-easing-decelerate);
 
-  /* breakpoint: Tailwind v4 defaults, recorded so Figma frame widths and CSS agree. Min-width, mobile first. */
+  /* breakpoint: Tailwind v4 defaults, recorded so Figma frame widths and CSS agree. Min-width, mobile first. Scoped to width and height, so a frame's width can be bound to one. */
   --breakpoint-sm: 640px /* --p-viewport-640 */;
   --breakpoint-md: 768px /* --p-viewport-768 */;
   --breakpoint-lg: 1024px /* --p-viewport-1024 */;

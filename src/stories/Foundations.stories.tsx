@@ -208,3 +208,41 @@ export const Spacing: Story = {
     )
   },
 }
+
+/** The widest breakpoint sets the scale, so each bar is its width as a share of 2xl. */
+export const Breakpoints: Story = {
+  render: () => {
+    const steps = inGroup('breakpoint')
+    const widest = Math.max(...steps.map((t) => Number(resolved(t)?.value ?? 0)))
+    return (
+      <div style={{ padding: 'var(--spacing-3xl)' }}>
+        <Section title="Breakpoints" count={steps.length}>
+          {steps.map((t) => {
+            const px = Number(resolved(t)?.value ?? 0)
+            const prefix = t.name.split('/')[1]
+            return (
+              <Row key={t.name}>
+                <Name>{`${prefix}: ${t.cssVar}`}</Name>
+                <Alias>{Object.values(t.aliases)[0]}</Alias>
+                <Alias>{`${px}px and up`}</Alias>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-xs)' }}>
+                  <div
+                    style={{
+                      width: `${(px / widest) * 100}%`,
+                      height: 12,
+                      background: 'var(--color-sample-pressed)',
+                    }}
+                  />
+                  <span style={{ fontSize: 'var(--text-label)', color: 'var(--color-muted)' }}>{t.description}</span>
+                </div>
+              </Row>
+            )
+          })}
+        </Section>
+        <p style={{ margin: 0, fontSize: 'var(--text-label)', color: 'var(--color-muted)', maxWidth: 'var(--container-measure-md)' }}>
+          Min-width and mobile first: a class with no prefix applies at every width, and md:flex applies from 768px up. Figma frames for each layout use these widths.
+        </p>
+      </div>
+    )
+  },
+}
