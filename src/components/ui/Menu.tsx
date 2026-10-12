@@ -1,7 +1,7 @@
 'use client'
 
 import { cloneElement, useEffect, useRef, type KeyboardEvent, type ReactElement, type Ref } from 'react'
-import { useAnchoredPopover, type PopoverAlign } from './useAnchoredPopover'
+import { useAnchoredPopover, type PopoverAlign, type PopoverSide } from './useAnchoredPopover'
 
 type TriggerProps = {
   ref?: Ref<HTMLElement>
@@ -28,15 +28,18 @@ export type MenuProps = {
   items: MenuItem[]
   /** Which edge of the trigger the menu lines up with. end for a menu at the right of a row. */
   align?: PopoverAlign
+  /** top for a trigger near the bottom of the screen, such as a profile at the foot of a sidebar. */
+  side?: PopoverSide
 }
 
 /**
- * A list of actions opened from a button. Opens below its trigger with focus on the first
- * item; arrow keys move, Home and End jump, Enter or Space runs the item and closes the
- * menu, Escape closes it and returns focus to the trigger, Tab closes it and moves on.
+ * A list of actions opened from a button. Opens below its trigger, or above with side="top",
+ * with focus on the first item; arrow keys move, Home and End jump, Enter or Space runs the
+ * item and closes the menu, Escape closes it and returns focus to the trigger, Tab closes it
+ * and moves on.
  */
-export function Menu({ trigger, items, align = 'start' }: MenuProps) {
-  const { id, open, triggerRef, panelRef, close } = useAnchoredPopover('bottom', align)
+export function Menu({ trigger, items, align = 'start', side = 'bottom' }: MenuProps) {
+  const { id, open, triggerRef, panelRef, close } = useAnchoredPopover(side, align)
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([])
   const enabled = items.map((it, i) => (it.disabled ? -1 : i)).filter((i) => i >= 0)
 

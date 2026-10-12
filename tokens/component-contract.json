@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "e8bd35eb93d4",
+  "sourceHash": "ef98a78df4d3",
   "components": [
     {
       "name": "Mark",
@@ -5777,7 +5777,7 @@
     },
     {
       "name": "Menu",
-      "description": "A list of actions opened from a button. Opens below its trigger with focus on the first\nitem; arrow keys move, Home and End jump, Enter or Space runs the item and closes the\nmenu, Escape closes it and returns focus to the trigger, Tab closes it and moves on.",
+      "description": "A list of actions opened from a button. Opens below its trigger, or above with side=\"top\",\nwith focus on the first item; arrow keys move, Home and End jump, Enter or Space runs the\nitem and closes the menu, Escape closes it and returns focus to the trigger, Tab closes it\nand moves on.",
       "storybookTitle": "Components/Menu",
       "source": "src/components/ui/Menu.tsx",
       "storyFile": "src/components/ui/Menu.stories.tsx",
@@ -5830,6 +5830,26 @@
               "end"
             ],
             "defaultValue": "start"
+          }
+        },
+        {
+          "name": "side",
+          "type": "enum",
+          "values": [
+            "bottom",
+            "top"
+          ],
+          "required": false,
+          "default": "bottom",
+          "description": "top for a trigger near the bottom of the screen, such as a profile at the foot of a sidebar.",
+          "figma": {
+            "name": "side",
+            "figmaType": "VARIANT",
+            "values": [
+              "bottom",
+              "top"
+            ],
+            "defaultValue": "bottom"
           }
         }
       ],
@@ -5916,9 +5936,16 @@
             "start",
             "end"
           ]
+        },
+        {
+          "name": "side",
+          "values": [
+            "bottom",
+            "top"
+          ]
         }
       ],
-      "expectedVariantCount": 2
+      "expectedVariantCount": 4
     },
     {
       "name": "Message",
