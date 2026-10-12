@@ -49,6 +49,8 @@ export type AppSidebarProps = {
  * that name themselves on hover and focus, and below md it becomes a Menu button that opens the
  * same navigation in a Drawer. A nav landmark; links are links and actions are buttons, so the
  * keyboard needs nothing beyond Tab.
+ * The rail and its footer carry data-slot="app-sidebar" and "app-sidebar-footer", so a theme can
+ * restyle them (float the rail, round it) from CSS.
  */
 export function AppSidebar({
   brand,
@@ -87,6 +89,7 @@ export function AppSidebar({
       </Drawer>
 
       <aside
+        data-slot="app-sidebar"
         className={[
           'hidden h-full shrink-0 flex-col border-r border-line bg-surface transition-[width] duration-fast motion-reduce:transition-none md:flex',
           // 240px open: wide enough for a label, a badge and the bar; no spacing step is that wide.
@@ -100,7 +103,7 @@ export function AppSidebar({
         <div id={`${id}-nav`} className={['flex min-h-0 flex-1 flex-col py-md', collapsed ? 'overflow-visible' : 'overflow-y-auto'].join(' ')}>
           <Nav groups={groups} activeId={activeId} collapsed={collapsed} label={ariaLabel} />
         </div>
-        {footer && !collapsed && <div className="border-t border-line px-lg py-md">{footer}</div>}
+        {footer && !collapsed && <div data-slot="app-sidebar-footer" className="border-t border-line px-lg py-md">{footer}</div>}
         <button
           type="button"
           aria-expanded={!collapsed}
