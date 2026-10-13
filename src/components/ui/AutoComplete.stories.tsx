@@ -73,6 +73,15 @@ export const RemoteSearch: Story = {
   args: { label: 'Billing address', search: searchAddresses, minChars: 2, placeholder: 'Start with a street name', hint: 'Addresses come from the postcode service.' },
 }
 
+/** Matches the Figma NoMatches frame: the list opens on text no option contains. */
+export const NoMatches: Story = {
+  name: 'No matches',
+  args: { label: 'Customer', options: CUSTOMERS, placeholder: 'Start typing a name' },
+  play: async ({ canvas, userEvent }) => {
+    await userEvent.type(canvas.getByRole('combobox'), 'Zephyr')
+  },
+}
+
 export const WithError: Story = {
   name: 'With error',
   args: { label: 'Customer', options: CUSTOMERS, required: true, error: 'Choose a customer from the list.' },

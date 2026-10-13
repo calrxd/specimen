@@ -1,6 +1,6 @@
 {
   "$comment": "GENERATED FILE — DO NOT EDIT. Source: src/**/*.stories.tsx. Rebuild: npm run contract.",
-  "sourceHash": "ef98a78df4d3",
+  "sourceHash": "4f898427bef5",
   "components": [
     {
       "name": "Mark",
@@ -709,6 +709,16 @@
             "minChars": 2,
             "placeholder": "Start with a street name",
             "hint": "Addresses come from the postcode service."
+          }
+        },
+        {
+          "name": "NoMatches",
+          "args": {
+            "label": "Customer",
+            "options": {
+              "$dynamic": "Identifier"
+            },
+            "placeholder": "Start typing a name"
           }
         },
         {
